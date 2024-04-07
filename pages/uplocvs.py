@@ -4,7 +4,7 @@ import pandas as pd
 from deta import Deta
 
 # Carga el archivo CSV desde el usuario
-uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
+uploaded_file = st.file_uploader("Cargar archivo excel")
 
 if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
