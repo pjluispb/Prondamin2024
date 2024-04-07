@@ -9,9 +9,13 @@ uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
 if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
     df = pd.read_csv(uploaded_file)
-    dfnc = df[(df["INGRESO"] != None)]
+    dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
+    dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
+    frames = [dfingresoXpm, dfingresoXtrans]
+
+    dfingreso = pd.concat(frames)
     # Muestra el DataFrame
-    st.write(dfnc)
+    st.write(dfingreso)
 
 
 # lee csv desde detadrive
