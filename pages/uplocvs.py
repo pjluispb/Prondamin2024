@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
 if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
     df = pd.read_csv(uploaded_file)
-    dfnc = df[(df["DESCRIPCION"].startswith('NC'))]
+    dfnc = df[(df["INGRESO"] != None)]
     # Muestra el DataFrame
     st.write(dfnc)
 
