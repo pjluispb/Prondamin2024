@@ -68,7 +68,7 @@ if b0:
                                 nombres = ph1.text_input('Nombres :name_badge:', value = first['nombre'])
                                 apellidos = ph1.text_input('Apellidos:',value = first['apellido'])
                                 correo = ph1.text_input('Correo Electrónico: 	:email:',value = first['emails'][0])
-                                telefono = ph1.text_input('Teléfono: :telephone_receiver:',value = first['teléfonos'][0])
+                                telefono = ph1.text_input('Teléfono: :telephone_receiver:', value = ''  if first['teléfonos'] == [] else first['teléfonos'][0])
                                 distrito = ph1.text_input('Distrito:',value = first['distrito'], disabled=True)
                                 if logina['tipou']=='Registrador':
                                         catasp = ph1.text_input('Categoría: :male-judge:',value = first['categoría'], disabled=True)
