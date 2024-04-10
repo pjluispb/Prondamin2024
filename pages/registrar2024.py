@@ -26,7 +26,7 @@ if (logina['user'], logina['clave']) not in permisados:
     switch_page('reiniciar03')
 
 
-encprof = deta.Base('Prondamin2024B')
+encprof = deta.Base('Prondamin2024C')
 montopay = deta.Base('MontoAPagar')
 montoApagar = montopay.fetch()
 #st.write(montoApagar.items[0]['MontoAPagarVirtual'], montoApagar.items[0]['MontoAPagarPresencial'])
