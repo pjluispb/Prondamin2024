@@ -58,7 +58,7 @@ if logina['tipou']!='Registrador Especial':
 else:
     dtto = ''
 deta = Deta(st.secrets["deta_key"])
-encprof = deta.Base('Prondamin2024B')
+encprof = deta.Base('Prondamin2024C')
 if dtto!='':
     db_content = encprof.fetch({'distrito':dtto}, limit=2000).items
 else:
