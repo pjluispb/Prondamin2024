@@ -209,7 +209,7 @@ if b1:
                 switch_page('reiniciar')
         
 st.write('----------------')
-regresar = st.button('Volver a Principal')
-if regresar:
-    st.switch_page('pages/home2024.py')
+#regresar = st.button('Volver a Principal')
+#if regresar:
+#    st.switch_page('pages/home2024.py')
 st.page_link("home2024.py", label="Inicio", icon="🏠")
