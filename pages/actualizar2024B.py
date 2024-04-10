@@ -16,7 +16,7 @@ imagen1 = Image.open('minecLogo.jpeg')
 imagen2 = Image.open('minecLogoTitle.jpeg')
 
 deta = Deta(st.secrets["deta_key"])
-encprof = deta.Base('Prondamin2024B')
+encprof = deta.Base('Prondamin2024C')
 montopay = deta.Base('MontoAPagar')
 montoApagar = montopay.fetch()
 # try:
