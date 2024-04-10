@@ -51,7 +51,7 @@ if b0:
                 cedmin = cedula
                 ch_data = True
                 ph1.text('Edite los siguientes campos')
-                ph1.write(first)
+                #ph1.write(first)
                 nombres = ph1.text_input('Nombres :name_badge:', value = first['nombre'])
                 apellidos = ph1.text_input('Apellidos:',value = first['apellido'])
                 correo = ph1.text_input('Correo Electrónico: 	:email:',value = first['emails'][0])
