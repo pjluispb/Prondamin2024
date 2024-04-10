@@ -11,7 +11,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-pronda2024 = deta.Base('Prondamin2024B')
+pronda2024 = deta.Base('Prondamin2024C')
 p24 = pronda2024.fetch(limit=5000)
 dfp24 = pd.DataFrame(p24.items)
 
