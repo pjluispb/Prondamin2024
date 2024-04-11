@@ -60,9 +60,9 @@ else:
 deta = Deta(st.secrets["deta_key"])
 encprof = deta.Base('Prondamin2024C')
 if dtto!='':
-    db_content = encprof.fetch({'distrito':dtto}, limit=2000).items
+    db_content = encprof.fetch({'distrito':dtto}, limit=3000).items
 else:
-    db_content = encprof.fetch(limit=3000).items
+    db_content = encprof.fetch(limit=5000).items
 #st.write(db_content)
 distritos = ['Andino', 'Centro', 'Centro Llanos', 'Falcón', 'Lara', 'Llanos Occidentales', 'Metropolitano', 'Nor Oriente', 'Sur Oriente', 'Yaracuy', 'Zulia']
 categorias = ['Ministro Ordenado', 'Ministro Licenciado', 'Ministro Cristiano']
