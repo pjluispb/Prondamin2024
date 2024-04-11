@@ -3,6 +3,10 @@ import streamlit as st
 import pandas as pd
 from deta import Deta
 
+def check_csv_header(header):
+    required_columns = ['Fecha', 'Descripcion', 'Referencia', 'Egreso', 'Ingreso']
+    return all(column in header for column in required_columns)
+    
 # Carga el archivo CSV desde el usuario
 uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
 
