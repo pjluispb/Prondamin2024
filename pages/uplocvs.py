@@ -128,7 +128,7 @@ if uploaded_file is not None:
         dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)
         dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)
         dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)  #Coloriza las filas
-        st.write('Status de pago de los inscritos')
+        st.header('Status de pago de los inscritos')
         dfPronda24B
 
 
