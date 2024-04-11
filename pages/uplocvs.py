@@ -18,28 +18,29 @@ if uploaded_file is not None:
     # Verificar si el archivo es CSV
     if not uploaded_file.name.lower().endswith('.csv'):
         st.error('El archivo seleccionado no es un archivo CSV válido.')
-        return
+        #return
 
     # Verificar si la cabecera cumple con los campos requeridos
-    if not check_csv_header(df.columns):
+    elif not check_csv_header(df.columns):
         st.error('El archivo CSV debe tener las siguientes columnas: Fecha, Descripcion, Referencia, Egreso, Ingreso.')
-        return
+        #return
 
-    # Mostrar el DataFrame si todas las verificaciones son exitosas
-    st.header('Contenido del archivo CSV')
-    st.write(df)
-
-
-
+    else:
+        # Mostrar el DataFrame si todas las verificaciones son exitosas
+        st.header('Contenido del archivo CSV')
+        st.write(df)
     
-    #df = pd.read_csv(uploaded_file)
-    dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
-    dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
-    frames = [dfingresoXpm, dfingresoXtrans]
-
-    dfingreso = pd.concat(frames)
-    # Muestra el DataFrame
-    st.write(dfingreso)
+    
+    
+        
+        #df = pd.read_csv(uploaded_file)
+        dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
+        dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
+        frames = [dfingresoXpm, dfingresoXtrans]
+    
+        dfingreso = pd.concat(frames)
+        # Muestra el DataFrame
+        st.write(dfingreso)
 
 
 # lee csv desde detadrive
