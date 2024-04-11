@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+def check_csv_header(header):
+    required_columns = ['Fecha', 'Descripcion', 'Referencia', 'Egreso', 'Ingreso']
+    return all(column in header for column in required_columns)
+    
 def main():
     st.title('Cargar y mostrar un archivo CSV')
 
