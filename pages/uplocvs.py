@@ -92,6 +92,9 @@ if uploaded_file is not None:
 
         DatBan = dfingreso.reindex(columns=['FECHA', 'DESCRIPCION', 'REFERENCIA', 'INGRESO'])
         DatBan['REFERENCIA'] = df['REFERENCIA'].apply(lambda x: str(x)[-4:])
+        st.write('---')
+        st.write(DatBan)
+        st.write('---')
         DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
         DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
         
