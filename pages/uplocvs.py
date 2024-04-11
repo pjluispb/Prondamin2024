@@ -43,6 +43,48 @@ if uploaded_file is not None:
         # Muestra el DataFrame
         st.write(dfingreso)
 
+        DatBan = dfingreso.reindex(columns=['FECHA', 'DESCRIPCION', 'REFERENCIA', 'INGRESO'])
+        DatBan['REFERENCIA'] = df['REFERENCIA'].apply(lambda x: str(x)[-4:])
+        DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
+        DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
+        
+        # Muestra el DataFrame
+        # st.write(DatBan)
+        
+        # Compara Df.REFERENCIA con dfPronda24.referenciaPago
+        DatBan['REFERENCIA'] = DatBan['REFERENCIA'].astype(str)
+        dfPronda24['referenciaPago'] = dfPronda24['referenciaPago'].astype(str)
+        
+        #dfnew = df[df['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
+        #dfnew = dfPronda24[dfPronda24['referenciaPago'].isin(df['REFERENCIA'])]
+        
+        # datban_verif = pd.merge(df, dfPronda24, left_on='REFERENCIA', right_on='referenciaPago', how='inner')
+        # 'datban_verif = '
+        # datban_verif
+        
+        DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
+        DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
+        
+        DatBanVerif1
+        # grabo DatBanVerif en Deta BD: DBanVerif2024
+        dbvreg = DatBanVerif1.to_dict('records')
+        cont=1
+        for registro in dbvreg:
+            #registro
+            DBanV24.put(registro)
+            st.toast('se ha cargado el registro: '+str(cont))
+            cont+=1
+        
+        referencias = set(DatBanVerif1['key'])
+        dfPronda24.loc[dfPronda24['referenciaPago'].isin(referencias), 'paycon'] = 'SI'
+        #dfPronda24.style.applymap(color_paycon, subset=['paycon'])
+        dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)
+        dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)
+        dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)  #Coloriza las filas
+        
+        dfPronda24B
+
+
 
 # lee csv desde detadrive
 # deta = Deta(st.secrets["deta_key"])
