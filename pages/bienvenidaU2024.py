@@ -11,7 +11,7 @@ accesos = deta.Base('minec-accesos')
 res=accesos.fetch()
 #res.items
 logina = st.session_state['logina']
-#logina
+logina
 
 st.image(imagen1)
 st.image(imagen2)
