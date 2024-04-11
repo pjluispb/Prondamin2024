@@ -111,7 +111,7 @@ if uploaded_file is not None:
         
         DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
-        st.write('Registros que match con la data de las inscripciones')
+        st.subheader('Registros del archivo CVS que coinciden con la data de las inscripciones')
         DatBanVerif1
         # grabo DatBanVerif en Deta BD: DBanVerif2024
         dbvreg = DatBanVerif1.to_dict('records')
