@@ -75,8 +75,8 @@ if uploaded_file is not None:
 
     else:
         # Mostrar el DataFrame si todas las verificaciones son exitosas
-        st.header('Contenido del archivo CSV')
-        st.write(df)
+        st.header('Contenido del archivo CSV (solo los ingresos)')
+        #st.write(df)
     
     
     
