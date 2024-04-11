@@ -4,7 +4,8 @@ import pandas as pd
 from deta import Deta
 
 def check_csv_header(header):
-    required_columns = ['Fecha', 'Descripcion', 'Referencia', 'Egreso', 'Ingreso']
+    #required_columns = ['Fecha', 'Descripcion', 'Referencia', 'Egreso', 'Ingreso']
+    required_columns = ['FECHA', 'DESCRIPCION', 'REFERENCIA', 'EGRESO', 'INGRESO']
     return all(column in header for column in required_columns)
     
 # Carga el archivo CSV desde el usuario
