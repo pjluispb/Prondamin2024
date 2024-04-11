@@ -111,7 +111,7 @@ if uploaded_file is not None:
         
         DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
-        
+        st.write('Registros que match con la data de las inscripciones')
         DatBanVerif1
         # grabo DatBanVerif en Deta BD: DBanVerif2024
         dbvreg = DatBanVerif1.to_dict('records')
@@ -128,7 +128,7 @@ if uploaded_file is not None:
         dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)
         dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)
         dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)  #Coloriza las filas
-        
+        st.write('Status de pago de los inscritos')
         dfPronda24B
 
 
