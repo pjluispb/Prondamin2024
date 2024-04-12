@@ -119,7 +119,7 @@ if uploaded_file is not None:
         dfPronda24B
 
         # graba dfPronda24B en Deta BD: Pronda24Test
-        dbprondareg = dfPronda24B.to_dict('records')
+        dbprondareg = dfPronda24.to_dict('records')
         contador = 1
         for registro in dbprondareg:
             if registro('paycon') in ('SI', 'SI++', 'PENDIENTE', 'PENDIENTE X DIFERENCIA'):
