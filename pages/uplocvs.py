@@ -122,8 +122,10 @@ if uploaded_file is not None:
         dbprondareg = dfPronda24.to_dict('records')
         contador = 1
         for registro in dbprondareg:
-            if registro('paycon') in ('SI', 'SI++', 'PENDIENTE', 'PENDIENTE X DIFERENCIA'):
-                registro
+            if registro['paycon'] in ['SI', 'SI++', 'PENDIENTE X DIFERENCIA', 'PENDIENTE']:
+                contador, registro
+                Prondamin24.put(registro)
+                contador+=1
                 
 
         
