@@ -162,7 +162,7 @@ if uploaded_file is not None:
         #conteo = dfPronda24B.value_counts("paycon")
         conteo = dfPronda24['paycon'].value_counts()
         conteo
-        st.write('Nro de PENDIENTES : ', conteo)
+        #st.write('Nro de PENDIENTES : ', conteo)
        
 st.write('---')
 st.write('')
