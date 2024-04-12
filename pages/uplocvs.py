@@ -126,7 +126,7 @@ if uploaded_file is not None:
                 #contador, registro
                 Prondamin24.put(registro)
                 contador+=1
-        st.metric('	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
+        st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
        
 
         
