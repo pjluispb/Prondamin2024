@@ -60,62 +60,46 @@ uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])
 
 if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
-    # Leer el archivo CSV
     df = pd.read_csv(uploaded_file)
 
     # Verificar si el archivo es CSV
     if not uploaded_file.name.lower().endswith('.csv'):
         st.error('El archivo seleccionado no es un archivo CSV válido.')
-        #return
 
     # Verificar si la cabecera cumple con los campos requeridos
     elif not check_csv_header(df.columns):
         st.error('El archivo CSV debe tener las siguientes columnas: Fecha, Descripcion, Referencia, Egreso, Ingreso.')
-        #return
 
     else:
         # Mostrar el DataFrame si todas las verificaciones son exitosas
-        st.header('Contenido del archivo CSV (solo los ingresos)')
-        #st.write(df)
-    
-    
-    
         
-        #df = pd.read_csv(uploaded_file)
+        # extrae del dataframe solo cuando la descripcion = pago movil o transferencia
         dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
         dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
         frames = [dfingresoXpm, dfingresoXtrans]
-    
         dfingreso = pd.concat(frames)
         # Muestra el DataFrame
+        st.header('Contenido del archivo CSV (solo los ingresos)')
         st.write(dfingreso)
-
+        
+        # Construye nuevo dataframe DatBan con referencia e ingreso formateados para el match con Pronda
+        # es decir, los ultimos 4 digitos de la referencia y sustituir la coma por punto en los montos
         DatBan = dfingreso.reindex(columns=['FECHA', 'DESCRIPCION', 'REFERENCIA', 'INGRESO'])
         DatBan['REFERENCIA'] = df['REFERENCIA'].apply(lambda x: str(x)[-4:])
-        #st.write('---')
-        #st.write(DatBan)
-        #st.write('---')
+
         DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
         DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
         
-        # Muestra el DataFrame
-        # st.write(DatBan)
-        
-        # Compara Df.REFERENCIA con dfPronda24.referenciaPago
+        # Compara DatBan.REFERENCIA con dfPronda24.referenciaPago y cuando sean iguales
+        # lo coloca en el df:DatBanVerif...
         DatBan['REFERENCIA'] = DatBan['REFERENCIA'].astype(str)
         dfPronda24['referenciaPago'] = dfPronda24['referenciaPago'].astype(str)
         
-        #dfnew = df[df['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
-        #dfnew = dfPronda24[dfPronda24['referenciaPago'].isin(df['REFERENCIA'])]
-        
-        # datban_verif = pd.merge(df, dfPronda24, left_on='REFERENCIA', right_on='referenciaPago', how='inner')
-        # 'datban_verif = '
-        # datban_verif
-        
         DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
-        st.subheader('Registros del archivo CVS que coinciden con la data de las inscripciones')
+        st.subheader('Registros del archivo CSV que coinciden con la data de las inscripciones')
         DatBanVerif1
+        
         # grabo DatBanVerif en Deta BD: DBanVerif2024
         dbvreg = DatBanVerif1.to_dict('records')
         cont=1
@@ -128,11 +112,21 @@ if uploaded_file is not None:
         referencias = set(DatBanVerif1['key'])
         dfPronda24.loc[dfPronda24['referenciaPago'].isin(referencias), 'paycon'] = 'SI'
         #dfPronda24.style.applymap(color_paycon, subset=['paycon'])
-        dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)
-        dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)
-        dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)  #Coloriza las filas
+        dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)                  # Actualiza el campo paycon en el dataframe
+        dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
+        dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)                # Coloriza las filas del dataframe
         st.header('Status de pago de los inscritos')
         dfPronda24B
+
+        # graba dfPronda24B en Deta BD: Pronda24Test
+        dbprondareg = dfPronda24B.to_dict('records')
+        contador = 1
+        for registro in dbprondareg:
+            if registro('paycon') in ('SI', 'SI++', 'PENDIENTE', 'PENDIENTE X DIFERENCIA'):
+                registro
+                
+
+        
 
 
 
