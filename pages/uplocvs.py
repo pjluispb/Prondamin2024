@@ -53,7 +53,7 @@ except:
     st.switch_page('home2024.py')
 # Carga el Pronda
 Prondamin24 = deta.Base('Prondamin2024C')
-Pronda24 = Prondamin24.fetch()
+Pronda24 = Prondamin24.fetch(limit=5000)
 dfPronda24 = pd.DataFrame(Pronda24.items)
 # dfPronda24
 
