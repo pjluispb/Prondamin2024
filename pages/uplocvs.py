@@ -158,9 +158,10 @@ if uploaded_file is not None:
                 contador+=1
         st.write('---')
         st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
-        conteoPENDIENTE = dfPronda24B['paycon'].value_counts()
-        conteoPENDIENTE
-        st.write('Nro de PENDIENTES : ', conteoPENDIENTE)
+        #conteoPENDIENTE = dfPronda24B['paycon'].value_counts()
+        conteo = dfPronda24B.value_counts("paycon")
+        conteo
+        st.write('Nro de PENDIENTES : ', conteo)
        
 st.write('---')
 st.write('')
