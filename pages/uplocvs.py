@@ -79,7 +79,7 @@ if uploaded_file is not None:
         frames = [dfingresoXpm, dfingresoXtrans]
         dfingreso = pd.concat(frames)
         # Muestra el DataFrame
-        st.header('Contenido del archivo CSV (solo los ingresos)')
+        st.header('Ingresos registrados por el banco')
         st.write(dfingreso)
         
         # Construye nuevo dataframe DatBan con referencia e ingreso formateados para el match con Pronda
@@ -97,7 +97,7 @@ if uploaded_file is not None:
         
         DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
-        st.subheader('Registros del archivo CSV que coinciden con la data de las inscripciones')
+        st.subheader('Pagos(referencias) encontrados ')
         DatBanVerif1
         
         # grabo DatBanVerif en Deta BD: DBanVerif2024
@@ -126,7 +126,7 @@ if uploaded_file is not None:
                 #contador, registro
                 Prondamin24.put(registro)
                 contador+=1
-        st.metric('Pagos Verificados', str(contador-1)+' registros actualizados')
+        st.metric('	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
        
 
         
