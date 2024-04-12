@@ -123,10 +123,11 @@ if uploaded_file is not None:
         contador = 1
         for registro in dbprondareg:
             if registro['paycon'] in ['SI', 'SI++', 'PENDIENTE X DIFERENCIA', 'PENDIENTE']:
-                contador, registro
+                #contador, registro
                 Prondamin24.put(registro)
                 contador+=1
-                
+        st.metric('Pagos Verificados', str(contador-1)+' registros actualizados')
+       
 
         
 
