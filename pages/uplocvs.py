@@ -154,7 +154,7 @@ if uploaded_file is not None:
         for registro in dbprondareg:
             if registro['paycon'] in ['SI', 'SI++', 'PENDIENTE X DIFERENCIA', 'PENDIENTE']:
                 #contador, registro
-                #Prondamin24.put(registro)
+                Prondamin24.put(registro)
                 contador+=1
         st.write('---')
         st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
