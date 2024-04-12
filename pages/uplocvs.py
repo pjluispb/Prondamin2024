@@ -136,12 +136,14 @@ if uploaded_file is not None:
         dfPronda24.loc[dfPronda24['referenciaPago'].isin(referencias), 'paycon'] = 'SI'
         #dfPronda24.style.applymap(color_paycon, subset=['paycon'])
         dfPronda24['paycon'] = dfPronda24.apply(update_paycon, axis=1)                  # Actualiza el campo paycon en el dataframe
-        dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
+        
         dfPronda24['Status'] = dfPronda24['Status'].fillna('-')                         # Coloca Status = '-' cuando valga None
         dfPronda24['ReporteCertif'] = dfPronda24['ReporteCertif'].fillna('-')           # Coloca ReporteCertif = '-' cuando valga None
         dfPronda24['curso'] = dfPronda24['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
         dfPronda24['Categoría Actual'] = dfPronda24['Categoría Actual'].fillna('-')     # Coloca Categoría Actual = '-' cuando valga None
         dfPronda24['Cédula'] = dfPronda24['Cédula'].fillna('-')                         # Coloca Cédula = '-' cuando valga None
+        
+        dfPronda24_ordenado = dfPronda24.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
         dfPronda24B = dfPronda24_ordenado.style.apply(row_style, axis=1)                # Coloriza las filas del dataframe
         st.header('Status de pago de los inscritos')
         dfPronda24B
