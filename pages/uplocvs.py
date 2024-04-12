@@ -147,9 +147,11 @@ if uploaded_file is not None:
                 #contador, registro
                 Prondamin24.put(registro)
                 contador+=1
+        st.write('---')
         st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
        
-
+st.write('---')
+st.write('')
 st.page_link("home2024.py", label="Inicio", icon="🏠")
 
 
