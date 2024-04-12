@@ -80,6 +80,7 @@ if uploaded_file is not None:
         dfingreso = pd.concat(frames)
         # Muestra el DataFrame
         st.header('Ingresos registrados por el banco')
+        st.write('solamente pago móvil y transferencias')
         st.write(dfingreso)
         
         # Construye nuevo dataframe DatBan con referencia e ingreso formateados para el match con Pronda
