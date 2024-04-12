@@ -47,9 +47,10 @@ def color_paycon(val):
 # Carga la bd de accesos
 accesos = deta.Base('minec-accesos')
 res=accesos.fetch()
-
-logina = st.session_state['logina']
-
+try:
+    logina = st.session_state['logina']
+except:
+    st.switch_page('home2024.py')
 # Carga el Pronda
 Prondamin24 = deta.Base('Pronda24Test')
 Pronda24 = Prondamin24.fetch()
