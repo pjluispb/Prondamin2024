@@ -39,7 +39,7 @@ with st.form('Login Minec'):
                     st.session_state['logina'] = logina
                     st.write(logina)
                     if buser[0]['tipou']=='Registrador Financiero':
-                        st.switch_page('uplocvs.py')
+                        st.switch_page('pages/uplocvs.py')
                     else:
                         switch_page('BienvenidaU2024')
                 else: st.write('Clave Inválida')
