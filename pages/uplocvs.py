@@ -2,8 +2,13 @@
 import streamlit as st
 import pandas as pd
 from deta import Deta
+from PIL import Image
+
+imagen1 = Image.open('minecLogo.jpeg')
+imagen2 = Image.open('minecLogoTitle.jpeg')
 
 deta = Deta(st.secrets["deta_key"])
+
 
 def row_style(row):
     if row['paycon'] == 'SI++':
@@ -39,6 +44,12 @@ def color_paycon(val):
     color = 'green' if val == 'SI' else 'white'
     return 'background-color: %s' % color   
 
+# Carga la bd de accesos
+accesos = deta.Base('minec-accesos')
+res=accesos.fetch()
+
+logina = st.session_state['logina']
+
 # Carga el Pronda
 Prondamin24 = deta.Base('Pronda24Test')
 Pronda24 = Prondamin24.fetch()
@@ -49,6 +60,14 @@ dfPronda24 = pd.DataFrame(Pronda24.items)
 DBanV24 = deta.Base('DBanVerif2024')
 DBanV24f = DBanV24.fetch().items
 dfDBanV24 = pd.DataFrame(DBanV24f)
+
+st.image(imagen1)
+st.image(imagen2)
+
+if logina['tipou']=='Registrador Financiero':
+    st.subheader('Bienvenid@ ' + logina['user'])
+else:
+    st.switch_page('home2024.py')
 
 def check_csv_header(header):
     #required_columns = ['Fecha', 'Descripcion', 'Referencia', 'Egreso', 'Ingreso']
