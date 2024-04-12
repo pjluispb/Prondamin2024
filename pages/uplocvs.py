@@ -107,8 +107,10 @@ if uploaded_file is not None:
         # es decir, los ultimos 4 digitos de la referencia y sustituir la coma por punto en los montos
         DatBan = dfingreso.reindex(columns=['FECHA', 'DESCRIPCION', 'REFERENCIA', 'INGRESO'])
         DatBan['REFERENCIA'] = df['REFERENCIA'].apply(lambda x: str(x)[-4:])
-
-        DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
+        try:
+            DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
+        except:
+            pass
         DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
         
         # Compara DatBan.REFERENCIA con dfPronda24.referenciaPago y cuando sean iguales
