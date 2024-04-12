@@ -158,6 +158,8 @@ if uploaded_file is not None:
                 contador+=1
         st.write('---')
         st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
+        conteoPENDIENTE = df['paycon'].value_counts()['PENDIENTE']
+        st.write('Nro de PENDIENTES : ', conteoPENDIENTE)
        
 st.write('---')
 st.write('')
