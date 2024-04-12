@@ -150,7 +150,7 @@ if uploaded_file is not None:
         st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
        
 
-        
+st.page_link("home2024.py", label="Inicio", icon="🏠")
 
 
 
