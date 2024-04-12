@@ -19,7 +19,7 @@ st.set_page_config(
 def row_style(row):
     if row['paycon'] == 'SI++':
         return pd.Series('background-color: #7986cb; color:#000000', row.index)
-    elif row['paycon'] == 'PENDIENTE x DIFERENCIA':
+    elif row['paycon'] == 'PENDIENTE X DIFERENCIA':
         return pd.Series('background-color: #ff6f00; color:#000000', row.index)
     elif row['paycon'] == 'SI':
         return pd.Series('background-color: #8ede99; color:#000000', row.index)
