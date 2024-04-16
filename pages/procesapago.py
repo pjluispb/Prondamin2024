@@ -106,5 +106,25 @@ if uploaded_file is not None:
         st.header('Ingresos registrados por el banco')
         st.write('solamente pago móvil y transferencias')
         st.write(dfingreso)
+
+        # Construye nuevo dataframe DatBan con referencia e ingreso formateados para el match con Pronda
+        # es decir, los ultimos 4 digitos de la referencia y sustituir la coma por punto en los montos
+        DatBan = dfingreso.reindex(columns=['FECHA', 'DESCRIPCION', 'REFERENCIA', 'INGRESO'])
+        DatBan['REFERENCIA'] = df['REFERENCIA'].apply(lambda x: str(x)[-4:])
+        try:
+            DatBan['INGRESO'] = DatBan['INGRESO'].str.replace(',', '.').astype(float)
+        except:
+            pass
+        DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
+        
+        # Compara DatBan.REFERENCIA con dfPronda24.referenciaPago y cuando sean iguales
+        # lo coloca en el df:DatBanVerif...
+        DatBan['REFERENCIA'] = DatBan['REFERENCIA'].astype(str)
+        dfPronda24['referenciaPago'] = dfPronda24['referenciaPago'].astype(str)
+        
+        DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
+        DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
+        st.subheader('Pagos(referencias) encontrados ')
+        DatBanVerif1
         st.stop()
 
