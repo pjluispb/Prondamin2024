@@ -135,47 +135,37 @@ if uploaded_file is not None:
             #DBanV24.put(registro)                                                       
             st.toast('se ha cargado el registro: '+str(cont))
             cont+=1
-        st.toast('--->Aqui vamos 001<---')
+        st.toast('--->registros bancarios guardados<---')
 
         referencias = set(DatBanVerif1['key'])
         #dfPronda24.loc[dfPronda24['referenciaPago'].isin(referencias), 'paycon'] = 'SI'
         dfPronda24_refO = dfPronda24[dfPronda24['referenciaPago'].isin(referencias)]
 
-        'dfPronda24_refO'
-        dfPronda24_refO
+        # 'dfPronda24_refO'
+        # dfPronda24_refO
         conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
-        conteopayconprondaref
+        # conteopayconprondaref
         #====>>> Prueba quitar los registros donde close == True                     <<<<======== Prueba
         try:
             dfPronda24_ref = dfPronda24_refO.loc[dfPronda24_refO['close']==False]
-            'dfPronda24_ref -- donde close == Not True'
-            dfPronda24_ref
+            # 'dfPronda24_ref -- donde close == Not True'
+            # dfPronda24_ref
             conteopayconprondaref2 = dfPronda24_ref['close'].value_counts()
-            conteopayconprondaref2
+            # conteopayconprondaref2
         except:
             dfPronda24_ref = dfPronda24_refO
-            'No aparece campo close!!!....se crea campo close=False'
+            # 'No aparece campo close!!!....se crea campo close=False'
             dfPronda24_ref['close'] = False
-            dfPronda24_ref
+            # dfPronda24_ref
         #====>>> Prueba quitar los registros donde close == True  
-        '---'
+        #'---'
         DatBanVerif.rename(columns={'REFERENCIA':'referenciaPago'}, inplace=True)
-        #dfPronda24
-        #DatBanVerif
-        dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')
-        #'dfpyd =', dfpyd
-        
-        #dfpyd['INGRESO'] = dfpyd['INGRESO'].fillna('-')
-        #dfpyd
-        #nuevo_dfpyd = dfpyd.loc[dfpyd['INGRESO'] != '-']
-        #nuevo_dfpyd
+        dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
         dfpyd['montoPago'] = dfpyd['INGRESO'].fillna(dfpyd['montoPago'])
         '**************************************'
-        
-        
+
         dfpyd = dfpyd.drop(columns=['FECHA', 'DESCRIPCION', 'INGRESO'])
-        dfpyd['paycon'] = dfpyd.apply(update_paycon, axis=1)                         # Actualiza paycon en nuevo_dfpyd
-        # 'dfpyd despues de actualiza paycon', dfpyd
+        dfpyd['paycon'] = dfpyd.apply(update_paycon, axis=1)                  # Actualiza paycon en dfpyd
 
         dfpyd['Status'] = dfpyd['Status'].fillna('-')                         # Coloca Status = '-' cuando valga None
         dfpyd['ReporteCertif'] = dfpyd['ReporteCertif'].fillna('-')           # Coloca ReporteCertif = '-' cuando valga None
@@ -184,7 +174,7 @@ if uploaded_file is not None:
         dfpyd['Cédula'] = dfpyd['Cédula'].fillna('-')                         # Coloca Cédula = '-' cuando valga None
         dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                      # Coloca close = True si paycon = SI
         dfpyd_ordenado = dfpyd.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
-        dfpyd_color = dfpyd_ordenado.style.apply(row_style, axis=1)
+        dfpyd_color = dfpyd_ordenado.style.apply(row_style, axis=1)           # Coloriza filas del dataframe
         'dfpyd ordenado y colorizado'
         #dfpyd_ordenado
         dfpyd_color
