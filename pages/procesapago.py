@@ -126,5 +126,25 @@ if uploaded_file is not None:
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
         st.subheader('Pagos(referencias) encontrados ')
         DatBanVerif1
+
+        # grabo DatBanVerif en Deta BD: DBanVerif2024
+        dbvreg = DatBanVerif1.to_dict('records')
+        cont=1
+        for registro in dbvreg:
+            registro
+            #DBanV24.put(registro)                                                       
+            st.toast('se ha cargado el registro: '+str(cont))
+            cont+=1
+        st.toast('--->Aqui vamos 001<---')
+
+        referencias = set(DatBanVerif1['key'])
+        #dfPronda24.loc[dfPronda24['referenciaPago'].isin(referencias), 'paycon'] = 'SI'
+        dfPronda24_refO = dfPronda24[dfPronda24['referenciaPago'].isin(referencias)]
+
+        'dfPronda24_refO'
+        dfPronda24_refO
+        conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
+        conteopayconprondaref
+        
         st.stop()
 
