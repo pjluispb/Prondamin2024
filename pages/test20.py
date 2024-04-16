@@ -35,13 +35,13 @@ dfp24_ordenado = dfp24.sort_values(by='paycon', ascending=False)
 conteopaycon = dfp24_ordenado['paycon'].value_counts()
 conteoclose = dfp24_ordenado['close'].value_counts()
 conteodistrito = dfp24_ordenado['distrito'].value_counts()
-#conteocategoria = dfp24_color['categoría'].value_counts()
-#conteomodalidad = dfp24_color['modalidad'].value_counts()
+conteocategoria = dfp24_ordenado['categoría'].value_counts()
+conteomodalidad = dfp24_ordenado['modalidad'].value_counts()
 
 'Status Pagos', conteopaycon
 'Distritos', conteodistrito
-#'Categorías', conteocategoria
-#'Modalidad', conteomodalidad
+'Categorías', conteocategoria
+'Modalidad', conteomodalidad
 'cerrados', conteoclose
 
 
