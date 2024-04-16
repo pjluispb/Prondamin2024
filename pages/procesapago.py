@@ -79,3 +79,32 @@ def check_csv_header(header):
 uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])        
 #uploaded_file = 'CTAPRONDAMIN1-1.csv'
 
+if uploaded_file is not None:
+    # Lee el archivo CSV en un DataFrame
+    df = pd.read_csv(uploaded_file)                                          
+    # Lee el DataFrame En modo local:
+    #df = pd.read_csv('C:/Users/user/Downloads/CTAPRONDAMIN1-1.csv')
+
+    # Verificar si el archivo es CSV
+    if not uploaded_file.name.lower().endswith('.csv'):                     
+        st.error('El archivo seleccionado no es un archivo CSV válido.')
+
+    # Verificar si la cabecera cumple con los campos requeridos               
+    elif not check_csv_header(df.columns):
+        st.error('El archivo CSV debe tener las siguientes columnas: Fecha, Descripcion, Referencia, Egreso, Ingreso.')
+
+    else:
+        #trabajaEldf = True
+        #if trabajaEldf:
+        # Mostrar el DataFrame si todas las verificaciones son exitosas
+        # extrae del dataframe solo cuando la descripcion = pago movil o transferencia
+        dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
+        dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
+        frames = [dfingresoXpm, dfingresoXtrans]
+        dfingreso = pd.concat(frames)
+        # Muestra el DataFrame
+        st.header('Ingresos registrados por el banco')
+        st.write('solamente pago móvil y transferencias')
+        st.write(dfingreso)
+        st.stop()
+
