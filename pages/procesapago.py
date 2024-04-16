@@ -188,6 +188,18 @@ if uploaded_file is not None:
         'dfpyd ordenado y colorizado'
         #dfpyd_ordenado
         dfpyd_color
-        
+        conteopaycon = dfpyd_ordenado['paycon'].value_counts()
+        conteodistrito = dfpyd_ordenado['distrito'].value_counts()
+        st.subheader('Status de pagos procesados')
+        conteopaycon
+        st.subheader('Pagos verificados X distrito') 
+        conteodistrito
+
+        dfpydReg = dfpyd_ordenado.to_dict('records')
+        contador = 1
+        for registro in dfpydReg:
+            contador, registro
+            #Prondamin24.put(registro)
+            contador+=1
         st.stop()
 
