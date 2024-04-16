@@ -163,8 +163,8 @@ if uploaded_file is not None:
         dfpydReg = dfpyd_ordenado.to_dict('records')
         contador = 1
         for registro in dfpydReg:
-            contador, registro
-            #Prondamin24.put(registro)
+            #contador, registro
+            Prondamin24.put(registro)
             contador+=1
         st.stop()
 
