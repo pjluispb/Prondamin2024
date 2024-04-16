@@ -28,4 +28,5 @@ pronda2024 = deta.Base('Prondamin2024C')
 p24 = pronda2024.fetch(limit=5000)
 dfp24 = pd.DataFrame(p24.items)
 
-dfp24
+dfp24_color = dfp24.style.apply(row_style, axis=1)
+dfp24_color
