@@ -49,7 +49,7 @@ with st.form('nuevo registro'):
         st.write('Distrito : ****' + distrito + '****')
     else:
         distrito = st.selectbox('Distrito:',['Andino','Centro','Centro Llanos', 'Falcón','Lara', 'Llanos','Llanos Occidentales','Metropolitano','Nor Oriente','Sur Oriente','Yaracuy','Zulia'])
-    categoria = st.selectbox(label= 'Categoría :', options=['Ministro Distrital', 'Ministro Cristiano','Ministro Licenciado','Ministro Ordenado'])
+    categoria = st.selectbox(label= 'Categoría :', options=['Ministro Distrital', 'Ministro Cristiano','Ministro Licenciado','Ministro Ordenado', '-'])
     # modalidad = st.radio(label='Modalidad del curso', options=['Virtual', 'Presencial'], horizontal=True)
     # if modalidad=='Virtual': montoAcancelar = montoApagar.items[0]['MontoAPagarVirtual']
     # else: montoAcancelar = montoApagar.items[0]['MontoAPagarPresencial']
