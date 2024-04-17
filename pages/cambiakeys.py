@@ -18,11 +18,8 @@ try:
     #dfPronda24 = pd.DataFrame(Pronda24.items)
 except:
     'Problemas cargando Pronda'
-Pronda24
+#Pronda24
 dfPronda24 = pd.DataFrame(Pronda24)
 dfPronda24
 
-#df = pd.DataFrame.from_dict(Pronda24)
-#df
-#archicvs = 'CTAPRONDAMIN1-1.csv'
-#dfu = pd.read_csv('C:/Users/user/Downloads/CTAPRONDAMIN1-1.csv')
+
