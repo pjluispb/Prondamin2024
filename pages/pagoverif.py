@@ -21,6 +21,9 @@ def row_style(row):
     else:
         return pd.Series('', row.index)
 
+def highlight_cells(val):
+    return 'background-color: yellow' if val == val else ''
+    
 # Carga la bd de accesos
 accesos = deta.Base('minec-accesos')
 res=accesos.fetch()
