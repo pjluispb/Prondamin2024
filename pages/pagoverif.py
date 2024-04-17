@@ -69,8 +69,10 @@ st.subheader('Pagos Verificados')
 df_color
 
 conteopaycon = df['paycon'].value_counts()
+conteopayconAll = dfPronda24['paycon'].value_counts()
 st.subheader('Resumen')
 conteopaycon
+conteopayconAll
 
 st.stop()
 
