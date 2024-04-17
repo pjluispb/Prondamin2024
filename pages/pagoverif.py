@@ -49,15 +49,17 @@ st.image(imagen2)
 df = dfPronda24.dropna(subset=['close'])
 #df
 df_ordenado = df.sort_values(by='paycon', ascending=False)
-df_color = df_ordenado.style.apply(row_style, axis=1)
-df_color
+#df_color = df_ordenado.style.apply(row_style, axis=1)
+#df_color
 cuentaref = df_ordenado['referenciaPago'].value_counts()
 #cuentaref
 claves = cuentaref.keys()
-#claves
+refrepetidas=[]
 for k, v in cuentaref.items():
     if v > 1:
         k,v
+        refrepetidas.append(k)
+refrepetidas
 
 
 
