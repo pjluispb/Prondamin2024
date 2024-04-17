@@ -55,6 +55,8 @@ cuentaref = df_ordenado['referenciaPago'].value_counts()
 cuentaref
 claves = cuentaref.keys()
 claves
+for k, v in cuentaref.items():
+    k,v
 
 
 
