@@ -128,6 +128,7 @@ if uploaded_file is not None:
         dfPronda24_refO = dfPronda24[dfPronda24['referenciaPago'].isin(referencias)]
         conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
         # conteopayconprondaref
+        #
         try:                                                                          # Aqui se agrega campo close = False
             dfPronda24_ref = dfPronda24_refO.loc[dfPronda24_refO['close']==False]
             conteopayconprondaref2 = dfPronda24_ref['close'].value_counts()
