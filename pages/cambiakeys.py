@@ -20,6 +20,7 @@ except:
     'Problemas cargando Pronda'
 #Pronda24
 #dfPronda24 = pd.DataFrame(Pronda24)
+'---'
 dfPronda24
 
 
