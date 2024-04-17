@@ -23,7 +23,7 @@ except:
 '---'
 dfPronda24
 
-cedulasOld = set(dfu['CédulaOLD'])
+cedulasOLD = set(dfu['CédulaOLD'])
 cedulasOLD
 
 
