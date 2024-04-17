@@ -73,7 +73,7 @@ conteopayconAll = dfPronda24['paycon'].value_counts()
 st.subheader('Resumen de Pagos Verificados')
 conteopaycon
 '---'
-st.Subheader('Resumen de Pagos Completo')
+st.subheader('Resumen de Pagos Completo')
 conteopayconAll
 st.subheader('Tabla completa de usuarios')
 dfpronda_color = dfPronda24.style.apply(row_style, axis=1)    #Coloriza las filas
