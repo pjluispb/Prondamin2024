@@ -128,7 +128,11 @@ if uploaded_file is not None:
         dfPronda24_refO = dfPronda24[dfPronda24['referenciaPago'].isin(referencias)]
         conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
         # conteopayconprondaref
-        #
+
+        #-------------------------------------------------------------------------
+        #A continuación selecciona de Pronda aquellos registros donde:
+        #                            close == False
+        #                            si close No existe, lo inicializa a False
         try:                                                                          # Aqui se agrega campo close = False
             dfPronda24_ref = dfPronda24_refO.loc[dfPronda24_refO['close']==False]
             conteopayconprondaref2 = dfPronda24_ref['close'].value_counts()
@@ -136,7 +140,8 @@ if uploaded_file is not None:
         except:
             dfPronda24_ref = dfPronda24_refO
             dfPronda24_ref['close'] = False
-
+        #-------------------------------------------------------------------------
+        
         DatBanVerif.rename(columns={'REFERENCIA':'referenciaPago'}, inplace=True)
         dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
         dfpyd['montoPago'] = dfpyd['INGRESO'].fillna(dfpyd['montoPago'])
