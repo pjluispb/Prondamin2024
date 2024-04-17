@@ -50,6 +50,8 @@ df = dfPronda24.dropna(subset=['close'])
 df
 df_ordenado = df.sort_values(by='paycon', ascending=False)
 df_color = df_ordenado.style.apply(row_style, axis=1)
+df_color
+
 
 
 
