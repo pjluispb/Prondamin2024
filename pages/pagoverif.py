@@ -65,7 +65,13 @@ df = df.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos
 df.style.apply(row_style, axis=1)  #Coloriza las filas
 
 df_color = df.style.apply(row_style, axis=1)
+st.subheader('Pagos Verificados')
 df_color
+
+conteopaycon = df['paycon'].value_counts()
+st.subheader('Resumen')
+conteopaycon
+
 st.stop()
 
 
