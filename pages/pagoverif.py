@@ -53,13 +53,12 @@ df_ordenado = df.sort_values(by='paycon', ascending=False)
 #df_color
 cuentaref = df_ordenado['referenciaPago'].value_counts()
 #cuentaref
-claves = cuentaref.keys()
-refrepetidas=[]
-for k, v in cuentaref.items():
-    if v > 1:
-        #k,v
-        refrepetidas.append(k)
-refrepetidas
+#claves = cuentaref.keys()
+filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
+filas_a_revisar
+df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
+df
+
 
 
 
