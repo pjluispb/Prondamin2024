@@ -53,7 +53,8 @@ df_color = df_ordenado.style.apply(row_style, axis=1)
 df_color
 cuentaref = df_ordenado['referenciaPago'].value_counts()
 cuentaref
-cuentaref.keys()
+claves = cuentaref.keys()
+claves
 
 
 
