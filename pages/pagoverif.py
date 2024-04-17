@@ -74,6 +74,9 @@ st.subheader('Resumen')
 conteopaycon
 conteopayconAll
 
+dfpronda_color = dfPronda24.style.apply(row_style, axis=1)    #Coloriza las filas
+dfpronda_color
+
 st.stop()
 
 
