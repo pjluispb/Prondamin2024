@@ -32,4 +32,4 @@ if selector=='revisar pagos':
 
 
 st.page_link("home2024.py", label="Inicio", icon="🏠")
-st.switch_page
+
