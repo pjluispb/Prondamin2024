@@ -18,6 +18,8 @@ def row_style(row):
         return pd.Series('background-color: #8ede99; color:#000000', row.index)
     elif row['paycon'] == 'PENDIENTE':
         return pd.Series('background-color: #fdd834; color:#000000', row.index)
+    elif row['paycon'] == 'En Revisión':
+        return pd.Series('background-color: #d8bfd8; color:#000000', row.index)
     else:
         return pd.Series('', row.index)
 
@@ -57,7 +59,9 @@ cuentaref = df_ordenado['referenciaPago'].value_counts()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
 filas_a_revisar
 df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
-df
+df_color = df_ordenado.style.apply(row_style, axis=1)
+df_color
+
 
 
 
