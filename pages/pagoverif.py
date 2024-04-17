@@ -59,7 +59,7 @@ cuentaref = df_ordenado['referenciaPago'].value_counts()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
 filas_a_revisar
 df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
-df_color = df_ordenado.style.apply(row_style, axis=1)
+df_color = df.style.apply(row_style, axis=1)
 df_color
 
 
