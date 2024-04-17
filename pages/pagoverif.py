@@ -43,5 +43,10 @@ dfDBanV24 = pd.DataFrame(DBanV24f)
 st.image(imagen1)
 st.image(imagen2)
 
-dfPronda24_filteredClose = dfPronda24.dropna(subset=['close'])
-dfPronda24_filteredClose
+df = dfPronda24.dropna(subset=['close'])
+df
+df_ordenado = df.sort_values(by='paycon', ascending=False)
+df_color = df_ordenado.style.apply(row_style, axis=1)
+df_color
+
+
