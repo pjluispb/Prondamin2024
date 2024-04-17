@@ -52,4 +52,6 @@ df_ordenado = df.sort_values(by='paycon', ascending=False)
 df_color = df_ordenado.style.apply(row_style, axis=1)
 df_color
 
+styled_df = df_color.style.applymap(highlight_cells, subset=['referenciaPago'])
+
 
