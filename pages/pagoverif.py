@@ -49,7 +49,7 @@ st.image(imagen1)
 st.image(imagen2)
 
 df = dfPronda24.dropna(subset=['close'])
-df
+#df
 df_ordenado = df.sort_values(by='paycon', ascending=False)
 #df_color = df_ordenado.style.apply(row_style, axis=1)
 #df_color
@@ -57,8 +57,9 @@ cuentaref = df_ordenado['referenciaPago'].value_counts()
 #cuentaref
 #claves = cuentaref.keys()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
-filas_a_revisar
+#filas_a_revisar
 df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
+df.loc[filas_a_revisar.index, 'close'] = False
 df_color = df.style.apply(row_style, axis=1)
 df_color
 
