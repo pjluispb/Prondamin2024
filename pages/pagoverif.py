@@ -50,8 +50,9 @@ df = dfPronda24.dropna(subset=['close'])
 df
 df_ordenado = df.sort_values(by='paycon', ascending=False)
 #df_color = df_ordenado.style.apply(row_style, axis=1)
-df_ordenado
+#df_ordenado
 
 styled_df = df_ordenado.style.applymap(highlight_cells, subset=['referenciaPago'])
+styled_df
 
 
