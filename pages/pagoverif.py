@@ -61,7 +61,7 @@ filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
 df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
 df.loc[filas_a_revisar.index, 'close'] = False
 
-df = df.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar' ]) #Reordena las columnas como se mostraran
+df = df.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
 df.style.apply(row_style, axis=1)  #Coloriza las filas
 
 df_color = df.style.apply(row_style, axis=1)
