@@ -66,6 +66,7 @@ df.style.apply(row_style, axis=1)  #Coloriza las filas
 
 df_color = df.style.apply(row_style, axis=1)
 df_color
+st.stop()
 
 
 
