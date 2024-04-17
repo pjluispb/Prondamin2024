@@ -172,5 +172,7 @@ if uploaded_file is not None:
             #contador, registro
             Prondamin24.put(registro)
             contador+=1
-        st.stop()
+
+st.page_link("home2024.py", label="Inicio", icon="🏠")
+#st.stop()
 
