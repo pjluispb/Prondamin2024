@@ -78,7 +78,7 @@ conteopayconAll
 st.subheader('Tabla completa de usuarios')
 dfpronda_color = dfPronda24.style.apply(row_style, axis=1)    #Coloriza las filas
 dfpronda_color
-
+st.page_link("home2024.py", label="Inicio", icon="🏠")
 st.stop()
 
 
