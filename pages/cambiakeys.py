@@ -25,8 +25,10 @@ dfPronda24
 
 cedulasOLD = set(dfu['CédulaOLD'])
 cedulasOLD
-dfPronda24_cOLD = dfPronda24[dfPronda24['key'].isin(cedulasOLD)]
-dfPronda24_cOLD
+#dfPronda24_cOLD = dfPronda24[dfPronda24['key'].isin(cedulasOLD)]
+#dfPronda24_cOLD
+cedulasOLD[0]
+
 
 
 
