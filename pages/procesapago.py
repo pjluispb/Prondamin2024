@@ -70,7 +70,8 @@ def check_csv_header(header):
     return all(column in header for column in required_columns)
     
 # Carga el archivo CSV desde el usuario
-uploaded_file = st.file_uploader("Cargar archivo CSV", type=["csv"])        
+st.header('Procesar Pagos')
+uploaded_file = st.file_uploader("Subir archivo CSV con los datos bancarios", type=["csv"])        
 
 if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
@@ -82,7 +83,7 @@ if uploaded_file is not None:
 
     # Verificar si la cabecera cumple con los campos requeridos               
     elif not check_csv_header(df.columns):
-        st.error('El archivo CSV debe tener las siguientes columnas: Fecha, Descripcion, Referencia, Egreso, Ingreso.')
+        st.error('El archivo CSV debe tener las siguientes columnas: FECHA, DESCRIPCION, REFERENCIA, EGRESO, INGRESO.')
 
     else:
         # Mostrar el DataFrame si todas las verificaciones son exitosas
