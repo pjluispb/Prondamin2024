@@ -14,7 +14,7 @@ dfu = pd.read_csv(uploaded_file)
 # Carga el Pronda
 try:
     Prondamin24 = deta.Base('Prondamin2024C')
-    Pronda24 = Prondamin24.fetch(limit=5000).items
+    Pronda24 = Prondamin24.fetch(limit=5000)
     dfPronda24 = pd.DataFrame(Pronda24.items)
 except:
     'Problemas cargando Pronda'
