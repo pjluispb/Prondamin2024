@@ -54,19 +54,13 @@ df = dfPronda24
 df_ordenado = df.sort_values(by='paycon', ascending=False)
 df_ordenado = df_ordenado.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
 
-'df_ordenado : ', df_ordenado
+#'df_ordenado : ', df_ordenado
 cuentapaycon = df_ordenado['paycon'].value_counts()
-cuentapaycon
 df_color = df_ordenado.style.apply(row_style, axis=1)    #Coloriza las filas 
-st.subheader('Status de Pagos')
+st.subheader('Status de Pagos de Usuarios')
 df_color
-cuentapayconcolor = df_color['paycon'].value_counts()
-cuentapayconcolor
+cuentapaycon
 
-#df_color = df_ordenado.style.apply(row_style, axis=1)
-#df_color
-#cuentaref = df_ordenado['referenciaPago'].value_counts()
-#cuentaref
 st.stop()
 #claves = cuentaref.keys()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
