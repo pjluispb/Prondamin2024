@@ -161,9 +161,10 @@ if uploaded_file is not None:
         dfpyd['curso'] = dfpyd['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
         dfpyd['Categoría Actual'] = dfpyd['Categoría Actual'].fillna('-')     # Coloca Categoría Actual = '-' cuando valga None
         dfpyd['Cédula'] = dfpyd['Cédula'].fillna('-')                         # Coloca Cédula = '-' cuando valga None
-        dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                      # Coloca close = True si paycon = SI
-        dfpyd.loc[dfpyd['paycon']=='SI++', 'close'] = True                    # Coloca close = False si paycon = SI++
-        dfpyd.loc[dfpyd['paycon']=='PENDIENTE X DIFERENCIA', 'close'] = True  # Coloca close = False si paycon = PENDIENTE X DIFERENCIA
+        dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                       # Coloca close = True si paycon = SI
+        dfpyd.loc[dfpyd['paycon']=='SI++', 'close'] = False                    # Coloca close = False si paycon = SI++
+        dfpyd.loc[dfpyd['paycon']=='PENDIENTE X DIFERENCIA', 'close'] = False  # Coloca close = False si paycon = PENDIENTE X DIFERENCIA
+        dfpyd.loc[dfpyd['paycon']=='PENDIENTE', 'close'] = False               # Coloca close = False si paycon = PENDIENTE
         dfpyd_ordenado = dfpyd.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
         dfpyd_color = dfpyd_ordenado.style.apply(row_style, axis=1)           # Coloriza filas del dataframe
         st.subheader('Registros con pagos verificados')
@@ -181,7 +182,7 @@ if uploaded_file is not None:
             contador, registro
             rkey = registro['key']
             st.toast('se ha cargado el registro: '+str(contador)+' RegCed# '+str(rkey))
-            # Prondamin24.put(registro)
+            Prondamin24.put(registro)
             contador+=1
 
 st.page_link("home2024.py", label="Inicio", icon="🏠")
