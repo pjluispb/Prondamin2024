@@ -179,7 +179,8 @@ if uploaded_file is not None:
         contador = 1
         for registro in dfpydReg:
             contador, registro
-            st.toast('se ha cargado el registro: '+str(contador)+' RegCed# '+str(registro['key'])
+            rkey = registro['key']
+            st.toast('se ha cargado el registro: '+str(contador)+' RegCed# '+str(rkey))
             # Prondamin24.put(registro)
             contador+=1
 
