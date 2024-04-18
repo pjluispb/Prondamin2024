@@ -130,6 +130,8 @@ if uploaded_file is not None:
         conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
         'conteopayconprondaref : ',conteopayconprondaref
 
+        dfPronda24_ref = dfPronda24_refO
+
         #-------------------------------------------------------------------------
         #A continuación selecciona de Pronda aquellos registros donde:
         #                            close == False
