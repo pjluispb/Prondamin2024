@@ -172,11 +172,11 @@ if uploaded_file is not None:
         conteopaycon
         st.subheader('Pagos verificados X distrito') 
         conteodistrito
-        st.stop()
+        #----------------------------------------------st.stop()
         dfpydReg = dfpyd_ordenado.to_dict('records')
         contador = 1
         for registro in dfpydReg:
-            #contador, registro
+            contador, registro
             Prondamin24.put(registro)
             contador+=1
 
