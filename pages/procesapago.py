@@ -134,13 +134,13 @@ if uploaded_file is not None:
         #A continuación selecciona de Pronda aquellos registros donde:
         #                            close == False
         #                            si close No existe, lo inicializa a False
-        try:                                                                          # Aqui se agrega campo close = False
-            dfPronda24_ref = dfPronda24_refO.loc[dfPronda24_refO['close']==False]
-            conteopayconprondaref2 = dfPronda24_ref['close'].value_counts()
-            conteopayconprondaref2
-        except:
-            dfPronda24_ref = dfPronda24_refO
-            dfPronda24_ref['close'] = False
+        #try:                                                                          # Aqui se agrega campo close = False
+        #    dfPronda24_ref = dfPronda24_refO.loc[dfPronda24_refO['close']==False]
+        #    conteopayconprondaref2 = dfPronda24_ref['close'].value_counts()
+        #    conteopayconprondaref2
+        #except:
+        #    dfPronda24_ref = dfPronda24_refO
+        #    dfPronda24_ref['close'] = False
         #-------------------------------------------------------------------------
 
         'dfPronda24_ref = ', dfPronda24_ref
