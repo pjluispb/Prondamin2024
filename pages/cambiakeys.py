@@ -8,27 +8,34 @@ from PIL import Image
 
 deta = Deta(st.secrets["deta_key"])
 
+
+def replace_value(value):
+    if pd.isnull(value):
+        return ['-']
+    else:
+        return [str(value)]
+
 uploaded_file = st.file_uploader("Subir archivo CSV", type=["csv"]) 
 dfu = pd.read_csv(uploaded_file)
 dfu
-# Carga el Pronda
-try:
-    Prondamin24 = deta.Base('Prondamin2024C')
-    Pronda24 = Prondamin24.fetch(limit=5000)
-    dfPronda24 = pd.DataFrame(Pronda24.items)
-    #st.dataframe(dfPronda24)
-except:
-    'Problemas cargando Pronda'
+dfu['CédulaOLD'] = dfu['CédulaOLD'].astype(str)
+dfu['CédulaNEW'] = dfu['CédulaNEW'].astype(str)
+dfu['Teléfono'] = dfu['Teléfono'].apply(replace_value)
+dfu['Correo'] = dfu['Correo'].apply(replace_value)
+'dfu = ', dfu
+cedulas = dfu["CédulaOLD"]  
 
-'---'
+# # Carga el Pronda
+Prondamin24 = deta.Base('Prondamin2024C')
+Pronda24 = Prondamin24.fetch(limit=3000).items
+dfPronda24 = pd.DataFrame(Pronda24)
+
+'cedulas = ', cedulas
 dfPronda24
 
-cedulasOLD = set(dfu['CédulaOLD'])
-cedulasOLD
-#dfPronda24_cOLD = dfPronda24[dfPronda24['key'].isin(cedulasOLD)]
-#dfPronda24_cOLD
-cedulasOLD(0)
-
+dfProndaSel = dfPronda24[dfPronda24['key'].isin(cedulas)]
+'dfProndaSel = '
+dfProndaSel
 
 
 
