@@ -128,7 +128,7 @@ if uploaded_file is not None:
         referencias = set(DatBanVerif1['key'])
         dfPronda24_refO = dfPronda24[dfPronda24['referenciaPago'].isin(referencias)]
         conteopayconprondaref = dfPronda24_refO['paycon'].value_counts()
-        # conteopayconprondaref
+        'conteopayconprondaref : ',conteopayconprondaref
 
         #-------------------------------------------------------------------------
         #A continuación selecciona de Pronda aquellos registros donde:
