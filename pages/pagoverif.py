@@ -52,10 +52,12 @@ st.image(imagen2)
 #df
 df = dfPronda24
 df_ordenado = df.sort_values(by='paycon', ascending=False)
+'df_ordenado : ', df_ordenado
 #df_color = df_ordenado.style.apply(row_style, axis=1)
 #df_color
 cuentaref = df_ordenado['referenciaPago'].value_counts()
-#cuentaref
+cuentaref
+st.stop()
 #claves = cuentaref.keys()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
 filas_a_revisar
