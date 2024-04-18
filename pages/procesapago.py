@@ -146,6 +146,8 @@ if uploaded_file is not None:
         DatBanVerif.rename(columns={'REFERENCIA':'referenciaPago'}, inplace=True)
         dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
         dfpyd['montoPago'] = dfpyd['INGRESO'].fillna(dfpyd['montoPago'])
+        'dfpyd = ', dfpyd
+        st.stop()
         '**************************************'
         dfpyd = dfpyd.drop(columns=['FECHA', 'DESCRIPCION', 'INGRESO'])
         dfpyd['paycon'] = dfpyd.apply(update_paycon, axis=1)                  # Actualiza paycon en dfpyd
