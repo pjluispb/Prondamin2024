@@ -88,9 +88,10 @@ if uploaded_file is not None:
     else:
         # Mostrar el DataFrame si todas las verificaciones son exitosas
         # extrae del dataframe solo cuando la descripcion = pago movil o transferencia
-        dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
+        dfingresoXpmi = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
+        dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL']
         dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
-        frames = [dfingresoXpm, dfingresoXtrans]
+        frames = [dfingresoXpmi, dfingresoXpm, dfingresoXtrans]
         dfingreso = pd.concat(frames)
         # Muestra el DataFrame
         st.header('Ingresos registrados por el banco')
