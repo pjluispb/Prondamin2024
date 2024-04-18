@@ -52,6 +52,8 @@ st.image(imagen2)
 #df
 df = dfPronda24
 df_ordenado = df.sort_values(by='paycon', ascending=False)
+df_ordenado = df_ordenado.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
+
 'df_ordenado : ', df_ordenado
 cuentapaycon = df_ordenado['paycon'].value_counts()
 cuentapaycon
