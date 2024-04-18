@@ -162,6 +162,8 @@ if uploaded_file is not None:
         dfpyd['Categoría Actual'] = dfpyd['Categoría Actual'].fillna('-')     # Coloca Categoría Actual = '-' cuando valga None
         dfpyd['Cédula'] = dfpyd['Cédula'].fillna('-')                         # Coloca Cédula = '-' cuando valga None
         dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                      # Coloca close = True si paycon = SI
+        dfpyd.loc[dfpyd['paycon']=='SI++', 'close'] = True                    # Coloca close = False si paycon = SI++
+        dfpyd.loc[dfpyd['paycon']=='PENDIENTE X DIFERENCIA', 'close'] = True  # Coloca close = False si paycon = PENDIENTE X DIFERENCIA
         dfpyd_ordenado = dfpyd.sort_values(by='paycon', ascending=False)      # Ordena el dataframe por columna paycon
         dfpyd_color = dfpyd_ordenado.style.apply(row_style, axis=1)           # Coloriza filas del dataframe
         st.subheader('Registros con pagos verificados')
