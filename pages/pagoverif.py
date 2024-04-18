@@ -60,7 +60,7 @@ df_color = df_ordenado.style.apply(row_style, axis=1)    #Coloriza las filas
 st.subheader('Status de Pagos de Usuarios')
 df_color
 cuentapaycon
-
+st.page_link("home2024.py", label="Inicio", icon="🏠")
 st.stop()
 #claves = cuentaref.keys()
 filas_a_revisar = df[df.duplicated(subset='referenciaPago', keep=False)]
