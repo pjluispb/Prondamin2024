@@ -62,10 +62,12 @@ filas_a_revisar
 #df.loc[filas_a_revisar.index, 'paycon'] = 'En Revisión'
 #df.loc[filas_a_revisar.index, 'close'] = False
 
-df = df.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
+#df = df.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
+df_ordenado = df_ordenado.reindex(columns=['distrito', 'categoría', 'key',  'emails', 'teléfonos', 'nombre', 'apellido', 'modalidad', 'paycon', 'referenciaPago', 'montoPago', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'close' ]) #Reordena las columnas como se mostraran
+
 #df.style.apply(row_style, axis=1)  #Coloriza las filas
 
-df_color = df.style.apply(row_style, axis=1)    #Coloriza las filas 
+df_color = df_ordenado.style.apply(row_style, axis=1)    #Coloriza las filas 
 st.subheader('Pagos Verificados')
 df_color
 
