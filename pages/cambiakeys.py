@@ -27,11 +27,11 @@ cedulas = dfu["CédulaOLD"]
 
 # # Carga el Pronda
 Prondamin24 = deta.Base('Prondamin2024C')
-Pronda24 = Prondamin24.fetch(limit=3000).items
+Pronda24 = Prondamin24.fetch(limit=5000).items
 dfPronda24 = pd.DataFrame(Pronda24)
 
 'cedulas = ', cedulas
-dfPronda24
+'dfPronda24 = ', dfPronda24
 
 dfProndaSel = dfPronda24[dfPronda24['key'].isin(cedulas)]
 'dfProndaSel = '
