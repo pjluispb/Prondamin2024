@@ -57,6 +57,9 @@ df_ordenado = df_ordenado.reindex(columns=['distrito', 'categoría', 'key',  'em
 'df_ordenado : ', df_ordenado
 cuentapaycon = df_ordenado['paycon'].value_counts()
 cuentapaycon
+df_color = df_ordenado.style.apply(row_style, axis=1)    #Coloriza las filas 
+st.subheader('Status de Pagos')
+df_color
 #df_color = df_ordenado.style.apply(row_style, axis=1)
 #df_color
 #cuentaref = df_ordenado['referenciaPago'].value_counts()
