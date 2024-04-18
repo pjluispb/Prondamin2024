@@ -142,8 +142,10 @@ if uploaded_file is not None:
             dfPronda24_ref = dfPronda24_refO
             dfPronda24_ref['close'] = False
         #-------------------------------------------------------------------------
-        
+
+        'dfPronda24_ref = ', dfPronda24_ref
         DatBanVerif.rename(columns={'REFERENCIA':'referenciaPago'}, inplace=True)
+        'DatBanVerif = ', DatBanVerif
         dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
         dfpyd['montoPago'] = dfpyd['INGRESO'].fillna(dfpyd['montoPago'])
         'dfpyd = ', dfpyd
