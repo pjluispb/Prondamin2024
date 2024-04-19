@@ -48,7 +48,7 @@ def load_data02():
         all_items += res.items
     dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
-    return pd.DataFrame(dfall_items_color)
+    return pd.DataFrame(dfall_items)
     
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
