@@ -14,15 +14,27 @@ def load_data():
     Pronda24last = Pronda24.last
     Pronda24count = Pronda24.count
     return (pd.DataFrame(Pronda24items), Pronda24last, Pronda24count)
+    
+@st.cache_data
+def load_data02():
+    Pronda24 = deta.Base('Prondamin2024C')
+    res = Pronda24.fetch()
 
+    while res.last:
+        res = db.fetch(last=res.last)
+        all_items += res.items
+    return pd.DataFrame(res)
+    
 # Boolean to resize the dataframe, stored as a session state variable
-st.checkbox("Use container width", value=False, key="use_container_width")
+# st.checkbox("Use container width", value=False, key="use_container_width")
 
-df, lastdf, countdf = load_data()
-df
-lastdf
-countdf
+#df, lastdf, countdf = load_data()
+#df
+#lastdf
+#countdf
 
+df2 = load_data02()
+df2
 
 
 
