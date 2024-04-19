@@ -21,8 +21,8 @@ Pronda24 = Prondamin24.fetch(limit=3500).items
 data = pd.DataFrame(Pronda24)
 
 # Ordenar el DataFrame por una columna específica
-columna_orden = st.sidebar.selectbox("Selecciona la columna para ordenar:", options=data.columns)
-data_sorted = data.sort_values(by=columna_orden)
+# columna_orden = st.sidebar.selectbox("Selecciona la columna para ordenar:", options=data.columns)
+# data_sorted = data.sort_values(by=columna_orden)
 
 # Número de filas por página
 rows_per_page = 100
