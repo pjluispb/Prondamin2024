@@ -38,6 +38,7 @@ dfPronda24 = pd.DataFrame(Pronda24)
 dfProndaSel = dfPronda24[dfPronda24['key'].isin(cedulas)]
 'dfProndaSel = '
 dfProndaSel
+cuentaPSel = dfProndaSel['paycon'].value_counts()
 
 
 
