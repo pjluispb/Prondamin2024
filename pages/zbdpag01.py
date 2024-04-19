@@ -20,6 +20,10 @@ Pronda24 = Prondamin24.fetch(limit=3500).items
 #data = pd.DataFrame({"key": range(4000), "nombre": range(4000), "apellido": range(4000), "categoría": range(4000), "distrito": range(4000), "paycon": range(4000)})
 data = pd.DataFrame(Pronda24)
 
+# Ordenar el DataFrame por una columna específica
+columna_orden = st.sidebar.selectbox("Selecciona la columna para ordenar:", options=data.columns)
+data_sorted = data.sort_values(by=columna_orden)
+
 # Número de filas por página
 rows_per_page = 100
 
