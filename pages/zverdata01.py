@@ -21,7 +21,7 @@ def load_data02():
     res = Pronda24.fetch()
 
     while res.last:
-        res = db.fetch(last=res.last)
+        res = Pronda24.fetch(last=res.last)
         all_items += res.items
     return pd.DataFrame(res)
     
