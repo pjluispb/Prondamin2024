@@ -46,19 +46,16 @@ def load_data02():
     while res.last:
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
-    return pd.DataFrame(all_items)
+    dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return pd.DataFrame(dfall_items_color)
     
-# Boolean to resize the dataframe, stored as a session state variable
-# st.checkbox("Use container width", value=False, key="use_container_width")
-
 #df, lastdf, countdf = load_data()
-#df
-#lastdf
-#countdf
+#df,  lastdf,  countdf
 
 df2 = load_data02()
 df2
-df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
-df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
-df2_color
+# df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
+# df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
+# df2_color
 
