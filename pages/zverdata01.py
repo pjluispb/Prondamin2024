@@ -4,7 +4,7 @@ from deta import Deta
 
 deta = Deta(st.secrets["deta_key"])
 
-@st.cache_data
+
 def row_style(row):
     if row['paycon'] == 'SI++':
         return pd.Series('background-color: #7986cb; color:#000000', row.index)
