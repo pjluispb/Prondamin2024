@@ -24,7 +24,7 @@ def load_data02():
     while res.last:
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
-    return pd.DataFrame(res)
+    return pd.DataFrame(all_items)
     
 # Boolean to resize the dataframe, stored as a session state variable
 # st.checkbox("Use container width", value=False, key="use_container_width")
