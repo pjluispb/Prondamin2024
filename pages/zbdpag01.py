@@ -13,7 +13,7 @@ deta = Deta(st.secrets["deta_key"])
 
 # # Carga el Pronda
 Prondamin24 = deta.Base('Prondamin2024C')
-Pronda24 = Prondamin24.fetch().items
+Pronda24 = Prondamin24.fetch(limit=3500).items
 #dfPronda24 = pd.DataFrame(Pronda24)
 
 # Simulación de un DataFrame con 4000 filas
