@@ -56,7 +56,7 @@ def load_data02():
 df2 = load_data02()
 df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
-@st.cache_data
+
 df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
 df2_color
 
