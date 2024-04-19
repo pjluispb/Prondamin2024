@@ -9,7 +9,7 @@ deta = Deta(st.secrets["deta_key"])
 def load_data():
     # # Carga el Pronda
     Prondamin24 = deta.Base('Prondamin2024C')
-    Pronda24 = Prondamin24.fetch(limit=4000).items
+    Pronda24 = Prondamin24.fetch(limit=4500).items
     return pd.DataFrame(Pronda24)
 
 # Boolean to resize the dataframe, stored as a session state variable
