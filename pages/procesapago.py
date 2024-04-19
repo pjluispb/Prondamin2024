@@ -91,7 +91,8 @@ if uploaded_file is not None:
         dfingresoXpmi = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL INTERBANCARIO']
         dfingresoXpm = df[df['DESCRIPCION'] == 'NC - PAGO MOVIL']
         dfingresoXtrans = df[df['DESCRIPCION'] == 'NC - TRANSFERENCIA DE FONDOS VIA INTERNET']
-        frames = [dfingresoXpmi, dfingresoXpm, dfingresoXtrans]
+        dfingresoXcre = df[df['DESCRIPCION'] == 'NC - CREDITO INMEDIATO CAMARA DE COMPENSACION']
+        frames = [dfingresoXpmi, dfingresoXpm, dfingresoXtrans, dfingresoXcre]
         dfingreso = pd.concat(frames)
         # Muestra el DataFrame
         st.header('Ingresos registrados por el banco')
