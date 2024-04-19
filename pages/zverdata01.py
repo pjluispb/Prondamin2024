@@ -19,6 +19,7 @@ def load_data():
 def load_data02():
     Pronda24 = deta.Base('Prondamin2024C')
     res = Pronda24.fetch()
+    all_items = res.items
 
     while res.last:
         res = Pronda24.fetch(last=res.last)
