@@ -42,3 +42,7 @@ page_data = data.iloc[start_index:end_index]
 
 # Mostrar el DataFrame
 st.write(page_data)
+
+data2 = st.dataframe(data)
+data2
+
