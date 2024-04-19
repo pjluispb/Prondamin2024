@@ -9,14 +9,20 @@ deta = Deta(st.secrets["deta_key"])
 def load_data():
     # # Carga el Pronda
     Prondamin24 = deta.Base('Prondamin2024C')
-    Pronda24 = Prondamin24.fetch(limit=4500).items
-    return pd.DataFrame(Pronda24)
+    Pronda24 = Prondamin24.fetch(limit=4500)
+    Pronda24items = Pronda24.items
+    Pronda24last = Pronda24.last
+    Pronda24count = Pronda24.count
+    return (pd.DataFrame(Pronda24items), Pronda24last, Pronda24count)
 
 # Boolean to resize the dataframe, stored as a session state variable
 st.checkbox("Use container width", value=False, key="use_container_width")
 
-df = load_data()
+df, lastdf, countdf = load_data()
 df
+lastdf
+countdf
+
 
 
 
