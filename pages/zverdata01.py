@@ -158,7 +158,7 @@ def load_dttoSurOriente():
 @st.cache_data
 def load_dttoYaracuy():
     ProndaYaracuy = deta.Base('Prondamin2024C')
-    PYaracuy = ProndaSurOriente.fetch({'distrito':'Yaracuy'})
+    PYaracuy = ProndaYaracuy.fetch({'distrito':'Yaracuy'})
     PYaracuyitems = PYaracuy.items
     dfYaracuy = pd.DataFrame(PYaracuyitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
@@ -167,7 +167,7 @@ def load_dttoYaracuy():
 @st.cache_data
 def load_dttoZulia():
     ProndaZulia = deta.Base('Prondamin2024C')
-    PZulia = ProndaSurOriente.fetch({'distrito':'Zulia'})
+    PZulia = ProndaZulia.fetch({'distrito':'Zulia'})
     PZuliaitems = PZulia.items
     dfZulia = pd.DataFrame(PZuliaitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
