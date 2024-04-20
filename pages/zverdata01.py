@@ -281,35 +281,45 @@ with tab7:
         #df5_color
     with st.expander("Centro"):
         dfcentro = df2[df2['distrito']=='Centro']
+        dfcentroCounts = dfcentro['paycon'].value_counts()
         dfcentro_color = dfcentro.style.apply(row_style, axis=1)
+        dfcentroCounts
         dfcentro_color
         #df6 = load_dttoCentro()
         #df6_color = df6.style.apply(row_style, axis=1)
         #df6_color
     with st.expander("Centro Llanos"):
         dfcentroLL = df2[df2['distrito']=='Centro Llanos']
+        dfcentroLLCounts = dfcentroLL['paycon'].value_counts()
         dfcentroLL_color = dfcentroLL.style.apply(row_style, axis=1)
         dfcentroLL_color
+        dfcentroLLCounts
         #df7 = load_dttoCentroLLanos()
         #df7_color = df7.style.apply(row_style, axis=1)
         #df7_color
     with st.expander("Falcón"):
         dffalcon = df2[df2['distrito']=='Falcón']
+        dffalconCounts = dffalcon['paycon'].value_counts()
         dffalcon_color = dffalcon.style.apply(row_style, axis=1)
+        dffalconCounts
         dffalcon_color
         #df8 = load_dttoFalcon()
         #df8_color = df8.style.apply(row_style, axis=1)
         #df8_color
     with st.expander("Lara"):
         dfLara = df2[df2['distrito']=='Lara']
+        dfLaraCounts = dfLara['paycon'].value_counts()
         dfLara_color = dfLara.style.apply(row_style, axis=1)
+        dfLaraCounts
         dfLara_color
         #df8 = load_dttoLara()
         #df8_color = df8.style.apply(row_style, axis=1)
         #df8_color
     with st.expander("Llanos Occidentales"):
         dfLlanosC = df2[df2['distrito']=='Llanos Occidentales']
+        dfLlanosCCounts = dfLlanosC['paycon'].value_counts()
         dfLlanosC_color = dfLlanosC.style.apply(row_style, axis=1)
+        dfLlanosCCounts
         dfLlanosC_color
         #df8 = load_dttoLlanosO()
         #df8_color = df8.style.apply(row_style, axis=1)
