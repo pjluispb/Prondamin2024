@@ -28,8 +28,9 @@ def update_paycon(row):
     st.toast('referencia ='+str(row['referenciaPago']))
     if row['referenciaPago'] == '5050':
         st.toast('Referencia '+str(row['referenciaPago'])+' diferencia = '+str(diferencia))
+        st.write('Referencia '+str(row['referenciaPago'])+' diferencia = '+str(diferencia))
         time.sleep(.1)
-        
+        st.stop()
     if -10 <= diferencia <= 10:
         return 'SI'
     elif diferencia < -10:
