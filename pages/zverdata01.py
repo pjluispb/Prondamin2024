@@ -37,6 +37,12 @@ def load_data():
     Pronda24last = Pronda24.last
     Pronda24count = Pronda24.count
     return (pd.DataFrame(Pronda24items), Pronda24last, Pronda24count)
+
+@st.cache_data
+def load_datapendiente():
+    ProndaPendiente = deta.Base('Prondamin2024C')
+    PPendiente = Prondamin.fetch({'paycon':'PENDIENTE'})
+    return (pd.Dataframe(PPendiente.items))
     
 @st.cache_data
 def load_data02():
@@ -54,11 +60,14 @@ def load_data02():
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
 
-df2 = load_data02()
-df2
+tab1, tab2, tab3 = st.tabs(["Todo", "Todo_color", "Pendiente"])
+with tab1:
+    df2 = load_data02()
+    df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
-
-df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
-df2_color
-
-
+with tab2:
+    df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
+    df2_color
+with tab3:
+    df3 = load_datapendiente()
+    df3
