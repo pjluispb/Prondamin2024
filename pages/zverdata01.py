@@ -43,21 +43,27 @@ def load_datapendiente():
     ProndaPendiente = deta.Base('Prondamin2024C')
     PPendiente = ProndaPendiente.fetch({'paycon':'PENDIENTE'})
     PPenitems = PPendiente.items
-    return pd.DataFrame(PPenitems)
+    dfpend = pd.DataFrame(PPenitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return pd.DataFrame(dfpend)
 
 @st.cache_data
 def load_datasi():
     ProndaSI = deta.Base('Prondamin2024C')
     PSI = ProndaSI.fetch({'paycon':'SI'})
     PSItems = PSI.items
-    return pd.DataFrame(PSItems)
+    dfsi = pd.DataFrame(PSItems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfsi
 
 @st.cache_data
 def load_datasimas():
     ProndaSImas = deta.Base('Prondamin2024C')
     PSImas = ProndaSImas.fetch({'paycon':'SI++'})
     PSImasitems = PSImas.items
-    return pd.DataFrame(PSImasitems)
+    dfsmas = pd.DataFrame(PSImasitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfsmas
 
 @st.cache_data
 def load_datadeficit():
@@ -66,7 +72,7 @@ def load_datadeficit():
     PDeficititems = PDeficit.items
     dfDeficit = pd.DataFrame(PDeficititems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
-    return pd.DataFrame(dfDeficit)
+    return dfDeficit
     
 @st.cache_data
 def load_data02():
