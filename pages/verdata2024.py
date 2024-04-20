@@ -55,7 +55,7 @@ st.write('Hola ****' + logina['user'] + '****')
 st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
 if logina['tipou']!='Registrador Especial':
     dtto = logina['Distrito']
-    
+    st.switch_page('pages/zverdata02.py')
 else:
     st.switch_page('pages/zverdata01.py')
     dtto = ''
