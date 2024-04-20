@@ -245,7 +245,7 @@ with tab4:
     #df4
 with tab5:
     st.subheader('Inscritos con Pagos Confirmados con exceso')
-    st.caption('paycon = SI++')
+    #st.caption('paycon = SI++')
     dfSImas = df2[df2['paycon']=='SI++']
     dfSImasCounts = dfSImas['paycon'].value_counts()
     dfSImasCounts
@@ -256,7 +256,7 @@ with tab5:
     #df4
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
-    st.caption('paycon = PENDIENTE X DIFERENCIA')
+    #st.caption('paycon = PENDIENTE X DIFERENCIA')
     dfdeficit = df2[df2['paycon']=='PENDIENTE X DIFERENCIA']
     dfdeficitCounts = dfdeficit['paycon'].value_counts()
     dfdeficitCounts
