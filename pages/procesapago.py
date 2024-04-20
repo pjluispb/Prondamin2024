@@ -69,6 +69,7 @@ res=accesos.fetch()
 
 # Carga el Pronda
 dfPronda24 = load_data02()
+dfPronda24
 
 # Carga el DBanVerif2024 ...Datos Bancarios ya procesados
 DBanV24 = deta.Base('DBanVerif2024')
