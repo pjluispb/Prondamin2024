@@ -222,7 +222,7 @@ with tab1:
     dfpendiente = df2[df2['paycon']=='PENDIENTE']
     dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
     dfpendiente_color
-    dfpendienteCounts = dfpendiente['paycon].value_counts()
+    dfpendienteCounts = dfpendiente['paycon'].value_counts()
     dfpendienteCounts
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 
