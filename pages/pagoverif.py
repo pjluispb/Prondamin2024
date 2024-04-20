@@ -25,6 +25,17 @@ def row_style(row):
 
 def highlight_cells(val):
     return 'background-color: yellow' if val == val else ''
+
+@st.cache_data
+def load_data02():
+    Pronda24 = deta.Base('Prondamin2024C')
+    res = Pronda24.fetch(limit=500)
+    all_items = res.items
+    while res.last:
+        res = Pronda24.fetch(last=res.last)
+        all_items += res.items
+    dfall_items = pd.DataFrame(all_items)
+    return dfall_items
     
 # Carga la bd de accesos
 accesos = deta.Base('minec-accesos')
@@ -35,9 +46,10 @@ res=accesos.fetch()
 #     st.switch_page('home2024.py')
 
 # Carga el Pronda
-Prondamin24 = deta.Base('Prondamin2024C')
-Pronda24 = Prondamin24.fetch(limit=5000)
-dfPronda24 = pd.DataFrame(Pronda24.items)
+dfPronda24 = load_data02()
+#Prondamin24 = deta.Base('Prondamin2024C')
+#Pronda24 = Prondamin24.fetch(limit=5000)
+#dfPronda24 = pd.DataFrame(Pronda24.items)
 # dfPronda24
 
 # Carga el DBanVerif2024 ...Datos Bancarios ya procesados
