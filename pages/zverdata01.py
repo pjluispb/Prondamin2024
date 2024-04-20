@@ -251,6 +251,18 @@ with tab7:
         df8 = load_dttoLlanosO()
         df8_color = df8.style.apply(row_style, axis=1)
         df8_color
+    with st.expander("Metropolitano"):
+        df9 = load_dttoMetropolitano()
+        df9_color = df9.style.apply(row_style, axis=1)
+        df9_color
+    with st.expander("Nor Oriente"):
+        df10 = load_dttoNorOriente()
+        df10_color = df10.style.apply(row_style, axis=1)
+        df10_color
+    with st.expander("Sur Oriente"):
+        df11 = load_dttoSurOriente()
+        df11_color = df11.style.apply(row_style, axis=1)
+        df11_color
 
 with tab2:
     st.subheader('Todos los distritos')
