@@ -147,10 +147,12 @@ with tab6:
 with tab7:
     st.subheader('Por Distrito')
     st.divider()
-    df5 = load_dttoAndino()
-    df6 = load_dttoCentro()
-    df5
-    df6
+    with st.expander("Andino"):
+        df5 = load_dttoAndino()
+        df5
+    with st.expander("Centro"):
+        df6 = load_dttoCentro()
+        df6
 
 with tab2:
     st.subheader('Todos los distritos')
