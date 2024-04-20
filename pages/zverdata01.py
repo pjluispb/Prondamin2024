@@ -102,7 +102,9 @@ with tab2:
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
 with tab3:
-    st.subheader('Pagos Pendientes por Confirmar (paycon = PENDIENTE)')
+    st.subheader('Pagos PENDIENTES')
+    st.write('Inscritos Pendientes de confirmación de pago')
+    st.caption('paycon = PENDIENTE')
     df3 = load_datapendiente()
     df3
 with tab4:
