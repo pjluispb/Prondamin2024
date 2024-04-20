@@ -112,6 +112,7 @@ if uploaded_file is not None:
         # lo coloca en el df:DatBanVerif...
         DatBan['REFERENCIA'] = DatBan['REFERENCIA'].astype(str)
         dfPronda24['referenciaPago'] = dfPronda24['referenciaPago'].astype(str)
+        dfPronda24['referenciaPago']
         DatBanVerif = DatBan[DatBan['REFERENCIA'].isin(dfPronda24['referenciaPago'])]
         DatBanVerif1 = DatBanVerif.rename(columns={'REFERENCIA': 'key'})
         st.subheader('Pagos(referencias) encontrados ')
