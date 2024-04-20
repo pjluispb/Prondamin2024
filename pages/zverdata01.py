@@ -176,11 +176,7 @@ def load_dttoYaracuy():
 def load_dttoZulia():
     ProndaZulia = deta.Base('Prondamin2024C')  
     PZulia = ProndaZulia.fetch(query= {'distrito':'Zulia'}, limit=500)
-    all_items = PZulia.items
-    while PZulia.last:
-        PZulia = Pronda24.fetch(last=PZulia.last)
-        all_items += PZulia.items
-    PZuliaitems = all_items
+    PZuliaitems = PYaracuy.items
     dfZulia = pd.DataFrame(PZuliaitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     return dfZulia
     
