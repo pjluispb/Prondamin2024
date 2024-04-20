@@ -201,13 +201,19 @@ if uploaded_file is not None:
         #-----------------------------------------st.stop()
         dfpydReg = dfpyd_ordenado.to_dict('records')
         contador = 1
+        erroresDeGrabarEnPronda =[]
         for registro in dfpydReg:
             #contador, registro
             rkey = registro['key']
             st.toast('se ha cargado el registro: '+str(contador)+' RegCed# '+str(rkey))
-            Prondamin24.put(registro)
+            try:
+                Prondamin24.put(registro)
+            except:
+                st.toast('error guardando registro '+str(rkey))
+                erroresDeGrabarEnPronda.append('error guardando registro: '+str(rkey))
             contador+=1
-
+        'Registros con errores al grabar: ', erroresDeGrabarEnPronda
+        
 st.page_link("home2024.py", label="Inicio", icon="🏠")
 #st.stop()
 
