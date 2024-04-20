@@ -149,10 +149,12 @@ with tab7:
     st.divider()
     with st.expander("Andino"):
         df5 = load_dttoAndino()
-        df5
+        df5_color = df5.style.apply(row_style, axis=1)
+        df5_color
     with st.expander("Centro"):
         df6 = load_dttoCentro()
-        df6
+        df6_color = df6.style.apply(row_style, axis=1)
+        df6_color
 
 with tab2:
     st.subheader('Todos los distritos')
