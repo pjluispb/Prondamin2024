@@ -104,12 +104,29 @@ def load_dttoCentroLLanos():
 @st.cache_data
 def load_dttoFalcon():
     ProndaFalcon = deta.Base('Prondamin2024C')
-    PFalcon = ProndaFalcon.fetch({'distrito':'Centro Llanos'})
+    PFalcon = ProndaFalcon.fetch({'distrito':'Falcón'})
     PFalconitems = PFalcon.items
     dfFalcon = pd.DataFrame(PFalconitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfFalcon
 
+@st.cache_data
+def load_dttoLara():
+    ProndaLara = deta.Base('Prondamin2024C')
+    PLara = ProndaLara.fetch({'distrito':'Lara'})
+    PLaraitems = PLara.items
+    dfLara = pd.DataFrame(PLaraitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfLara
+
+@st.cache_data
+def load_dttoLlanosO():
+    ProndaLlanosO = deta.Base('Prondamin2024C')
+    PLlanosO = ProndaLlanosO.fetch({'distrito':'Llanos Occidentales'})
+    PLlanosOitems = PLlanosO.items
+    dfLlanosO = pd.DataFrame(PLlanosOitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfLlanosO
     
 @st.cache_data
 def load_data02():
@@ -178,6 +195,14 @@ with tab7:
         df7_color
     with st.expander("Falcón"):
         df8 = load_dttoFalcon()
+        df8_color = df8.style.apply(row_style, axis=1)
+        df8_color
+    with st.expander("Lara"):
+        df8 = load_dttoLara()
+        df8_color = df8.style.apply(row_style, axis=1)
+        df8_color
+    with st.expander("Llanos Occidentales"):
+        df8 = load_dttoLlanosO()
         df8_color = df8.style.apply(row_style, axis=1)
         df8_color
 
