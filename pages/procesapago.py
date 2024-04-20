@@ -211,6 +211,7 @@ if uploaded_file is not None:
             except:
                 st.toast('error guardando registro '+str(rkey))
                 erroresDeGrabarEnPronda.append('error guardando registro: '+str(rkey))
+                st.stop()
             contador+=1
         'Registros con errores al grabar: ', erroresDeGrabarEnPronda
         
