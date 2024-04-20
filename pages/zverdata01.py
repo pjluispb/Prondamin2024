@@ -93,38 +93,39 @@ def load_data02():
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado", "SI++", "P X D"])
 with tab1:
     st.subheader('Todos los distritos')
-    st.caption()
+    st.divider()
     df2 = load_data02()
     df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 with tab2:
     st.subheader('Todos los distritos')
     st.write('Coloreado a partir del campo paycon')
-    st.caption()
+    st.divider()
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
 with tab3:
     st.subheader('Inscritos con Pagos PENDIENTES')
     st.write('Inscritos Pendientes de confirmación de pago')
     st.caption('paycon = PENDIENTE')
-    st.caption()
+    st.divider()
     df3 = load_datapendiente()
     df3
 with tab4:
     st.subheader('Inscritos con Pagos Confirmados  ')
     st.caption('paycon = SI')
-    st.caption()
+    st.divider()
     df4 = load_datasi()
     df4
 with tab5:
     st.subheader('Inscritos con Pagos Confirmados con exceso')
     st.caption('paycon = SI++')
+    st.divider()
     df4 = load_datasimas()
     df4
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
     st.caption('paycon = PENDIENTE X DIFERENCIA')
-    st.caption()
+    st.divider()
     df4 = load_datadeficit()
     df4
     
