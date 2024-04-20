@@ -274,6 +274,7 @@ with tab7:
         dfandino = df2[df2['distrito']=='Andino']
         dfandinoCounts = dfandino['paycon'].value_counts()
         dfandino_color = dfandino.style.apply(row_style, axis=1)
+        dfandinoCounts
         dfandino_color
         #df5 = load_dttoAndino()
         #df5_color = df5.style.apply(row_style, axis=1)
