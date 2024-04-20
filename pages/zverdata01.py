@@ -91,7 +91,24 @@ def load_dttoCentro():
     dfCentro = pd.DataFrame(PCentroitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfCentro
+    
+@st.cache_data
+def load_dttoCentroLLanos():
+    ProndaCentroLLanos = deta.Base('Prondamin2024C')
+    PCentroLLanos = ProndaCentroLLanos.fetch({'distrito':'Centro Llanos'})
+    PCentroLLanositems = PCentroLLanos.items
+    dfCentroLLanos = pd.DataFrame(PCentroLLanositems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfCentroLLanos
 
+@st.cache_data
+def load_dttoFalcon():
+    ProndaFalcon = deta.Base('Prondamin2024C')
+    PFalcon = ProndaFalcon.fetch({'distrito':'Centro Llanos'})
+    PFalconitems = PFalcon.items
+    dfFalcon = pd.DataFrame(PFalconitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfFalcon
 
     
 @st.cache_data
@@ -155,6 +172,14 @@ with tab7:
         df6 = load_dttoCentro()
         df6_color = df6.style.apply(row_style, axis=1)
         df6_color
+    with st.expander("Centro Llanos"):
+        df7 = load_dttoCentroLlanos()
+        df7_color = df6.style.apply(row_style, axis=1)
+        df7_color
+    with st.expander("Falcón"):
+        df8 = load_dttoFalcon()
+        df8_color = df6.style.apply(row_style, axis=1)
+        df8_color
 
 with tab2:
     st.subheader('Todos los distritos')
