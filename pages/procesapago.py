@@ -107,7 +107,7 @@ if uploaded_file is not None:
         except:
             pass
         DatBan['INGRESO'] = pd.to_numeric(DatBan['INGRESO'])
-        
+        'DatBan = ', datBan
         # Compara DatBan.REFERENCIA con dfPronda24.referenciaPago y cuando sean iguales
         # lo coloca en el df:DatBanVerif...
         DatBan['REFERENCIA'] = DatBan['REFERENCIA'].astype(str)
