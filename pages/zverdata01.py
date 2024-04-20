@@ -173,12 +173,12 @@ with tab7:
         df6_color = df6.style.apply(row_style, axis=1)
         df6_color
     with st.expander("Centro Llanos"):
-        df7 = load_dttoCentroLlanos()
-        df7_color = df6.style.apply(row_style, axis=1)
+        df7 = load_dttoCentroLLanos()
+        df7_color = df7.style.apply(row_style, axis=1)
         df7_color
     with st.expander("Falcón"):
         df8 = load_dttoFalcon()
-        df8_color = df6.style.apply(row_style, axis=1)
+        df8_color = df8.style.apply(row_style, axis=1)
         df8_color
 
 with tab2:
