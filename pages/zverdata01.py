@@ -222,11 +222,11 @@ with tab1:
     df2counts
     df2
     st.divider()
-    dfpendiente = df2[df2['paycon']=='PENDIENTE']
-    dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
-    dfpendiente_color
-    dfpendienteCounts = dfpendiente['paycon'].value_counts()
-    dfpendienteCounts
+    #dfpendiente = df2[df2['paycon']=='PENDIENTE']
+    #dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
+    #dfpendiente_color
+    #dfpendienteCounts = dfpendiente['paycon'].value_counts()
+    #dfpendienteCounts
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 
 with tab3:
@@ -244,8 +244,10 @@ with tab3:
 with tab4:
     st.subheader('Inscritos con Pagos Confirmados  ')
     st.caption('paycon = SI')
-    st.divider()
     dfSI = df2[df2['paycon']=='SI']
+    dfSICounts = dfSI['paycon'].value_counts()
+    dfSICounts
+    st.divider()
     dfSI_color = dfSI.style.apply(row_style, axis=1)
     dfSI_color
     #df4 = load_datasi()
