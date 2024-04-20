@@ -38,7 +38,19 @@ def color_paycon(val):
     color = 'green' if val == 'SI' else 'white'
     return 'background-color: %s' % color  
 
+@st.cache_data
+def load_data02():
+    Pronda24 = deta.Base('Prondamin2024C')
+    res = Pronda24.fetch()
+    all_items = res.items
 
+    while res.last:
+        res = Pronda24.fetch(last=res.last)
+        all_items += res.items
+    dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfall_items
+    
 # Carga la bd de accesos
 accesos = deta.Base('minec-accesos')
 res=accesos.fetch()
@@ -46,11 +58,14 @@ res=accesos.fetch()
 #     logina = st.session_state['logina']
 # except:
 #     st.switch_page('home2024.py')
-# Carga el Pronda
-Prondamin24 = deta.Base('Prondamin2024C')
-Pronda24 = Prondamin24.fetch(limit=5000)
-dfPronda24 = pd.DataFrame(Pronda24.items)
+
+# Prondamin24 = deta.Base('Prondamin2024C')
+# Pronda24 = Prondamin24.fetch(limit=5000)
+# dfPronda24 = pd.DataFrame(Pronda24.items)
 # dfPronda24
+
+# Carga el Pronda
+dfPronda24 = load_data02()
 
 # Carga el DBanVerif2024 ...Datos Bancarios ya procesados
 DBanV24 = deta.Base('DBanVerif2024')
