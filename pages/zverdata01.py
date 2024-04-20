@@ -291,7 +291,7 @@ with tab7:
         df11_color
     with st.expander("Yaracuy"):
         dfyaracuy = df2[df2['distrito']=='Yaracuy']
-        dfyaracuy_color = dfzulia.style.apply(row_style, axis=1)
+        dfyaracuy_color = dfyaracuy.style.apply(row_style, axis=1)
         dfyaracuy_color
         #df12 = load_dttoYaracuy()
         #df12_color = df12.style.apply(row_style, axis=1)
