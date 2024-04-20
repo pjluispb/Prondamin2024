@@ -217,9 +217,10 @@ with tab1:
     st.subheader('Todos los distritos')
     st.divider()
     df2 = load_data02()
-    df2
+    
     df2counts = df2['paycon'].value_counts()
     df2counts
+    df2
     st.divider()
     dfpendiente = df2[df2['paycon']=='PENDIENTE']
     dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
@@ -232,6 +233,8 @@ with tab3:
     st.subheader('Inscritos con Pagos PENDIENTES')
     st.write('Inscritos Pendientes de confirmación de pago')
     st.caption('paycon = PENDIENTE')
+    dfpendienteCounts = dfpendiente['paycon'].value_counts()
+    dfpendienteCounts
     st.divider()
     dfpendiente = df2[df2['paycon']=='PENDIENTE']
     dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
