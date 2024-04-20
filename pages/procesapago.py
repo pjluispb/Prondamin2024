@@ -200,6 +200,7 @@ if uploaded_file is not None:
         conteodistrito
         #-----------------------------------------st.stop()
         dfpydReg = dfpyd_ordenado.to_dict('records')
+        'dfpydReg = ', dfpydReg
         contador = 1
         erroresDeGrabarEnPronda =[]
         for registro in dfpydReg:
@@ -211,7 +212,7 @@ if uploaded_file is not None:
             except:
                 st.toast('error guardando registro '+str(rkey))
                 erroresDeGrabarEnPronda.append('error guardando registro: '+str(rkey))
-                st.stop()
+                #st.stop()
             contador+=1
         'Registros con errores al grabar: ', erroresDeGrabarEnPronda
         
