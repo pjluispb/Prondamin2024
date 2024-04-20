@@ -232,7 +232,8 @@ with tab1:
     df2
     st.divider()
     dfzulia = df2[df2['distrito']=='Zulia']
-    dfzulia
+    dfzulia_color = dfzulia.style.apply(row_style, axis=1)
+    dfzulia_color
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 
 with tab3:
