@@ -302,5 +302,8 @@ with tab2:
     st.divider()
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
-    
+
+
+st.page_link("home2024.py", label="Inicio", icon="🏠")
+
     
