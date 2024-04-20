@@ -209,4 +209,9 @@ with st.expander('Data del distrito --' + dtto):
 # regresar = st.button('Volver')
 # if regresar:
 #     switch_page('logmi')
+
+if st.button("Clear All"):
+    # Clear values from *all* all in-memory and on-disk data caches:
+    # i.e. clear values from both square and cube
+    st.cache_data.clear()
 st.page_link("home2024.py", label="Inicio", icon="🏠")
