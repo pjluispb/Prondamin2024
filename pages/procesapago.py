@@ -61,7 +61,7 @@ res=accesos.fetch()
 # except:
 #     st.switch_page('home2024.py')
 
-# Prondamin24 = deta.Base('Prondamin2024C')
+Prondamin24 = deta.Base('Prondamin2024C')
 # Pronda24 = Prondamin24.fetch(limit=5000)
 # dfPronda24 = pd.DataFrame(Pronda24.items)
 # dfPronda24
