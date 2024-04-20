@@ -25,9 +25,10 @@ def update_paycon(row):
     fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
     fmontoApagar = float(row['montoApagar']) if row['montoApagar'] not in ('-', None, '') else 0
     diferencia = fmontoPago - fmontoApagar
-    if row['referenciaPago'] == '5050':
-        st.toast('Referencia '+str(row['referenciaPago'])+' diferencia = '+str(diferencia))
-        time.sleep(.9)
+    st.toast('referencia ='+str(row['referenciaPago']))
+    #if row['referenciaPago'] == '5050':
+    #    st.toast('Referencia '+str(row['referenciaPago'])+' diferencia = '+str(diferencia))
+    #    time.sleep(.9)
         
     if -10 <= diferencia <= 10:
         return 'SI'
