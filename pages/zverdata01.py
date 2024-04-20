@@ -292,8 +292,8 @@ with tab7:
         dfcentroLL = df2[df2['distrito']=='Centro Llanos']
         dfcentroLLCounts = dfcentroLL['paycon'].value_counts()
         dfcentroLL_color = dfcentroLL.style.apply(row_style, axis=1)
-        dfcentroLL_color
         dfcentroLLCounts
+        dfcentroLL_color
         #df7 = load_dttoCentroLLanos()
         #df7_color = df7.style.apply(row_style, axis=1)
         #df7_color
@@ -326,35 +326,45 @@ with tab7:
         #df8_color
     with st.expander("Metropolitano"):
         dfMetropolitano = df2[df2['distrito']=='Metropolitano']
+        dfMetropolitanoCounts = dfMetropolitano['paycon'].value_counts()
         dfMetropolitano_color = dfMetropolitano.style.apply(row_style, axis=1)
+        dfMetropolitanoCounts
         dfMetropolitano_color
         #df9 = load_dttoMetropolitano()
         #df9_color = df9.style.apply(row_style, axis=1)
         #df9_color
     with st.expander("Nor Oriente"):
         dfnororiente = df2[df2['distrito']=='Nor Oriente']
+        dfnororienteCounts = dfnororiente['paycon'].value_counts()
         dfnororiente_color = dfnororiente.style.apply(row_style, axis=1)
+        dfnororienteCounts
         dfnororiente_color
         #df10 = load_dttoNorOriente()
         #df10_color = df10.style.apply(row_style, axis=1)
         #df10_color
     with st.expander("Sur Oriente"):
         dfsuroriente = df2[df2['distrito']=='Sur Oriente']
+        dfsurorienteCounts = dfsuroriente['paycon'].value_counts()
         dfsuroriente_color = dfsuroriente.style.apply(row_style, axis=1)
+        dfsurorienteCounts
         dfsuroriente_color
         #df11 = load_dttoSurOriente()
         #df11_color = df11.style.apply(row_style, axis=1)
         #df11_color
     with st.expander("Yaracuy"):
         dfyaracuy = df2[df2['distrito']=='Yaracuy']
+        dfyaracuyCounts = dfyaracuy['paycon'].value_counts()
         dfyaracuy_color = dfyaracuy.style.apply(row_style, axis=1)
+        dfyaracuyCounts
         dfyaracuy_color
         #df12 = load_dttoYaracuy()
         #df12_color = df12.style.apply(row_style, axis=1)
         #df12_color
     with st.expander("Zulia"):
         dfzulia = df2[df2['distrito']=='Zulia']
+        dfzuliaCounts = dfzulia['paycon'].value_counts()
         dfzulia_color = dfzulia.style.apply(row_style, axis=1)
+        dfzuliaCounts
         dfzulia_color
         #df13 = load_dttoZulia()
         #df13_color = df13.style.apply(row_style, axis=1)
