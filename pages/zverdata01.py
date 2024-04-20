@@ -230,6 +230,9 @@ with tab1:
     st.divider()
     df2 = load_data02()
     df2
+    st.divider()
+    dfzulia = df2[df2['distrito']=='Zulia']
+    dfZulia
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 
 with tab3:
