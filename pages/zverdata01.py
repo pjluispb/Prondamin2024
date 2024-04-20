@@ -97,7 +97,8 @@ with tab1:
     df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 with tab2:
-    st.subheader('Todos lso distritos Color')
+    st.subheader('Todos los distritos')
+    st.wwrite('Coloreado a partir del campo paycon')
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
 with tab3:
