@@ -217,22 +217,13 @@ with tab1:
     st.subheader('Todos los distritos')
     st.divider()
     df2 = load_data02()
-    
     df2counts = df2['paycon'].value_counts()
     df2counts
     df2
-    st.divider()
-    #dfpendiente = df2[df2['paycon']=='PENDIENTE']
-    #dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
-    #dfpendiente_color
-    #dfpendienteCounts = dfpendiente['paycon'].value_counts()
-    #dfpendienteCounts
-# df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
-
 with tab3:
     st.subheader('Inscritos con Pagos PENDIENTES')
-    st.write('Inscritos Pendientes de confirmación de pago')
-    st.caption('paycon = PENDIENTE')
+    st.caption('Inscritos Pendientes de confirmación de pago')
+    #st.caption('paycon = PENDIENTE')
     dfpendiente = df2[df2['paycon']=='PENDIENTE']
     dfpendienteCounts = dfpendiente['paycon'].value_counts()
     dfpendienteCounts
@@ -243,7 +234,7 @@ with tab3:
     #df3
 with tab4:
     st.subheader('Inscritos con Pagos Confirmados  ')
-    st.caption('paycon = SI')
+    #st.caption('paycon = SI')
     dfSI = df2[df2['paycon']=='SI']
     dfSICounts = dfSI['paycon'].value_counts()
     dfSICounts
@@ -255,8 +246,10 @@ with tab4:
 with tab5:
     st.subheader('Inscritos con Pagos Confirmados con exceso')
     st.caption('paycon = SI++')
-    st.divider()
     dfSImas = df2[df2['paycon']=='SI++']
+    dfSImasCounts = dfSImas['paycon'].value_counts()
+    dfSImasCounts
+    st.divider()
     dfSImas_color = dfSImas.style.apply(row_style, axis=1)
     dfSImas_color
     #df4 = load_datasimas()
@@ -264,8 +257,11 @@ with tab5:
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
     st.caption('paycon = PENDIENTE X DIFERENCIA')
-    st.divider()
     dfdeficit = df2[df2['paycon']=='PENDIENTE X DIFERENCIA']
+    dfdeficitCounts = dfdeficit['paycon'].value_counts()
+    dfdeficitCounts
+    st.divider()
+    
     dfdeficit_color = dfdeficit.style.apply(row_style, axis=1)
     dfdeficit_color
     #df4 = load_datadeficit()
