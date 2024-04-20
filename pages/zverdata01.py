@@ -270,17 +270,26 @@ with tab7:
     st.subheader('Por Distrito')
     st.divider()
     with st.expander("Andino"):
-        df5 = load_dttoAndino()
-        df5_color = df5.style.apply(row_style, axis=1)
-        df5_color
+        dfandino = df2[df2['distrito']=='Andino']
+        dfandino_color = dfandino.style.apply(row_style, axis=1)
+        dfandino_color
+        #df5 = load_dttoAndino()
+        #df5_color = df5.style.apply(row_style, axis=1)
+        #df5_color
     with st.expander("Centro"):
-        df6 = load_dttoCentro()
-        df6_color = df6.style.apply(row_style, axis=1)
-        df6_color
+        dfcentro = df2[df2['distrito']=='Centro']
+        dfcentro_color = dfcentro.style.apply(row_style, axis=1)
+        dfcentro_color
+        #df6 = load_dttoCentro()
+        #df6_color = df6.style.apply(row_style, axis=1)
+        #df6_color
     with st.expander("Centro Llanos"):
-        df7 = load_dttoCentroLLanos()
-        df7_color = df7.style.apply(row_style, axis=1)
-        df7_color
+        dfcentroLL = df2[df2['distrito']=='Centro Llanos']
+        dfcentroLL_color = dfcentroLL.style.apply(row_style, axis=1)
+        dfcentroLL_color
+        #df7 = load_dttoCentroLLanos()
+        #df7_color = df7.style.apply(row_style, axis=1)
+        #df7_color
     with st.expander("Falcón"):
         dffalcon = df2[df2['distrito']=='Falcón']
         dffalcon_color = dffalcon.style.apply(row_style, axis=1)
