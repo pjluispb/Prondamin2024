@@ -203,7 +203,8 @@ imagen2 = Image.open('minecLogoTitle.jpeg')
 try:
     logina = st.session_state['logina']
 except:
-    switch_page('reiniciar03')
+    # switch_page('reiniciar03')
+    st.switch_page('pages/home2024.py') 
 
 #logina = st.session_state['logina']
 #logina
