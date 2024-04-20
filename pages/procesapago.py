@@ -177,7 +177,8 @@ if uploaded_file is not None:
         '**************************************'
         dfpyd = dfpyd.drop(columns=['FECHA', 'DESCRIPCION', 'INGRESO'])
         dfpyd['paycon'] = dfpyd.apply(update_paycon, axis=1)                  # Actualiza paycon en dfpyd
-
+        'dfpyd con paycon actualizado', dfpyd
+        st.stop()
         dfpyd['Status'] = dfpyd['Status'].fillna('-')                         # Coloca Status = '-' cuando valga None
         dfpyd['ReporteCertif'] = dfpyd['ReporteCertif'].fillna('-')           # Coloca ReporteCertif = '-' cuando valga None
         dfpyd['curso'] = dfpyd['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
