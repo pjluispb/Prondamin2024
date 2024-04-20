@@ -263,6 +263,14 @@ with tab7:
         df11 = load_dttoSurOriente()
         df11_color = df11.style.apply(row_style, axis=1)
         df11_color
+    with st.expander("Yaracuy"):
+        df12 = load_dttoYaracuy()
+        df12_color = df12.style.apply(row_style, axis=1)
+        df12_color
+    with st.expander("Zulia"):
+        df13 = load_dttoZulia()
+        df13_color = df13.style.apply(row_style, axis=1)
+        df13_color
 
 with tab2:
     st.subheader('Todos los distritos')
