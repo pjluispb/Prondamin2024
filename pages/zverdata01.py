@@ -44,6 +44,13 @@ def load_datapendiente():
     PPendiente = ProndaPendiente.fetch({'paycon':'PENDIENTE'})
     PPenitems = PPendiente.items
     return pd.DataFrame(PPenitems)
+
+@st.cache_data
+def load_datasi():
+    ProndaSI = deta.Base('Prondamin2024C')
+    PSI = ProndaSI.fetch({'paycon':'SI'})
+    PSItems = PSI.items
+    return pd.DataFrame(PSItems)
     
 @st.cache_data
 def load_data02():
@@ -61,7 +68,7 @@ def load_data02():
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
 
-tab1, tab2, tab3 = st.tabs(["Todo", "Todo_color", "Pendiente"])
+tab1, tab2, tab3, tab4 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado"])
 with tab1:
     df2 = load_data02()
     df2
@@ -72,3 +79,7 @@ with tab2:
 with tab3:
     df3 = load_datapendiente()
     df3
+with tab4:
+    df4 = load_datasi()
+    df4
+    
