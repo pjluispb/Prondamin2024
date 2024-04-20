@@ -251,14 +251,20 @@ with tab5:
     st.subheader('Inscritos con Pagos Confirmados con exceso')
     st.caption('paycon = SI++')
     st.divider()
-    df4 = load_datasimas()
-    df4
+    dfSImas = df2[df2['paycon']=='SI++']
+    dfSImas_color = dfSImas.style.apply(row_style, axis=1)
+    dfSImas_color
+    #df4 = load_datasimas()
+    #df4
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
     st.caption('paycon = PENDIENTE X DIFERENCIA')
     st.divider()
-    df4 = load_datadeficit()
-    df4
+    dfdeficit = df2[df2['paycon']=='PENDIENTE X DIFERENCIA']
+    dfdeficit_color = dfdeficit.style.apply(row_style, axis=1)
+    dfdeficit_color
+    #df4 = load_datadeficit()
+    #df4
 
 with tab7:
     st.subheader('Por Distrito')
@@ -276,21 +282,33 @@ with tab7:
         df7_color = df7.style.apply(row_style, axis=1)
         df7_color
     with st.expander("Falcón"):
-        df8 = load_dttoFalcon()
-        df8_color = df8.style.apply(row_style, axis=1)
-        df8_color
+        dffalcon = df2[df2['distrito']=='Falcón']
+        dffalcon_color = dffalcon.style.apply(row_style, axis=1)
+        dffalcon_color
+        #df8 = load_dttoFalcon()
+        #df8_color = df8.style.apply(row_style, axis=1)
+        #df8_color
     with st.expander("Lara"):
-        df8 = load_dttoLara()
-        df8_color = df8.style.apply(row_style, axis=1)
-        df8_color
+        dfLara = df2[df2['distrito']=='Lara']
+        dfLara_color = dfLara.style.apply(row_style, axis=1)
+        dfLara_color
+        #df8 = load_dttoLara()
+        #df8_color = df8.style.apply(row_style, axis=1)
+        #df8_color
     with st.expander("Llanos Occidentales"):
-        df8 = load_dttoLlanosO()
-        df8_color = df8.style.apply(row_style, axis=1)
-        df8_color
+        dfLlanosC = df2[df2['distrito']=='Llanos Occidentales']
+        dfLlanosC_color = dfLlanosC.style.apply(row_style, axis=1)
+        dfLlanosC_color
+        #df8 = load_dttoLlanosO()
+        #df8_color = df8.style.apply(row_style, axis=1)
+        #df8_color
     with st.expander("Metropolitano"):
-        df9 = load_dttoMetropolitano()
-        df9_color = df9.style.apply(row_style, axis=1)
-        df9_color
+        dfMetropolitano = df2[df2['distrito']=='Metropolitano']
+        dfMetropolitano_color = dfMetropolitano.style.apply(row_style, axis=1)
+        dfMetropolitano_color
+        #df9 = load_dttoMetropolitano()
+        #df9_color = df9.style.apply(row_style, axis=1)
+        #df9_color
     with st.expander("Nor Oriente"):
         dfnororiente = df2[df2['distrito']=='Nor Oriente']
         dfnororiente_color = dfnororiente.style.apply(row_style, axis=1)
