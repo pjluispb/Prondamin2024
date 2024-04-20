@@ -51,6 +51,20 @@ def load_datasi():
     PSI = ProndaSI.fetch({'paycon':'SI'})
     PSItems = PSI.items
     return pd.DataFrame(PSItems)
+
+@st.cache_data
+def load_datasimas():
+    ProndaSImas = deta.Base('Prondamin2024C')
+    PSImas = ProndaSImas.fetch({'paycon':'SI++'})
+    PSImasitems = PSImas.items
+    return pd.DataFrame(PSImasitems)
+
+@st.cache_data
+def load_datadeficit():
+    ProndaDeficit = deta.Base('Prondamin2024C')
+    PDeficit = ProndaDeficit.fetch({'paycon':'PENDIENTE X DIFERENCIA'})
+    PDeficititems = PDeficit.items
+    return pd.DataFrame(PDeficititems)
     
 @st.cache_data
 def load_data02():
@@ -68,7 +82,7 @@ def load_data02():
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
 
-tab1, tab2, tab3, tab4 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado", "SI++", "P X D"])
 with tab1:
     df2 = load_data02()
     df2
@@ -81,5 +95,11 @@ with tab3:
     df3
 with tab4:
     df4 = load_datasi()
+    df4
+with tab5:
+    df4 = load_datasimas()
+    df4
+with tab6:
+    df4 = load_datadeficit()
     df4
     
