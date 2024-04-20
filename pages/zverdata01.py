@@ -219,9 +219,9 @@ with tab1:
     df2 = load_data02()
     df2
     st.divider()
-    dfzulia = df2[df2['distrito']=='Zulia']
-    dfzulia_color = dfzulia.style.apply(row_style, axis=1)
-    dfzulia_color
+    dfpendiente = df2[df2['paycon']=='PENDIENTE']
+    dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
+    dfpendiente_color
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
 
 with tab3:
@@ -290,13 +290,19 @@ with tab7:
         df11_color = df11.style.apply(row_style, axis=1)
         df11_color
     with st.expander("Yaracuy"):
-        df12 = load_dttoYaracuy()
-        df12_color = df12.style.apply(row_style, axis=1)
-        df12_color
+        dfyaracuy = df2[df2['distrito']=='Yaracuy']
+        dfyaracuy_color = dfzulia.style.apply(row_style, axis=1)
+        dfyaracuy_color
+        #df12 = load_dttoYaracuy()
+        #df12_color = df12.style.apply(row_style, axis=1)
+        #df12_color
     with st.expander("Zulia"):
-        df13 = load_dttoZulia()
-        df13_color = df13.style.apply(row_style, axis=1)
-        df13_color
+        dfzulia = df2[df2['distrito']=='Zulia']
+        dfzulia_color = dfzulia.style.apply(row_style, axis=1)
+        dfzulia_color
+        #df13 = load_dttoZulia()
+        #df13_color = df13.style.apply(row_style, axis=1)
+        #df13_color
 
 with tab2:
     st.subheader('Todos los distritos')
