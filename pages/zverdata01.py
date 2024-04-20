@@ -73,6 +73,26 @@ def load_datadeficit():
     dfDeficit = pd.DataFrame(PDeficititems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfDeficit
+
+@st.cache_data
+def load_dttoAndino():
+    ProndaAndino = deta.Base('Prondamin2024C')
+    PAndino = ProndaAndino.fetch({'distrito':'Andino'})
+    PAndinoitems = PAndino.items
+    dfAndino = pd.DataFrame(PAndinoitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfAndino
+
+@st.cache_data
+def load_dttoCentro():
+    ProndaCentro = deta.Base('Prondamin2024C')
+    PCentro = ProndaCentro.fetch({'distrito':'Centro'})
+    PCentroitems = PCentro.items
+    dfCentro = pd.DataFrame(PCentroitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return dfCentro
+
+
     
 @st.cache_data
 def load_data02():
@@ -90,7 +110,7 @@ def load_data02():
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
 
-tab1, tab3, tab4, tab5, tab6, tab2 = st.tabs(["Todo", "Por Confirmar", "Confirmado", "SI++", "P X D", "Todo_color"])
+tab1, tab3, tab4, tab5, tab6, tab7, tab2 = st.tabs(["Todo", "Por Confirmar", "Confirmado", "SI++", "P X D", "Por Distrito", "Todo_color"])
 with tab1:
     st.subheader('Todos los distritos')
     st.divider()
@@ -123,6 +143,14 @@ with tab6:
     st.divider()
     df4 = load_datadeficit()
     df4
+
+with tab7:
+    st.subheader('Por Distrito')
+    st.divider()
+    df5 = load_dttoAndino()
+    df6 = load_dttoCentro()
+    df5
+    df6
 
 with tab2:
     st.subheader('Todos los distritos')
