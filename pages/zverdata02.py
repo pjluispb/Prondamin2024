@@ -32,16 +32,7 @@ def load_dtto(DTTO):
     dfdtto = pd.DataFrame(Pdttoitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfdtto
-
-@st.cache_data
-def load_dttoZulia():
-    ProndaZulia = deta.Base('Prondamin2024C')
-    PZulia = ProndaZulia.fetch({'distrito':'Zulia'})
-    PZuliaitems = PZulia.items
-    dfZulia = pd.DataFrame(PZuliaitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
-    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
-    return dfZulia
-    
+  
     
 @st.cache_data
 def load_data02():
@@ -62,7 +53,7 @@ imagen2 = Image.open('minecLogoTitle.jpeg')
 try:
     logina = st.session_state['logina']
 except:
-    logina = {'user':'Picapiedra', 'Distrito':'Andino'}
+    logina = {'user':'Picapiedra', 'Distrito':'Zulia'}
     #st.switch_page('home2024.py') 
 
 st.image(imagen1)
@@ -74,28 +65,6 @@ st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito
 dfdtto = load_dtto(logina['Distrito'])
 dfdtto_color = dfdtto.style.apply(row_style, axis=1)
 dfdtto_color
-
-#tab1 tab7 = st.tabs(["Por Distrito", "Todo_color"])
-#with tab1:
-#    st.subheader('Todos los distritos')
-#    st.divider()
-#    df2 = load_data02()
-#    df2
-
-#with tab7:
-#    st.subheader('Por Distrito')
-#    st.divider()
-#    with st.expander("Yaracuy"):
-#        df12 = load_dttoYaracuy()
-#        df12_color = df12.style.apply(row_style, axis=1)
-#        df12_color
-#    with st.expander("Zulia"):
-#        df13 = load_dttoZulia()
-#        df13_color = df13.style.apply(row_style, axis=1)
-#        df13_color
-
-
-
 
 st.page_link("home2024.py", label="Inicio", icon="🏠")
 
