@@ -210,8 +210,8 @@ except:
 st.image(imagen1)
 st.image(imagen2)
 
-st.write('Hola ****' + logina['user'] + '****')
-st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
+st.subheader('Hola ****' + logina['user'] + '****')
+#st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
 
 
 tab1, tab3, tab4, tab5, tab6, tab7, tab2 = st.tabs(["Todo", "Por Confirmar", "Confirmado", "SI++", "P X D", "Por Distrito", "Todo_color"])
