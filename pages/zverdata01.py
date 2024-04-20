@@ -64,7 +64,9 @@ def load_datadeficit():
     ProndaDeficit = deta.Base('Prondamin2024C')
     PDeficit = ProndaDeficit.fetch({'paycon':'PENDIENTE X DIFERENCIA'})
     PDeficititems = PDeficit.items
-    return pd.DataFrame(PDeficititems)
+    dfDeficit = pd.DataFrame(PDeficititems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
+    return pd.DataFrame(dfDeficit)
     
 @st.cache_data
 def load_data02():
