@@ -102,21 +102,24 @@ with tab2:
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
 with tab3:
-    st.subheader('Pagos PENDIENTES')
+    st.subheader('Inscritos con Pagos PENDIENTES')
     st.write('Inscritos Pendientes de confirmación de pago')
     st.caption('paycon = PENDIENTE')
     df3 = load_datapendiente()
     df3
 with tab4:
-    st.subheader('Pagos Confirmados (paycon = SI) ')
+    st.subheader('Inscritos con Pagos Confirmados  ')
+    st.caption('paycon = SI')
     df4 = load_datasi()
     df4
 with tab5:
-    st.subheader('Pagos Confirmados con exceso (paycon = SI++) ')
+    st.subheader('Inscritos con Pagos Confirmados con exceso')
+    st.caption('paycon = SI++')
     df4 = load_datasimas()
     df4
 with tab6:
-    st.subheader('Pagos Confirmados en Déficit (paycon = PENDIENTE X DIFERENCIA) ')
+    st.subheader('Inscritos con Pagos Confirmados en Déficit ')
+    st.caption('paycon = PENDIENTE X DIFERENCIA')
     df4 = load_datadeficit()
     df4
     
