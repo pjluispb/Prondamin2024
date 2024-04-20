@@ -42,7 +42,8 @@ def load_data():
 def load_datapendiente():
     ProndaPendiente = deta.Base('Prondamin2024C')
     PPendiente = ProndaPendiente.fetch({'paycon':'PENDIENTE'})
-    return pd.Dataframe(PPendiente.items)
+    PPenitems = PPendiente.items
+    return pd.Dataframe(PPenitems)
     
 @st.cache_data
 def load_data02():
