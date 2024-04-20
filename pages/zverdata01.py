@@ -175,8 +175,12 @@ def load_dttoYaracuy():
 @st.cache_data
 def load_dttoZulia():
     ProndaZulia = deta.Base('Prondamin2024C')
-    PZulia = ProndaZulia.fetch({'distrito':'Zulia'})
-    PZuliaitems = PZulia.items
+    PZulia = ProndaZulia.fetch(query= {'distrito':'Zulia'}, limit=500)
+    all_items = PZulia.items
+    while PZulia.last:
+        PZulia = Pronda24.fetch(last=PZulia.last)
+        all_items += PZulia.items
+    PZuliaitems = all_items
     dfZulia = pd.DataFrame(PZuliaitems, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfZulia
@@ -187,12 +191,10 @@ def load_data02():
     Pronda24 = deta.Base('Prondamin2024C')
     res = Pronda24.fetch(limit=500)
     all_items = res.items
-
     while res.last:
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
     dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
-    #dfall_items_color = dfall_items.style.apply(row_style, axis=1)
     return dfall_items
     
 #df, lastdf, countdf = load_data()
