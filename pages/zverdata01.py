@@ -229,14 +229,20 @@ with tab3:
     st.write('Inscritos Pendientes de confirmación de pago')
     st.caption('paycon = PENDIENTE')
     st.divider()
-    df3 = load_datapendiente()
-    df3
+    dfpendiente = df2[df2['paycon']=='PENDIENTE']
+    dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
+    dfpendiente_color
+    #df3 = load_datapendiente()
+    #df3
 with tab4:
     st.subheader('Inscritos con Pagos Confirmados  ')
     st.caption('paycon = SI')
     st.divider()
-    df4 = load_datasi()
-    df4
+    dfSI = df2[df2['paycon']=='SI']
+    dfSI_color = dfpendiente.style.apply(row_style, axis=1)
+    dfSI_color
+    #df4 = load_datasi()
+    #df4
 with tab5:
     st.subheader('Inscritos con Pagos Confirmados con exceso')
     st.caption('paycon = SI++')
@@ -282,13 +288,19 @@ with tab7:
         df9_color = df9.style.apply(row_style, axis=1)
         df9_color
     with st.expander("Nor Oriente"):
-        df10 = load_dttoNorOriente()
-        df10_color = df10.style.apply(row_style, axis=1)
-        df10_color
+        dfnororiente = df2[df2['distrito']=='Nor Oriente']
+        dfnororiente_color = dfnororiente.style.apply(row_style, axis=1)
+        dfnororiente_color
+        #df10 = load_dttoNorOriente()
+        #df10_color = df10.style.apply(row_style, axis=1)
+        #df10_color
     with st.expander("Sur Oriente"):
-        df11 = load_dttoSurOriente()
-        df11_color = df11.style.apply(row_style, axis=1)
-        df11_color
+        dfsuroriente = df2[df2['distrito']=='Sur Oriente']
+        dfsuroriente_color = dfsuroriente.style.apply(row_style, axis=1)
+        dfsuroriente_color
+        #df11 = load_dttoSurOriente()
+        #df11_color = df11.style.apply(row_style, axis=1)
+        #df11_color
     with st.expander("Yaracuy"):
         dfyaracuy = df2[df2['distrito']=='Yaracuy']
         dfyaracuy_color = dfyaracuy.style.apply(row_style, axis=1)
