@@ -92,6 +92,7 @@ def load_data02():
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado", "SI++", "P X D"])
 with tab1:
+    st.subheader('Todos los distritos')
     df2 = load_data02()
     df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
