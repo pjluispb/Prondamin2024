@@ -141,11 +141,12 @@ if uploaded_file is not None:
 
         # grabo DatBanVerif en Deta BD: DBanVerif2024
         dbvreg = DatBanVerif1.to_dict('records')
+        dbvreg
         cont=1
         for registro in dbvreg:
             #registro
             DBanV24.put(registro)                                                       
-            st.toast('se ha cargado el registro: '+str(cont)+'-->'+str(registro['REFERENCIA']))
+            st.toast('se ha cargado el registro: '+str(cont))
             cont+=1
         st.toast('--->registros bancarios guardados<---')
 
