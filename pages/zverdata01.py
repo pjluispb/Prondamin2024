@@ -218,6 +218,8 @@ with tab1:
     st.divider()
     df2 = load_data02()
     df2
+    df2counts = df2['paycon'].value_counts()
+    df2counts
     st.divider()
     dfpendiente = df2[df2['paycon']=='PENDIENTE']
     dfpendiente_color = dfpendiente.style.apply(row_style, axis=1)
