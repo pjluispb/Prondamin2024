@@ -239,7 +239,7 @@ with tab4:
     st.caption('paycon = SI')
     st.divider()
     dfSI = df2[df2['paycon']=='SI']
-    dfSI_color = dfpendiente.style.apply(row_style, axis=1)
+    dfSI_color = dfSI.style.apply(row_style, axis=1)
     dfSI_color
     #df4 = load_datasi()
     #df4
