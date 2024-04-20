@@ -90,19 +90,14 @@ def load_data02():
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Todo", "Todo_color", "Por Confirmar", "Confirmado", "SI++", "P X D"])
+tab1, tab3, tab4, tab5, tab6, tab2 = st.tabs(["Todo", "Por Confirmar", "Confirmado", "SI++", "P X D", "Todo_color"])
 with tab1:
     st.subheader('Todos los distritos')
     st.divider()
     df2 = load_data02()
     df2
 # df2 = df2.reindex(columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ]) #Reordena las columnas como se mostraran
-with tab2:
-    st.subheader('Todos los distritos')
-    st.write('Coloreado a partir del campo paycon')
-    st.divider()
-    df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
-    df2_color
+
 with tab3:
     st.subheader('Inscritos con Pagos PENDIENTES')
     st.write('Inscritos Pendientes de confirmación de pago')
@@ -125,6 +120,13 @@ with tab5:
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
     st.caption('paycon = PENDIENTE X DIFERENCIA')
+
+with tab2:
+    st.subheader('Todos los distritos')
+    st.write('Coloreado a partir del campo paycon')
+    st.divider()
+    df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
+    df2_color
     st.divider()
     df4 = load_datadeficit()
     df4
