@@ -272,6 +272,7 @@ with tab7:
     st.divider()
     with st.expander("Andino"):
         dfandino = df2[df2['distrito']=='Andino']
+        dfandinoCounts = dfandino['paycon'].value_counts()
         dfandino_color = dfandino.style.apply(row_style, axis=1)
         dfandino_color
         #df5 = load_dttoAndino()
