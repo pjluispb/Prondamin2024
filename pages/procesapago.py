@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from deta import Deta
 from PIL import Image
+import time
 
 imagen1 = Image.open('minecLogo.jpeg')
 imagen2 = Image.open('minecLogoTitle.jpeg')
@@ -24,6 +25,10 @@ def update_paycon(row):
     fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
     fmontoApagar = float(row['montoApagar']) if row['montoApagar'] not in ('-', None, '') else 0
     diferencia = fmontoPago - fmontoApagar
+    if row['referenciaPago'] == '5050':
+        st.toast('Referencia '+str(row['referenciaPago])+' diferencia = '+str(diferencia))
+        time.sleep(.9)
+        
     if -10 <= diferencia <= 10:
         return 'SI'
     elif diferencia < -10:
