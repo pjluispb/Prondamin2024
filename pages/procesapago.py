@@ -28,7 +28,7 @@ def update_paycon(row):
     st.toast('referencia ='+str(row['referenciaPago']))
     if row['referenciaPago'] == '5050':
         st.toast('Referencia '+str(row['referenciaPago'])+' diferencia = '+str(diferencia))
-        time.sleep(.9)
+        time.sleep(.1)
         
     if -10 <= diferencia <= 10:
         return 'SI'
@@ -145,7 +145,7 @@ if uploaded_file is not None:
         for registro in dbvreg:
             #registro
             DBanV24.put(registro)                                                       
-            st.toast('se ha cargado el registro: '+str(cont))
+            st.toast('se ha cargado el registro: '+str(cont)+'-->'+str(registro['REFERENCIA']))
             cont+=1
         st.toast('--->registros bancarios guardados<---')
 
