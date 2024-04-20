@@ -197,6 +197,22 @@ def load_data02():
     
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
+imagen1 = Image.open('minecLogo.jpeg')
+imagen2 = Image.open('minecLogoTitle.jpeg')
+
+try:
+    logina = st.session_state['logina']
+except:
+    switch_page('reiniciar03')
+
+#logina = st.session_state['logina']
+#logina
+st.image(imagen1)
+st.image(imagen2)
+
+st.write('Hola ****' + logina['user'] + '****')
+st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
+
 
 tab1, tab3, tab4, tab5, tab6, tab7, tab2 = st.tabs(["Todo", "Por Confirmar", "Confirmado", "SI++", "P X D", "Por Distrito", "Todo_color"])
 with tab1:
