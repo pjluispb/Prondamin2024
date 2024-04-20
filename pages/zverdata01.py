@@ -120,6 +120,9 @@ with tab5:
 with tab6:
     st.subheader('Inscritos con Pagos Confirmados en Déficit ')
     st.caption('paycon = PENDIENTE X DIFERENCIA')
+    st.divider()
+    df4 = load_datadeficit()
+    df4
 
 with tab2:
     st.subheader('Todos los distritos')
@@ -127,7 +130,5 @@ with tab2:
     st.divider()
     df2_color = df2.style.apply(row_style, axis=1)  #Coloriza las filas
     df2_color
-    st.divider()
-    df4 = load_datadeficit()
-    df4
+    
     
