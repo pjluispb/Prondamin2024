@@ -53,8 +53,8 @@ imagen2 = Image.open('minecLogoTitle.jpeg')
 try:
     logina = st.session_state['logina']
 except:
-    logina = {'user':'Picapiedra', 'Distrito':'Lara'}
-    #st.switch_page('home2024.py') 
+    #logina = {'user':'Picapiedra', 'Distrito':'Lara'}
+    st.switch_page('home2024.py') 
 
 st.image(imagen1)
 st.image(imagen2)
