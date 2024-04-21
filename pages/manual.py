@@ -8,26 +8,27 @@ Pronda = deta.Base('Prondamin2024C')
 # Pronda.delete(" 10126173")
 
 reg = {
-	"key": "15733073",
-	"ReporteCertif": "-",
-	"Status": "-",
-	"apellido": "Rengifo",
-	"categoría": "Ministro Licenciado",
-	"distrito": "Nor Oriente",
+	"key": "10126173",
+	"ReporteCertif": "S/A",
+	"Status": "S/A",
+	"apellido": "Betancourt de Luna",
+	"categoría": "Ministro Cristiano",
+	"distrito": "Lara",
 	"emails": [
-		"erengifom@yahoo.com"
+		"-"
 	],
 	"fechaPago": "-",
 	"fuenteOrigen": "-",
 	"modalidad": "-",
 	"montoApagar": "-",
 	"montoPago": "-",
-	"nombre": "Eduardo",
+	"nombre": "Ana Maritza",
 	"paycon": "NO",
 	"referenciaPago": "-",
 	"teléfonos": [
-		"04128643490"
+		"-"
 	]
 }
+
 Pronda.put(reg)
 
