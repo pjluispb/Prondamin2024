@@ -64,7 +64,7 @@ dfmarcas = pd.DataFrame(marcas_items)
 
 'Pronda = ', Pronda
 'marks = ', dfmarcas 
-Prondamin24 = deta.Base('Prondamin2024C')
+
 
 genm = st.button('Genera Marca 1')
 if genm:
@@ -81,7 +81,7 @@ if genm:
     contador = 1
     for registro in dftoreg:
         rkey = registro['key']
-        Prondamin2024.put(registro)
+        bdmarks.put(registro)
         st.toast('se grabo el registro key = '+str(rkey))
         contador+=1
     st.write('---')
