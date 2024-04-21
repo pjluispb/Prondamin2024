@@ -30,7 +30,7 @@ def load_data02():
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
     dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
-    return dfall_items
+    return dfall_items, res
     
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
@@ -54,7 +54,7 @@ st.subheader('Hola ****' + logina['user'] + '****')
 #st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
 
 # Carga Pronda
-Pronda = load_data02()
+Pronda, bdPronda = load_data02()
 
 # Carga Marks
 bdmarks = deta.Base('marks24')
@@ -77,6 +77,17 @@ if genm:
     'dfcedpay = ', dfcedpay
     dftoreg = dfcedpay.to_dict('records')
     dftoreg
+    contador = 1
+    for registro in dftoreg:
+        rkey = registro['key']
+        bdPronda.put(registro)
+        st.toast('se grabo el registro key = '+str(rkey))
+        contador+=1
+    st.write('---')
+    st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
+
+    conteo = dfPronda24['paycon'].value_counts()
+    conteo
     
     
     
