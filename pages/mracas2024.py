@@ -75,5 +75,8 @@ if genm:
     #if dfcedpay['paycon'] == 'SI': dfcedpay['condicion']='Bloqueo - 01'
     #else: dfcedpay['condicion'] = '-'
     'dfcedpay = ', dfcedpay
+    dftoreg = dfcedpay.to_dict('records')
+    dftoreg
+    
     
     
