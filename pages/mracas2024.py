@@ -54,7 +54,7 @@ st.subheader('Hola ****' + logina['user'] + '****')
 #st.write('Datos del registro de ministros del distrito: ****' + logina['Distrito'] + '****')
 
 # Carga Pronda
-Pronda, bdPronda = load_data02()
+Pronda = load_data02()
 
 # Carga Marks
 bdmarks = deta.Base('marks24')
