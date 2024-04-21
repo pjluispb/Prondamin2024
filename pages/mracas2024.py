@@ -16,10 +16,7 @@ def update_condicion(row):
     #dfcedpay['condicion']='Bloqueo - 01' if dfcedpay['paycon']=='SI' else '-'
     condicion = 'Bloqueo en marca 01' if row['paycon'] in ['SI', 'SI++'] else '-'
     return condicion
-    #if row['paycon']=='SI':
-    #    return 'Bloqueo en marca 01'
-    #else:
-    #    return '-'
+
         
 @st.cache_data
 def load_data02():
@@ -32,8 +29,7 @@ def load_data02():
     dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
     return dfall_items
     
-#df, lastdf, countdf = load_data()
-#df,  lastdf,  countdf
+
 imagen1 = Image.open('minecLogo.jpeg')
 imagen2 = Image.open('minecLogoTitle.jpeg')
 
@@ -71,10 +67,6 @@ if genm:
     dfcedpay = Pronda[['key','paycon']]
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
     dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)                  # Actualiza el campo condicion en el dataframe
-    #dfcedpay['condicion']='Bloqueo - 01' if dfcedpay['paycon']=='SI' else '-'
-    #catasp = catasp2 if catasp2 != None else vacat
-    #if dfcedpay['paycon'] == 'SI': dfcedpay['condicion']='Bloqueo - 01'
-    #else: dfcedpay['condicion'] = '-'
     'dfcedpay = ', dfcedpay
     dftoreg = dfcedpay.to_dict('records')
     dftoreg
@@ -82,7 +74,7 @@ if genm:
     for registro in dftoreg:
         rkey = registro['key']
         bdmarks.put(registro)
-        st.toast('se grabo el registro key = '+str(rkey))
+        st.toast('se grabo el registro '+str(contador)+' key = '+str(rkey))
         contador+=1
     st.write('---')
     st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
