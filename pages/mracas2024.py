@@ -70,24 +70,20 @@ if genm:
     'dfcedpay = ', dfcedpay
     dftoreg = dfcedpay.to_dict('records')
     dftoreg
-    contador = 1
-    for registro in dftoreg:
-        rkey = registro['key']
-        try:
-            bdmarks.put(registro)
-            contador, rkey
-        except:
-            '---'
-            'error grabando a registro: ', rkey
-            contador
-            '---'
-        #st.toast('se grabo el registro '+str(contador)+' key = '+str(rkey))
-        contador+=1
+    #contador = 1
+    #for registro in dftoreg:
+    #    rkey = registro['key']
+    #    try:
+    #        bdmarks.put(registro)
+    #        contador, rkey
+    #    except:
+    #        '---'
+    #        'error grabando a registro: ', rkey
+    #        contador
+    #        '---'
+    #    contador+=1
     st.write('---')
-    st.metric('✅	:white_check_mark: Pagos Verificados', str(contador-1)+' registros actualizados')
 
-    conteo = dfPronda24['paycon'].value_counts()
-    conteo
     
     
     
