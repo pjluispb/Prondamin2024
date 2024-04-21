@@ -68,8 +68,13 @@ if genm:
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
     dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)                  # Actualiza el campo condicion en el dataframe
     'dfcedpay = ', dfcedpay
-    dftoreg = dfcedpay.to_dict('records')
-    dftoreg
+    listas_registros = [dfcedpay[i:i+registros_por_lista] 
+                        for i in range(0, len(dfcedpay), registros_por_lista)]
+    for i, lista in enumerate(listas_registros[:5]):
+        st.write(f"Lista {i+1}:\n{lista}\n")
+    
+    #   dftoreg = dfcedpay.to_dict('records')
+    #   dftoreg
     #contador = 1
     #for registro in dftoreg:
     #    rkey = registro['key']
