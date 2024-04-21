@@ -58,7 +58,7 @@ dfmarcas = pd.DataFrame(marcas_items)
 genm = st.button('Genera Marca 1')
 if genm:
     dfcedpay = Pronda[['key','paycon']]
-    dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+'21/4:3pm'
+    dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
     'dfcedpay = ', dfcedpay
     
     
