@@ -11,6 +11,16 @@ st.set_page_config(
 )
 
 deta = Deta(st.secrets["deta_key"])
+
+def update_condicion(row):
+    #dfcedpay['condicion']='Bloqueo - 01' if dfcedpay['paycon']=='SI' else '-'
+    condicion = 'Bloqueo en marca 01' if row['paycon']=='SI' else '-'
+    return condicion
+    #if row['paycon']=='SI':
+    #    return 'Bloqueo en marca 01'
+    #else:
+    #    return '-'
+        
 @st.cache_data
 def load_data02():
     Pronda24 = deta.Base('Prondamin2024C')
