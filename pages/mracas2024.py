@@ -14,7 +14,7 @@ deta = Deta(st.secrets["deta_key"])
 
 def update_condicion(row):
     #dfcedpay['condicion']='Bloqueo - 01' if dfcedpay['paycon']=='SI' else '-'
-    condicion = 'Bloqueo en marca 01' if row['paycon']=='SI' else '-'
+    condicion = 'Bloqueo en marca 01' if row['paycon'] in ['SI', 'SI++'] else '-'
     return condicion
     #if row['paycon']=='SI':
     #    return 'Bloqueo en marca 01'
