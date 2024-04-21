@@ -53,4 +53,4 @@ marcas_items = marcas.items
 dfmarcas = pd.DataFrame(marcas_items)
 
 'Pronda = ', Pronda
-'marks = ', marks
+'marks = ', dfmarcas 
