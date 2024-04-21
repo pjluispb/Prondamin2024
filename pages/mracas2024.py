@@ -48,7 +48,7 @@ Pronda = load_data02()
 
 # Carga Marks
 bdmarks = deta.Base('marks24')
-marcas = marks24.fetch(limit=5000)
+marcas = bdmarks.fetch(limit=5000)
 marcas_items = marcas.items
 dfmarcas = pd.DataFrame(marcas_items)
 
