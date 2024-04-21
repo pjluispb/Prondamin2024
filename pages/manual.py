@@ -5,5 +5,5 @@ from deta import Deta
 deta = Deta(st.secrets["deta_key"])
 Pronda = deta.Base('Prondamin2024C')
 
-Pronda.delete(" 15733073 ")
+Pronda.delete(" 10126173")
 
