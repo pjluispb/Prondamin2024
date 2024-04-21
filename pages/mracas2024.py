@@ -60,6 +60,7 @@ if genm:
     dfcedpay = Pronda[['key','paycon']]
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
     dfcedpay['condicion']='Bloqueo - 01' if dfcedpay['paycon']=='SI' else '-'
+    catasp = catasp2 if catasp2 != None else vacat
     #if dfcedpay['paycon'] == 'SI': dfcedpay['condicion']='Bloqueo - 01'
     #else: dfcedpay['condicion'] = '-'
     'dfcedpay = ', dfcedpay
