@@ -59,6 +59,8 @@ genm = st.button('Genera Marca 1')
 if genm:
     dfcedpay = Pronda[['key','paycon']]
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
+    if dfcedpay['paycon'] == 'SI': dfcedpaycon['condicion']='Bloqueo - 01'
+    else dfcedpaycon['condicion'] = '-'
     'dfcedpay = ', dfcedpay
     
     
