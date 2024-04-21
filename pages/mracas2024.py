@@ -30,7 +30,7 @@ def load_data02():
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
     dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
-    return (dfall_items, Pronda24)
+    return dfall_items
     
 #df, lastdf, countdf = load_data()
 #df,  lastdf,  countdf
@@ -64,6 +64,7 @@ dfmarcas = pd.DataFrame(marcas_items)
 
 'Pronda = ', Pronda
 'marks = ', dfmarcas 
+Prondamin24 = deta.Base('Prondamin2024C')
 
 genm = st.button('Genera Marca 1')
 if genm:
@@ -80,7 +81,7 @@ if genm:
     contador = 1
     for registro in dftoreg:
         rkey = registro['key']
-        bdPronda.put(registro)
+        Prondamin2024.put(registro)
         st.toast('se grabo el registro key = '+str(rkey))
         contador+=1
     st.write('---')
