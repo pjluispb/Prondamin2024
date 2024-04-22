@@ -62,34 +62,34 @@ dfmarcas = pd.DataFrame(marcas_items)
 'marks = ', dfmarcas 
 if 'corte-1' in marks:
     'corte-1 existe en marks'
-
-genm = st.button('Genera Marca 1')
-if genm:
-    dfcedpay = Pronda[['key','paycon']]
-    dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
-    dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)               # Actualiza el campo condicion en el dataframe
-    'dfcedpay = ', dfcedpay
-    #  Graba dfcedpay{key,paycon,corte-1,condicion}
-    #---------------------------------------------------------------------------
-    # para grabar en la bd en grupos de 20 registros a la vez
-    num_registros_por_lista = 20
-    # Crea una columna que represente el número de lista para cada registro
-    dfcedpay['lista'] = dfcedpay.index // num_registros_por_lista
-    # Divide el DataFrame en grupos basados en la columna 'lista'
-    grupos = dfcedpay.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
-    contador = 1
-    for nombre_lista, grupo in grupos:
-        st.write('Lista ', nombre_lista)
-        grupo
-        reggrupo = grupo.to_dict('records')
-        #reggrupo
-        try:
-            bdmarks.put_many(reggrupo)
-        except:
-            'error grabando grupo',contador
-        contador+=1
-        #if contador>12: break
-    #--------------------------------------------------------------------------
+else:
+    genm = st.button('Genera Marca 1')
+    if genm:
+        dfcedpay = Pronda[['key','paycon']]
+        dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 22/4:4am'
+        dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)               # Actualiza el campo condicion en el dataframe
+        'dfcedpay = ', dfcedpay
+        #  Graba dfcedpay{key,paycon,corte-1,condicion}
+        #---------------------------------------------------------------------------
+        # para grabar en la bd en grupos de 20 registros a la vez
+        num_registros_por_lista = 20
+        # Crea una columna que represente el número de lista para cada registro
+        dfcedpay['lista'] = dfcedpay.index // num_registros_por_lista
+        # Divide el DataFrame en grupos basados en la columna 'lista'
+        grupos = dfcedpay.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+        contador = 1
+        for nombre_lista, grupo in grupos:
+            st.write('Lista ', nombre_lista)
+            grupo
+            reggrupo = grupo.to_dict('records')
+            #reggrupo
+            try:
+                bdmarks.put_many(reggrupo)
+            except:
+                'error grabando grupo',contador
+            contador+=1
+            #if contador>12: break
+        #--------------------------------------------------------------------------
     
     st.write('---')
 
