@@ -68,10 +68,21 @@ if genm:
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
     dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)                  # Actualiza el campo condicion en el dataframe
     'dfcedpay = ', dfcedpay
-    listas_registros = [dfcedpay[i:i+registros_por_lista] 
-                        for i in range(0, len(dfcedpay), registros_por_lista)]
-    for i, lista in enumerate(listas_registros[:5]):
-        st.write(f"Lista {i+1}:\n{lista}\n")
+    # Supongamos que tienes un DataFrame llamado mi_dataframe
+    num_registros_por_lista = 20
+    
+    # Crea una columna que represente el número de lista para cada registro
+    dfcedpay['lista'] = dfcedpay.index // num_registros_por_lista
+    
+    # Divide el DataFrame en grupos basados en la columna 'lista'
+    grupos = dfcedpay.groupby('lista')
+    
+    # Ahora puedes acceder a cada grupo individualmente
+    for nombre_lista, grupo in grupos:
+        st.write('Lista ', nombre_lista)
+        grupo
+        #print(f"Lista {nombre_lista}:")
+        #print(grupo)
     
     #   dftoreg = dfcedpay.to_dict('records')
     #   dftoreg
