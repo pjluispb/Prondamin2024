@@ -17,8 +17,10 @@ def load_data02():
 
 
 dfpronda = load_data02()
+dfpronda
 dfexo = dfpronda[dfpronda['value']=='exonerado']
 dfexo
+#dfpendiente = df2[df2['paycon']=='PENDIENTE']
 #--------------------------------------------------
 # Pronda = deta.Base('Prondamin2024C')
 # Pronda.delete(" 10126173")
