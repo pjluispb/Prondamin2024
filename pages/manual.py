@@ -55,11 +55,13 @@ Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
 #dfpronda
 #dfpronda2 = dfpronda[(dfpronda['condicion'].isnull()) | (dfpronda['condicion']!='Bloqueo en marca 01')]
-dfpronda2 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01') | (dfpronda['condicion']!='-')]
+dfpronda2 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
 dfpronda2
-conteo = dfpronda2['paycon'].value_counts()
+dfpronda3 = dfpronda2[(dfpronda2['condicion']!='-')]
+dfpronda3
+conteo = dfpronda3['paycon'].value_counts()
 conteo
-conteo2 = dfpronda2['condicion'].value_counts()
+conteo2 = dfpronda3['condicion'].value_counts()
 conteo2
 st.stop()
 dfmarks = load_data03()            # Carga marks
