@@ -10,7 +10,7 @@ Pronda = deta.Base('Prondamin2024C')
 # reg = {.....}
 
 #Pronda.put(reg)
-mask24 = deta.Base('marks24')
+mask24 = deta.Base('marks24B')
 mask24f = mask24.fetch(limit=5000)
 dfmask24 = pd.DataFrame(mask24f.items)
 
