@@ -52,60 +52,60 @@ def load_data03():
 
 
 
-dfpronda = load_data02()           # Carga pronda
-#dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
-dfprondabloq1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
-dfprondabloq1
-conteo = dfprondabloq1['paycon'].value_counts()
-conteo
+#dfpronda = load_data02()           # Carga pronda
+##dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
+#dfprondabloq1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
+#dfprondabloq1
+#conteo = dfprondabloq1['paycon'].value_counts()
+#conteo
 #==================================================================================================================================
 # Carga Pronda y marks y los mezcla, actualiza loc campos condicion y corte-1 y graba los registros en Prondamin2024C
 
-#Prondamin24 = deta.Base('Prondamin2024C')
-#dfpronda = load_data02()           # Carga pronda
-#dfpronda
-# dfmarks = load_data03()            # Carga marks
-# dfmarks
-#dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
-#dfpymarks = ', dfpymarks
-#dfpymarks = dfpymarks.apply(update_columns, axis=1)
-#dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
-#dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
-#dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')            # Coloca Categoría Actual = '-' cuando valga None
-#dfpymarks['Cédula'] = dfpymarks['Cédula'].fillna('-')                          # Coloca Cédula = '-' cuando valga None
-#dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            # Coloca ReporteCertif = '-' cuando valga None
-#dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
-#dfpymarks['curso'] = dfpymarks['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
-#'dfpymarks con paycon_y actualizado', dfpymarks
-# st.stop()
-#dfpymarks.drop(columns = ['paycon_y', 'lista'], inplace=True )
-#dfpymarks.rename(columns={'paycon_x':'paycon'}, inplace=True)
-#'dfpymarks_final =', dfpymarks
-# st.stop()
+Prondamin24 = deta.Base('Prondamin2024C')
+dfpronda = load_data02()           # Carga pronda
+dfpronda
+dfmarks = load_data03()            # Carga marks
+dfmarks
+dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
+dfpymarks = ', dfpymarks
+dfpymarks = dfpymarks.apply(update_columns, axis=1)
+dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
+dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
+dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')            # Coloca Categoría Actual = '-' cuando valga None
+dfpymarks['Cédula'] = dfpymarks['Cédula'].fillna('-')                          # Coloca Cédula = '-' cuando valga None
+dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            # Coloca ReporteCertif = '-' cuando valga None
+dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
+dfpymarks['curso'] = dfpymarks['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
+'dfpymarks con paycon_y actualizado', dfpymarks
+st.stop()
+dfpymarks.drop(columns = ['paycon_y', 'lista'], inplace=True )
+dfpymarks.rename(columns={'paycon_x':'paycon'}, inplace=True)
+'dfpymarks_final =', dfpymarks
+st.stop()
 # para grabar en la bd en grupos de 20 registros a la vez
-#num_registros_por_lista = 20
+num_registros_por_lista = 20
 # Crea una columna que represente el número de lista para cada registro
-#dfpymarks['lista'] = dfpymarks.index // num_registros_por_lista
+dfpymarks['lista'] = dfpymarks.index // num_registros_por_lista
 # Divide el DataFrame en grupos basados en la columna 'lista'
-#grupos = dfpymarks.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
-#grupos
-#contador = 1
-#for nombre_lista, grupo in grupos:
-#    st.write('Lista ', nombre_lista)
+grupos = dfpymarks.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+grupos
+contador = 1
+for nombre_lista, grupo in grupos:
+    st.write('Lista ', nombre_lista)
     #grupo
-#    reggrupo = grupo.to_dict('records')
+    reggrupo = grupo.to_dict('records')
     
-#    if contador<165:                #graba los primeros 100 grupos de 162
-#        reggrupo
-#        try:
-#            Prondamin24.put_many(reggrupo)
-#            'listo grupo ',str(contador)
-#        except:
-#            'error grabando grupo',contador
-#            reggrupo
-#            st.stop()
-#    else: st.stop()
-#    contador+=1
+    if 160 < contador < 170:                #graba los primeros 100 grupos de 162
+        reggrupo
+        try:
+            Prondamin24.put_many(reggrupo)
+            'listo grupo ',str(contador)
+        except:
+            'error grabando grupo',contador
+            reggrupo
+            st.stop()
+    else: st.stop()
+    contador+=1
 #--------------------------------------------------------------------------
 
 #if st.button("Clear All"):
