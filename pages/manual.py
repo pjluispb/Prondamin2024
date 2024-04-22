@@ -51,6 +51,7 @@ def load_data03():
     return dfall_items
 
 
+Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
 dfpronda
 # st.stop()
@@ -89,7 +90,7 @@ for nombre_lista, grupo in grupos:
     if contador<10:                #graba los primeros 10 grupos de 162
         reggrupo
         try:
-            bdmarks.put_many(reggrupo)
+            Prondamin24.put_many(reggrupo)
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
