@@ -68,7 +68,7 @@ dfmarks = load_data03()            # Carga marks
 dfmarks
 st.stop()
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
-dfpymarks = ', dfpymarks
+'dfpymarks = ', dfpymarks
 
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
 dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
@@ -148,4 +148,6 @@ for nombre_lista, grupo in grupos:
 #	cont+=1
 #	'registro borrado ',str(cont)
 #-------------------------------------------------	
+
+
 
