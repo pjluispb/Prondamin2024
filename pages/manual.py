@@ -31,7 +31,10 @@ dfpronda = load_data02()           # Carga pronda
 dfmarks = load_data03()            # Carga marks
 dfpronda
 dfmarks
+dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
+'dfymarks = ', dfymarks
 
+#dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
 #---------------------------------------------------
 # muestra los exonerados en dfpronda
 #dfpronda = load_data02()          # Carga completa(todos los registros) de la bd pronda
