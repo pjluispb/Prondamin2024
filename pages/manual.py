@@ -14,15 +14,34 @@ def load_data02():
         all_items += res.items
     dfall_items = pd.DataFrame(all_items)
     return dfall_items
+    
+@st.cache_data
+def load_data03():
+    marks24 = deta.Base('marks24B')
+    res = marks24.fetch(limit=500)
+    all_items = res.items
+    while res.last:
+        res = marks24.fetch(last=res.last)
+        all_items += res.items
+    dfall_items = pd.DataFrame(all_items)
+    return dfall_items
 
 
-dfpronda = load_data02()
+dfpronda = load_data02()           # Carga pronda
+dfmarks = load_data03()            # Carga marks
+dfpronda
+dfmarks
+
+#---------------------------------------------------
+# muestra los exonerados en dfpronda
+#dfpronda = load_data02()          # Carga completa(todos los registros) de la bd pronda
 #dfpronda
-dfexo = dfpronda[dfpronda['value']=='exonerado']
-dfexo
-
-if 'value' in dfpronda.columns:
-    'columna value existe en dfpronda'
+#dfexo = dfpronda[dfpronda['value']=='exonerado']
+#dfexo
+#-------------------------------------------------
+# muestra si existe la columna value en dfpronda
+#if 'value' in dfpronda.columns:
+#    'columna value existe en dfpronda'
 #dfpendiente = df2[df2['paycon']=='PENDIENTE']
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
