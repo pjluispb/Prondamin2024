@@ -68,6 +68,7 @@ dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')     
 dfpymarks['Cédula'] = dfpymarks['Cédula'].fillna('-')                          # Coloca Cédula = '-' cuando valga None
 dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            # Coloca ReporteCertif = '-' cuando valga None
 dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
+dfpymarks['curso'] = dfpymarks['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
 dfpymarks.drop(columns = ['paycon_y', 'lista'], inplace=True )
