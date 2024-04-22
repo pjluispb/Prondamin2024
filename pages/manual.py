@@ -63,16 +63,16 @@ def load_data03():
 
 Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
-dfpronda
+#dfpronda
 dfpronda2 = dfpronda[(dfpronda['condicion'].isnull())]
 dfpronda2
 # st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
-# st.stop()
-dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
-'dfpymarks = ', dfpymarks
 
+dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
+'dfpymarks = ', dfpymarks
+#st.stop()
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
 dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
 dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
