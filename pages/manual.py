@@ -7,7 +7,7 @@ Pronda = deta.Base('Prondamin2024C')
 
 # Pronda.delete(" 10126173")
 
-reg = {.....}
+# reg = {.....}
 
 #Pronda.put(reg)
 mask24 = deta.Base('marks24')
