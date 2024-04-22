@@ -76,7 +76,7 @@ dfpymarks.rename(columns={'paycon_x':'paycon'}, inplace=True)
 # para grabar en la bd en grupos de 20 registros a la vez
 num_registros_por_lista = 20
 # Crea una columna que represente el número de lista para cada registro
-dfpymarks_final['lista'] = dfpymarks_final.index // num_registros_por_lista + 1           #le agrego una lista mas por si acaso
+dfpymarks_final['lista'] = dfpymarks_final.index // num_registros_por_lista
 # Divide el DataFrame en grupos basados en la columna 'lista'
 grupos = dfpymarks_final.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
 #grupos
