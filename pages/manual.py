@@ -3,15 +3,26 @@ import streamlit as st
 from deta import Deta
 
 deta = Deta(st.secrets["deta_key"])
-Pronda = deta.Base('Prondamin2024C')
 
-exone = Pronda.fetch({'value?contains':'exonerado'}, limit=5000)
-dfexone = pd.DataFrame(exone.items)
-dfexone
+@st.cache_data
+def load_data02():
+    Pronda24 = deta.Base('Prondamin2024C')
+    res = Pronda24.fetch(limit=500)
+    all_items = res.items
+    while res.last:
+        res = Pronda24.fetch(last=res.last)
+        all_items += res.items
+    dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    return dfall_items
+
+
+dfpronda = load_data02()
+dfexo = dfpronda[dfpronda['value']=='exonerado']
+dfexo
+#--------------------------------------------------
+# Pronda = deta.Base('Prondamin2024C')
 # Pronda.delete(" 10126173")
-
 # reg = {.....}
-
 #Pronda.put(reg)
 #--------------------------------------------------
 #mask24 = deta.Base('marks24B')
