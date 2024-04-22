@@ -87,6 +87,14 @@ if genmarca:
         dfpronda3[corte] = dfpronda3[corte].apply(lambda x: '-' if pd.isnull(x) else x)
     dfpronda3[nueva_columna] = nueva_columna+':'+dfpronda3['paycon']+' -->22/2pm'
     dfpronda3['condicion'] = nueva_condicion
+    dfpronda3['Categoría Actual'] = dfpronda3['Categoría Actual'].fillna('-')
+    dfpronda3['Cédula'] = dfpronda3['Cédula'].fillna('-')
+    dfpronda3['ReporteCertif'] = dfpronda3['ReporteCertif'].fillna('-')
+    dfpronda3['Status'] = dfpronda3['Status'].fillna('-')
+    dfpronda3['close'] = dfpronda3['close'].fillna('-')
+    dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
+    dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
+    dfpronda3['value'] = dfpronda3['value'].fillna('-')
     dfpronda3
     
     
@@ -116,7 +124,7 @@ st.stop()
 #dfpymarks = dfpymarks.apply(update_columns, axis=1)
 #dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
 #dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
-#dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')            # Coloca Categoría Actual = '-' cuando valga None
+#dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')       # Coloca Categoría Actual = '-' cuando valga None
 #dfpymarks['Cédula'] = dfpymarks['Cédula'].fillna('-')                          # Coloca Cédula = '-' cuando valga None
 #dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            # Coloca ReporteCertif = '-' cuando valga None
 #dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
