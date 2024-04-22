@@ -69,10 +69,10 @@ dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            #
 dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
-dfpymarks_final = dfpymarks.drop('paycon_y', 'lista')
-dfpymarks_final.rename(columns={'paycon_x':'paycon'}, inplace=True)
-'dfpymarks_final =', dfpymarks_final
-
+dfpymarks.drop('paycon_y', 'lista')
+dfpymarks.rename(columns={'paycon_x':'paycon'}, inplace=True)
+'dfpymarks_final =', dfpymarks
+st.stop()
 # para grabar en la bd en grupos de 20 registros a la vez
 num_registros_por_lista = 20
 # Crea una columna que represente el número de lista para cada registro
