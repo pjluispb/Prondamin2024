@@ -76,11 +76,11 @@ for nombre_lista, grupo in grupos:
     st.write('Lista ', nombre_lista)
     #grupo
     reggrupo = grupo.to_dict('records')
-    #reggrupo
-    #try:
-    #    bdmarks.put_many(reggrupo)
-    #except:
-    #    'error grabando grupo',contador
+    reggrupo
+    try:
+        bdmarks.put_many(reggrupo)
+    except:
+        'error grabando grupo',contador
     contador+=1
     #if contador>12: break
 #--------------------------------------------------------------------------
