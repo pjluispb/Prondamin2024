@@ -120,16 +120,16 @@ if genmarca:
         grupo
         reggrupo = grupo.to_dict('records')
         
-    #    if contador < 100:               
-    #        reggrupo
-    #        try:
-    #            Prondamin24.put_many(reggrupo)
-    #            'listo grupo ',str(contador)
-    #        except:
-    #            'error grabando grupo',contador
-    #            reggrupo
-    #            st.stop()
-    #    else: st.stop()
+        if contador < 100:               
+            reggrupo
+            try:
+                Prondamin24.put_many(reggrupo)
+                'listo grupo ',str(contador)
+            except:
+                'error grabando grupo',contador
+                reggrupo
+                st.stop()
+        else: st.stop()
         contador+=1
     #-------------------------------
     
