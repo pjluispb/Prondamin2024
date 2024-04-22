@@ -34,6 +34,11 @@ dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
+if st.button("Clear All"):
+    # Clear values from *all* all in-memory and on-disk data caches:
+    # i.e. clear values from both square and cube
+    st.cache_data.clear()
+    
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
 #---------------------------------------------------
 # muestra los exonerados en dfpronda
