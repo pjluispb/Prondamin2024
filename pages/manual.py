@@ -70,8 +70,7 @@ genmarca = st.button('Genera marca de bloqueo')
 if genmarca:
     nueva_condicion = 'Bloqueo en marca 02'
     columnaspronda = dfpronda3.columns.values
-    nuevacondicion
-    columnaspronda
+    nueva_condicion, columnaspronda
     'generando nueva marca de bloqueo'
     
 st.stop()
