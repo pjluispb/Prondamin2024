@@ -67,6 +67,10 @@ st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
 
+genmarca = st.button('Genera marca de bloqueo')
+if genmarca:
+    'generando marca de bloqueo'
+
 #dfpronda = load_data02()           # Carga pronda
 ##dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
 #dfprondabloq1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
