@@ -20,6 +20,7 @@ Pronda
 # Display specific columns
 selected_columns = ['key', 'paycon', 'condicion', 'corte-1', 'corte-2', 'corte-3', 'distrito']  # List of desired column names
 df_selected = Pronda[selected_columns]
+df_selected
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
 #Pronda = deta.Base('Prondamin2024C')
