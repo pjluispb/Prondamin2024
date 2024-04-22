@@ -59,9 +59,10 @@ dfmarks
 # st.stop()
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
-st.stop()
+# st.stop()
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
 'dfpymarks con paycon_y actualizado', dfpymarks
+st.stop()
 
 # para grabar en la bd en grupos de 20 registros a la vez
 num_registros_por_lista = 20
