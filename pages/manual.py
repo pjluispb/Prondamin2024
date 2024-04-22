@@ -88,7 +88,7 @@ for nombre_lista, grupo in grupos:
     #grupo
     reggrupo = grupo.to_dict('records')
     
-    if contador<100:                #graba los primeros 100 grupos de 162
+    if contador<165:                #graba los primeros 100 grupos de 162
         reggrupo
         try:
             Prondamin24.put_many(reggrupo)
