@@ -55,6 +55,7 @@ def load_data03():
 # generando una nueva marca de bloqueo
 Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
+st.stop()
 #dfpronda
 #dfpronda2 = dfpronda[(dfpronda['condicion'].isnull()) | (dfpronda['condicion']!='Bloqueo en marca 01')]
 dfpronda1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
