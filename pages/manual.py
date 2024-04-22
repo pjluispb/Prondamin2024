@@ -18,7 +18,8 @@ def update_paycon(row):
         return row['paycon']  # Keep the original value if none of the conditions apply
 
 def update_condicion(row):
-    condicion = 'Bloqueo en marca 01' if row['paycon_y'] in ['SI', 'SI++'] else '-'
+    row['condicion'] = 'Bloqueo en marca 01' if row['paycon_y'] in ['SI', 'SI++'] else '-'
+    #row['condicion'] = vcondicion
     return condicion
     
 def update_paycon_y(row):
