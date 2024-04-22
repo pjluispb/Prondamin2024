@@ -56,10 +56,10 @@ dfpronda
 # st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
-st.stop()
+# st.stop()
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
-
+st.stop()
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
 'dfpymarks con paycon_y actualizado', dfpymarks
 
