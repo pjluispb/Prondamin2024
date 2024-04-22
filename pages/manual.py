@@ -67,8 +67,20 @@ num_registros_por_lista = 20
 dfpymarks['lista'] = dfpymarks.index // num_registros_por_lista + 1           #le agrego una lista mas por si acaso
 # Divide el DataFrame en grupos basados en la columna 'lista'
 grupos = dfpymarks.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
-grupos
-
+#grupos
+contador = 1
+for nombre_lista, grupo in grupos:
+    st.write('Lista ', nombre_lista)
+    #grupo
+    reggrupo = grupo.to_dict('records')
+    #reggrupo
+    #try:
+    #    bdmarks.put_many(reggrupo)
+    #except:
+    #    'error grabando grupo',contador
+    contador+=1
+    #if contador>12: break
+#--------------------------------------------------------------------------
 
 if st.button("Clear All"):
     # Clear values from *all* all in-memory and on-disk data caches:
