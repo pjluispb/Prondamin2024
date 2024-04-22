@@ -5,7 +5,7 @@ from deta import Deta
 deta = Deta(st.secrets["deta_key"])
 Pronda = deta.Base('Prondamin2024C')
 
-exone = await Pronda.fetch({'value':'exonerado'}, limit=5000)
+exone = Pronda.fetch({'value?contains':'exonerado'}, limit=5000)
 dfexone = pd.DataFrame(exone.items)
 dfexone
 # Pronda.delete(" 10126173")
