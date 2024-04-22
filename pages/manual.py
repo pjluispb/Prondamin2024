@@ -61,8 +61,12 @@ dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 # st.stop()
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
-dfpymarks['value'] = dfpymarks['value'].fillna('-')            # Coloca value = '-' cuando valga None
-dfpymarks['close'] = dfpymarks['close'].fillna('-')            # Coloca close = '-' cuando valga None
+dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
+dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
+dfpymarks['Categoría Actual'] = dfpymarks['Categoría Actual'].fillna('-')            # Coloca Categoría Actual = '-' cuando valga None
+dfpymarks['Cédula'] = dfpymarks['Cédula'].fillna('-')                          # Coloca Cédula = '-' cuando valga None
+dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            # Coloca ReporteCertif = '-' cuando valga None
+dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
 
@@ -83,7 +87,7 @@ for nombre_lista, grupo in grupos:
     #    bdmarks.put_many(reggrupo)
     #except:
     #    'error grabando grupo',contador
-    contador+=1
+    
     if contador<10:                #graba los primeros 10 grupos de 162
         reggrupo
         try:
@@ -91,7 +95,9 @@ for nombre_lista, grupo in grupos:
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
+            reggrupo
             st.stop()
+    contador+=1
 #--------------------------------------------------------------------------
 
 if st.button("Clear All"):
