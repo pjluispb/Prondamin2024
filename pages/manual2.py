@@ -6,8 +6,8 @@ deta = Deta(st.secrets["deta_key"])
 
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
-Pronda = deta.Base('Prondamin2024C')
-Pronda.delete("92ttxhdnjfnt")
+#Pronda = deta.Base('Prondamin2024C')
+#Pronda.delete("92ttxhdnjfnt")
 # reg = {.....}
 #Pronda.put(reg)
 #--------------------------------------------------
