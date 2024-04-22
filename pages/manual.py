@@ -32,7 +32,7 @@ dfmarks = load_data03()            # Carga marks
 dfpronda
 dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
-'dfymarks = ', dpfymarks
+'dfpymarks = ', dfpymarks
 
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif
 #---------------------------------------------------
