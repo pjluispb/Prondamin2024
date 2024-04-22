@@ -98,7 +98,31 @@ if genmarca:
     dfpronda3['value'] = dfpronda3['value'].fillna('-')
     dfpronda3.drop(columns = ['lista'], inplace=True )
     dfpronda3
-    
+    # para grabar en la bd en grupos de 20 registros a la vez
+    num_registros_por_lista = 20
+    # Crea una columna que represente el número de lista para cada registro
+    dfpronda3['lista'] = dfpronda3.index // num_registros_por_lista
+    # Divide el DataFrame en grupos basados en la columna 'lista'
+    grupos = dfpronda3.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+    #grupos
+    contador = 1
+    for nombre_lista, grupo in grupos:
+        st.write('Lista ', nombre_lista)
+        #grupo
+        reggrupo = grupo.to_dict('records')
+        
+        if contador < 100:               
+            reggrupo
+    #        try:
+    #            Prondamin24.put_many(reggrupo)
+    #            'listo grupo ',str(contador)
+    #        except:
+    #            'error grabando grupo',contador
+    #            reggrupo
+    #            st.stop()
+        else: st.stop()
+        contador+=1
+    #-------------------------------
     
     
 st.stop()
