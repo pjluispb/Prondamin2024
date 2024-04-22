@@ -76,7 +76,7 @@ if genmarca:
     cort_strings = [s for s in columnaspronda if s.startswith('corte-')]
     cort_strings
     # Encontrar el último número existente
-    numeros = [int(s[len(prefijo):]) for s in cort_strings]
+    numeros = [int(s[len('corte-'):]) for s in cort_strings]
     ultimo_numero = max(numeros) if numeros else 0
     # Generar el siguiente número consecutivo
     siguiente_numero = ultimo_numero + 1
