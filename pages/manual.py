@@ -69,7 +69,7 @@ dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            #
 dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
-dfpymarks.drop('paycon_y', 'lista')
+dfpymarks.drop(columns = ['paycon_y', 'lista'], inplace=True )
 dfpymarks.rename(columns={'paycon_x':'paycon'}, inplace=True)
 'dfpymarks_final =', dfpymarks
 st.stop()
