@@ -70,9 +70,21 @@ genmarca = st.button('Genera marca de bloqueo')
 if genmarca:
     nueva_condicion = 'Bloqueo en marca 02'
     columnaspronda = dfpronda3.columns.values.tolist()
-    
     nueva_condicion, columnaspronda
+    # genera nuevo campo/columna corte
     'generando nueva marca de bloqueo'
+    cort_strings = [s for columnaspronda in lista if s.startswith('corte')]
+    # Encontrar el último número existente
+    numeros = [int(s[len(prefijo):]) for s in cort_strings]
+    ultimo_numero = max(numeros) if numeros else 0
+    # Generar el siguiente número consecutivo
+    siguiente_numero = ultimo_numero + 1
+    # Crear la nueva cadena con el prefijo y el número
+    nueva_columna = f"{prefijo}{siguiente_numero}"
+    # Agregar la nueva cadena a la lista
+    # lista.append(nueva_cadena)
+    # Configurar los valores de la nueva_columna, condicion y las viejas columnas(cort_strings)
+    
     
 st.stop()
 #dfpronda = load_data02()           # Carga pronda
