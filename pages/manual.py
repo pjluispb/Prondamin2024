@@ -20,6 +20,9 @@ dfpronda = load_data02()
 #dfpronda
 dfexo = dfpronda[dfpronda['value']=='exonerado']
 dfexo
+
+if 'value' in dfpronda.columns:
+    'columna value existe en dfpronda'
 #dfpendiente = df2[df2['paycon']=='PENDIENTE']
 #--------------------------------------------------
 # Pronda = deta.Base('Prondamin2024C')
