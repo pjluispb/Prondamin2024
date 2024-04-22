@@ -106,18 +106,19 @@ if genmarca:
     dfpronda3['lista'] = dfpronda3.index // num_registros_por_lista
     dfpronda3['lista']
     dfpronda3['lista'].value_counts()
-    st.stop()
+    
     # Divide el DataFrame en grupos basados en la columna 'lista'
     grupos = dfpronda3.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
     #grupos
+    
     contador = 1
     for nombre_lista, grupo in grupos:
-        st.write('Lista ', nombre_lista)
-        #grupo
-        reggrupo = grupo.to_dict('records')
+        st.write('Lista ', nombre_lista, contador)
+        grupo
+    #    reggrupo = grupo.to_dict('records')
         
-        if contador < 100:               
-            reggrupo
+    #    if contador < 100:               
+    #        reggrupo
     #        try:
     #            Prondamin24.put_many(reggrupo)
     #            'listo grupo ',str(contador)
@@ -125,7 +126,7 @@ if genmarca:
     #            'error grabando grupo',contador
     #            reggrupo
     #            st.stop()
-        else: st.stop()
+    #    else: st.stop()
         contador+=1
     #-------------------------------
     
