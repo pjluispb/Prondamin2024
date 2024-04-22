@@ -15,6 +15,15 @@ def load_data02():
     dfall_items = pd.DataFrame(all_items)
     return dfall_items
 
+def update_condicion(row):
+    if row['corte-1'].find('SI')<0:
+        return '-'
+    if row['corte-2'].find('SI')<0:
+        return '-'
+    if row['corte-3'].find('SI')<0:
+        return '-'
+
+
 Pronda = load_data02()
 Pronda
 # Display specific columns
