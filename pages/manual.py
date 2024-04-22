@@ -68,6 +68,7 @@ dfmarks = load_data03()            # Carga marks
 dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 dfpymarks = ', dfpymarks
+
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
 dfpymarks['value'] = dfpymarks['value'].fillna('-')                             # Coloca value = '-' cuando valga None
 dfpymarks['close'] = dfpymarks['close'].fillna('-')                             # Coloca close = '-' cuando valga None
