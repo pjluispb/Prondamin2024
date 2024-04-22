@@ -25,9 +25,7 @@ def update_condicion(row):
 def update_columns(row):
     row['paycon_y'] = row['paycon_x']
     row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
-    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'
-    row['close'] = row['close'].fillna('-')
-    dfpyd['value'] = dfpyd['value'].fillna('-')            # Coloca value = '-' cuando valga None
+    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'    
     return row
     
 @st.cache_data
@@ -63,6 +61,8 @@ dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 # st.stop()
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
+dfpymarks['value'] = dfpymarks['value'].fillna('-')            # Coloca value = '-' cuando valga None
+dfpymarks['close'] = dfpymarks['close'].fillna('-')            # Coloca close = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
 
