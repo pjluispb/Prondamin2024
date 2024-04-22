@@ -57,7 +57,7 @@ dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
 dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon_y en dfpyd
-dfpymarks['paycon_y'] = dfpymarks.apply(update_condicion, axis=1)                 # Actualiza condicion en dfpyd
+#dfpymarks['paycon_y'] = dfpymarks.apply(update_condicion, axis=1)                 # Actualiza condicion en dfpyd
 'dfpymarks con paycon_y actualizado', dfpymarks
 
 if st.button("Clear All"):
