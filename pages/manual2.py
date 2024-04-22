@@ -33,6 +33,7 @@ df_selected = Pronda[selected_columns]
 df_selected
 df_selected['condicion'] = df_selected.apply(update_condicion, axis=1)
 df_selected
+st.stop()
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
 #Pronda = deta.Base('Prondamin2024C')
