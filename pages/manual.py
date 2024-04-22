@@ -12,7 +12,7 @@ def load_data02():
     while res.last:
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
-    dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    dfall_items = pd.DataFrame(all_items)
     return dfall_items
 
 
