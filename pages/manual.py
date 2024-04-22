@@ -69,24 +69,22 @@ dfpymarks['ReporteCertif'] = dfpymarks['ReporteCertif'].fillna('-')            #
 dfpymarks['Status'] = dfpymarks['Status'].fillna('-')                           # Coloca Status = '-' cuando valga None
 'dfpymarks con paycon_y actualizado', dfpymarks
 # st.stop()
+dfpymarks_final = dfpymarks.drop('paycon_y', 'lista')
+dfpymarks_final.rename(columns={'paycon_x':'paycon'}, inplace=True)
+'dfpymarks_final =', dfpymarks_final
 
 # para grabar en la bd en grupos de 20 registros a la vez
 num_registros_por_lista = 20
 # Crea una columna que represente el número de lista para cada registro
-dfpymarks['lista'] = dfpymarks.index // num_registros_por_lista + 1           #le agrego una lista mas por si acaso
+dfpymarks_final['lista'] = dfpymarks_final.index // num_registros_por_lista + 1           #le agrego una lista mas por si acaso
 # Divide el DataFrame en grupos basados en la columna 'lista'
-grupos = dfpymarks.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+grupos = dfpymarks_final.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
 #grupos
 contador = 1
 for nombre_lista, grupo in grupos:
     st.write('Lista ', nombre_lista)
     #grupo
     reggrupo = grupo.to_dict('records')
-    #reggrupo
-    #try:
-    #    bdmarks.put_many(reggrupo)
-    #except:
-    #    'error grabando grupo',contador
     
     if contador<10:                #graba los primeros 10 grupos de 162
         reggrupo
