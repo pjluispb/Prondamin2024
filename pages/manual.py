@@ -53,7 +53,8 @@ def load_data03():
 
 
 dfpronda = load_data02()           # Carga pronda
-dfpronda
+dfprondabloq1 = dfpronda[dfpronda['condicion']=='Bloqueo en marca 01']
+dfprondabloq1
 
 #==================================================================================================================================
 # Carga Pronda y marks y los mezcla, actualiza loc campos condicion y corte-1 y graba los registros en Prondamin2024C
