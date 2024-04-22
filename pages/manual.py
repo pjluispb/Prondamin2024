@@ -93,7 +93,7 @@ if genmarca:
     dfpronda3['Status'] = dfpronda3['Status'].fillna('-')
     dfpronda3['close'] = dfpronda3['close'].fillna('-')
     dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
-    dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
+    dfpronda3['curso'] = dfpronda3['curso'].fillna('-')
     dfpronda3['value'] = dfpronda3['value'].fillna('-')
     dfpronda3
     
