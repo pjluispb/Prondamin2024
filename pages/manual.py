@@ -4,6 +4,9 @@ from deta import Deta
 
 deta = Deta(st.secrets["deta_key"])
 
+def update_paycon_y():
+    return 'update'
+    
 @st.cache_data
 def load_data02():
     Pronda24 = deta.Base('Prondamin2024C')
@@ -33,6 +36,9 @@ dfpronda
 dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
+
+dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon en dfpyd
+'dfpymarks con paycon_y actualizado', dfpymarks
 
 if st.button("Clear All"):
     # Clear values from *all* all in-memory and on-disk data caches:
