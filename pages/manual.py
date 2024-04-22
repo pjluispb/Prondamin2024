@@ -100,8 +100,13 @@ if genmarca:
     dfpronda3
     # para grabar en la bd en grupos de 20 registros a la vez
     num_registros_por_lista = 20
+    ' dfpronda3.index = ', dfpronda3.index
+    
     # Crea una columna que represente el número de lista para cada registro
     dfpronda3['lista'] = dfpronda3.index // num_registros_por_lista
+    dfpronda3['lista']
+    dfpronda3['lista'].value_counts()
+    st.stop()
     # Divide el DataFrame en grupos basados en la columna 'lista'
     grupos = dfpronda3.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
     #grupos
