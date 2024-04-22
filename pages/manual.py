@@ -53,7 +53,7 @@ def load_data03():
 
 dfpronda = load_data02()           # Carga pronda
 dfpronda
-st.stop()
+# st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
 st.stop()
