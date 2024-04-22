@@ -7,28 +7,19 @@ Pronda = deta.Base('Prondamin2024C')
 
 # Pronda.delete(" 10126173")
 
-reg = {
-	"key": "10126173",
-	"ReporteCertif": "S/A",
-	"Status": "S/A",
-	"apellido": "Betancourt de Luna",
-	"categoría": "Ministro Cristiano",
-	"distrito": "Lara",
-	"emails": [
-		"-"
-	],
-	"fechaPago": "-",
-	"fuenteOrigen": "-",
-	"modalidad": "-",
-	"montoApagar": "-",
-	"montoPago": "-",
-	"nombre": "Ana Maritza",
-	"paycon": "NO",
-	"referenciaPago": "-",
-	"teléfonos": [
-		"-"
-	]
-}
+reg = {.....}
 
-Pronda.put(reg)
+#Pronda.put(reg)
+mask24 = deta.Base('marks24')
+mask24f = mask24.fetch(limit=5000)
+dfmask24 = pd.DataFrame(mask24f)
+
+regmask = dfmask24.to_dict('records')
+
+cont=1
+for registro in regmask:
+	mask24.delete(registro)
+	cont+=1
+	'registro borrado ',str(cont)
+	
 
