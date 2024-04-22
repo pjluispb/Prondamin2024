@@ -16,6 +16,7 @@ def load_data02():
     return dfall_items
 
 def update_condicion(row):
+    'row : ', row
     if row['corte-1'].find('SI')<0:
         return '-'
     if row['corte-2'].find('SI')<0:
