@@ -25,11 +25,13 @@ if 'value' in dfpronda.columns:
     'columna value existe en dfpronda'
 #dfpendiente = df2[df2['paycon']=='PENDIENTE']
 #--------------------------------------------------
+# para eliminar(1ro) y luego crear(put) registros en Pronda
 # Pronda = deta.Base('Prondamin2024C')
 # Pronda.delete(" 10126173")
 # reg = {.....}
 #Pronda.put(reg)
 #--------------------------------------------------
+# para borrar(delete) todos los registros en mask24
 #mask24 = deta.Base('marks24B')
 #mask24f = mask24.fetch(limit=5000)
 #dfmask24 = pd.DataFrame(mask24f.items)
