@@ -26,7 +26,7 @@ def load_data02():
     while res.last:
         res = Pronda24.fetch(last=res.last)
         all_items += res.items
-    dfall_items = pd.DataFrame(all_items, columns=['distrito', 'categoría', 'key', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'paycon', 'montoApagar', 'fuenteOrigen', 'referenciaPago', 'fechaPago', 'montoPago' ])
+    dfall_items = pd.DataFrame(all_items)
     return dfall_items
     
 
@@ -60,24 +60,23 @@ dfmarcas = pd.DataFrame(marcas_items)
 
 'Pronda = ', Pronda
 'marks = ', dfmarcas 
-
+if 'corte-1' in marks:
+    'corte-1 existe en marks'
 
 genm = st.button('Genera Marca 1')
 if genm:
     dfcedpay = Pronda[['key','paycon']]
     dfcedpay['corte-1'] = 'Corte01 : '+dfcedpay['paycon']+' --> 21/4:3pm'
-    dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)                  # Actualiza el campo condicion en el dataframe
+    dfcedpay['condicion'] = dfcedpay.apply(update_condicion, axis=1)               # Actualiza el campo condicion en el dataframe
     'dfcedpay = ', dfcedpay
-    # Supongamos que tienes un DataFrame llamado mi_dataframe
+    #  Graba dfcedpay{key,paycon,corte-1,condicion}
+    #---------------------------------------------------------------------------
+    # para grabar en la bd en grupos de 20 registros a la vez
     num_registros_por_lista = 20
-    
     # Crea una columna que represente el número de lista para cada registro
     dfcedpay['lista'] = dfcedpay.index // num_registros_por_lista
-    
     # Divide el DataFrame en grupos basados en la columna 'lista'
-    grupos = dfcedpay.groupby('lista')
-    
-    # Ahora puedes acceder a cada grupo individualmente
+    grupos = dfcedpay.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
     contador = 1
     for nombre_lista, grupo in grupos:
         st.write('Lista ', nombre_lista)
@@ -90,23 +89,8 @@ if genm:
             'error grabando grupo',contador
         contador+=1
         #if contador>12: break
-        #print(f"Lista {nombre_lista}:")
-        #print(grupo)
+    #--------------------------------------------------------------------------
     
-    #   dftoreg = dfcedpay.to_dict('records')
-    #   dftoreg
-    #contador = 1
-    #for registro in dftoreg:
-    #    rkey = registro['key']
-    #    try:
-    #        bdmarks.put(registro)
-    #        contador, rkey
-    #    except:
-    #        '---'
-    #        'error grabando a registro: ', rkey
-    #        contador
-    #        '---'
-    #    contador+=1
     st.write('---')
 
     
