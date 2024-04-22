@@ -59,9 +59,16 @@ dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
 dfpymarks = dfpymarks.apply(update_columns, axis=1)
-#dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon_y en dfpyd
-#dfpymarks['paycon_y'] = dfpymarks.apply(update_condicion, axis=1)                 # Actualiza condicion en dfpyd
 'dfpymarks con paycon_y actualizado', dfpymarks
+
+# para grabar en la bd en grupos de 20 registros a la vez
+num_registros_por_lista = 20
+# Crea una columna que represente el número de lista para cada registro
+dfpymarks['lista'] = dfpymarks.index // num_registros_por_lista + 1           #le agrego una lista mas por si acaso
+# Divide el DataFrame en grupos basados en la columna 'lista'
+grupos = dfpymarks.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+grupos
+
 
 if st.button("Clear All"):
     # Clear values from *all* all in-memory and on-disk data caches:
