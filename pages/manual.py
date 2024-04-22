@@ -26,7 +26,8 @@ def update_columns(row):
     row['paycon_y'] = row['paycon_x']
     row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
     row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'
-    row['close'] = row['close'].fillna
+    row['close'] = row['close'].fillna('-')
+    dfpyd['value'] = dfpyd['value'].fillna('-')            # Coloca value = '-' cuando valga None
     return row
     
 @st.cache_data
@@ -90,6 +91,7 @@ for nombre_lista, grupo in grupos:
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
+            st.stop()
 #--------------------------------------------------------------------------
 
 if st.button("Clear All"):
