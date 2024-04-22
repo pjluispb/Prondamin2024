@@ -83,9 +83,11 @@ if genmarca:
     # Crear la nueva cadena con el prefijo y el número
     nueva_columna = 'corte-'+str(siguiente_numero)
     nueva_columna
-    # Agregar la nueva cadena a la lista
-    # lista.append(nueva_cadena)
-    # Configurar los valores de la nueva_columna, condicion y las viejas columnas(cort_strings)
+    for corte in cort_strings:
+        dfpronda3[corte] = dfpronda3[corte].apply(lambda x: '-' if pd.isnull(x) else x)
+    dfpronda3[nueva_columna] = nueva_columna+':'+dfpronda3['paycon']+' -->22/2pm'
+    dfpronda3['condicion'] = nueva_condicion
+    
     
     
 st.stop()
