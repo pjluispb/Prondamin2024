@@ -12,7 +12,7 @@ Pronda = deta.Base('Prondamin2024C')
 #Pronda.put(reg)
 mask24 = deta.Base('marks24')
 mask24f = mask24.fetch(limit=5000)
-dfmask24 = pd.DataFrame(mask24f)
+dfmask24 = pd.DataFrame(mask24f.items)
 
 regmask = dfmask24.to_dict('records')
 
