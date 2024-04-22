@@ -53,7 +53,7 @@ st.subheader('Hola ****' + logina['user'] + '****')
 Pronda = load_data02()
 
 # Carga Marks
-bdmarks = deta.Base('marks24')
+bdmarks = deta.Base('marks24B')
 marcas = bdmarks.fetch(limit=5000)
 marcas_items = marcas.items
 dfmarcas = pd.DataFrame(marcas_items)
@@ -83,13 +83,13 @@ if genm:
         st.write('Lista ', nombre_lista)
         grupo
         reggrupo = grupo.to_dict('records')
-        reggrupo
+        #reggrupo
         try:
             bdmarks.put_many(reggrupo)
         except:
             'error grabando grupo',contador
         contador+=1
-        if contador>12: break
+        #if contador>12: break
         #print(f"Lista {nombre_lista}:")
         #print(grupo)
     
