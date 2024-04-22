@@ -82,6 +82,7 @@ if genmarca:
     siguiente_numero = ultimo_numero + 1
     # Crear la nueva cadena con el prefijo y el número
     nueva_columna = 'corte-'+str(siguiente_numero)
+    nueva_condicion = 'Bloqueo en marca '+str(siguiente numero)
     nueva_columna
     for corte in cort_strings:
         dfpronda3[corte] = dfpronda3[corte].apply(lambda x: '-' if pd.isnull(x) else x)
@@ -95,6 +96,7 @@ if genmarca:
     dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
     dfpronda3['curso'] = dfpronda3['curso'].fillna('-')
     dfpronda3['value'] = dfpronda3['value'].fillna('-')
+    dfpronda3.drop(columns = ['lista'], inplace=True )
     dfpronda3
     
     
