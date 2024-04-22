@@ -23,8 +23,10 @@ def update_condicion(row):
     return row['condicion']
     
 def update_paycon_y(row):
-    pay_y = row['paycon_x'] 
-    return pay_y
+    row['paycon_y'] = row['paycon_x']
+    row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
+    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am' if row['paycon_x]
+    return row
     
 @st.cache_data
 def load_data02():
