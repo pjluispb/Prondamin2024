@@ -8,8 +8,6 @@ def update_paycon(row):
     fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
     fmontoApagar = float(row['montoApagar']) if row['montoApagar'] not in ('-', None, '') else 0
     diferencia = fmontoPago - fmontoApagar
-    #st.toast('referencia ='+str(row['referenciaPago']))
-    
     if -10 <= diferencia <= 10:
         return 'SI'
     elif diferencia < -10:
@@ -19,8 +17,13 @@ def update_paycon(row):
     else:
         return row['paycon']  # Keep the original value if none of the conditions apply
 
-def update_paycon_y():
-    return 'update'
+def update_condicion(row):
+    condicion = 'Bloqueo en marca 01' if row['paycon'] in ['SI', 'SI++'] else '-'
+    return condicion
+    
+def update_paycon_y(row):
+    pay_y = row['paycon_x'] 
+    return pay_y
     
 @st.cache_data
 def load_data02():
