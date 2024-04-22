@@ -56,9 +56,10 @@ dfpronda = load_data02()           # Carga pronda
 #dfpronda
 #dfpronda2 = dfpronda[(dfpronda['condicion'].isnull()) | (dfpronda['condicion']!='Bloqueo en marca 01')]
 dfpronda2 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
-dfpronda2
+dfpronda2                            # aqui se muestran los registros donde condicion!='Bloqueo en marca 01'
+                                     # esto es, condicion==None o condicion=='-'
 dfpronda3 = dfpronda2[(dfpronda2['condicion']!='-')]
-dfpronda3
+dfpronda3                            # aqui se muestran los registros donde condicion==None
 conteo = dfpronda3['paycon'].value_counts()
 conteo
 conteo2 = dfpronda3['condicion'].value_counts()
