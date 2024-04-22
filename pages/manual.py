@@ -82,8 +82,13 @@ for nombre_lista, grupo in grupos:
     #except:
     #    'error grabando grupo',contador
     contador+=1
-    if contador<10: 
+    if contador<10:                #graba los primeros 10 grupos de 162
         reggrupo
+        try:
+            bdmarks.put_many(reggrupo)
+            'listo grupo ',str(contador)
+        except:
+            'error grabando grupo',contador
 #--------------------------------------------------------------------------
 
 if st.button("Clear All"):
