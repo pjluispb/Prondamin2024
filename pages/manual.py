@@ -51,6 +51,8 @@ def load_data03():
     return dfall_items
 
 
+#----------------------------------------------------------------------------------------------------------------------
+# generando una nueva marca de bloqueo
 Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
 #dfpronda
@@ -64,10 +66,6 @@ conteo = dfpronda3['paycon'].value_counts()
 conteo
 conteo2 = dfpronda3['condicion'].value_counts()
 conteo2
-
-dfmarks = load_data03()            # Carga marks
-dfmarks
-
 genmarca = st.button('Genera marca de bloqueo')
 if genmarca:
     'generando marca de bloqueo'
