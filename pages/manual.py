@@ -18,7 +18,7 @@ regmask = dfmask24.to_dict('records')
 
 cont=1
 for registro in regmask:
-	mask24.delete(registro)
+	mask24.delete(registro['key'])
 	cont+=1
 	'registro borrado ',str(cont)
 	
