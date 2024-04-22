@@ -60,7 +60,9 @@ dfmarcas = pd.DataFrame(marcas_items)
 
 'Pronda = ', Pronda
 'marks = ', dfmarcas 
-if 'corte-1' in marks.columns:
+#if 'value' in dfpronda.columns:
+#    'columna value existe en dfpronda'
+if 'corte-1' in dfmarks.columns:
     'corte-1 existe en marks'
 else:
     genm = st.button('Genera Marca 1')
