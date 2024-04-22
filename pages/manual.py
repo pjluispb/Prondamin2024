@@ -64,9 +64,9 @@ def load_data03():
 Prondamin24 = deta.Base('Prondamin2024C')
 dfpronda = load_data02()           # Carga pronda
 #dfpronda
-dfpronda2 = dfpronda[(dfpronda['condicion'].isnull())]
+dfpronda2 = dfpronda[(dfpronda['condicion'].isnull()) & (dfpronda['paycon'] in ['SI', 'SI++'])]
 dfpronda2
-# st.stop()
+st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
 
