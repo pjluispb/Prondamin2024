@@ -74,6 +74,7 @@ if genmarca:
     # genera nuevo campo/columna corte
     'generando nueva marca de bloqueo'
     cort_strings = [s for s in columnaspronda if s.startswith('corte-')]
+    cort_strings
     # Encontrar el último número existente
     numeros = [int(s[len(prefijo):]) for s in cort_strings]
     ultimo_numero = max(numeros) if numeros else 0
