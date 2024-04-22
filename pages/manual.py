@@ -60,7 +60,7 @@ dfpronda = load_data02()           # Carga pronda
 dfpronda1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
 #dfpronda1                            # aqui se muestran los registros donde condicion!='Bloqueo en marca 01'
                                      # esto es, condicion==None o condicion=='-'
-dfpronda2 = dfpronda1[(dfpronda1['condicion']!='Bloqueo en marca 02')]
+dfpronda2 = dfpronda1[(dfpronda1['condicion']!='Bloqueo en marca 2')]
 #dfpronda2                            # aqui se muestran los registros donde condicion!='Bloqueo en marca 02'
                                      # esto es, condicion==None o condicion=='-'
 dfpronda3 = dfpronda2[(dfpronda2['condicion']!='-')]
