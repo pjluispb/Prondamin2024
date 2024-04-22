@@ -18,7 +18,7 @@ def update_paycon(row):
         return row['paycon']  # Keep the original value if none of the conditions apply
 
 def update_condicion(row):
-    condicion = 'Bloqueo en marca 01' if row['paycon'] in ['SI', 'SI++'] else '-'
+    condicion = 'Bloqueo en marca 01' if row['paycon_y'] in ['SI', 'SI++'] else '-'
     return condicion
     
 def update_paycon_y(row):
@@ -55,7 +55,8 @@ dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
-dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon en dfpyd
+dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon_y en dfpyd
+dfpymarks['paycon_y'] = dfpymarks.apply(update_condicion, axis=1)                 # Actualiza condicion en dfpyd
 'dfpymarks con paycon_y actualizado', dfpymarks
 
 if st.button("Clear All"):
