@@ -81,8 +81,8 @@ if genm:
     for nombre_lista, grupo in grupos:
         st.write('Lista ', nombre_lista)
         grupo
-        gl = grupo.to_numpy()
-        gl
+        reggrupo = grupo.to_dict('records')
+        reggrupo
         #print(f"Lista {nombre_lista}:")
         #print(grupo)
     
