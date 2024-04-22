@@ -17,7 +17,7 @@ def load_data02():
 
 
 dfpronda = load_data02()
-dfpronda
+#dfpronda
 dfexo = dfpronda[dfpronda['value']=='exonerado']
 dfexo
 #dfpendiente = df2[df2['paycon']=='PENDIENTE']
