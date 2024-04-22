@@ -68,7 +68,12 @@ conteo2 = dfpronda3['condicion'].value_counts()
 conteo2
 genmarca = st.button('Genera marca de bloqueo')
 if genmarca:
-    'generando marca de bloqueo'
+    nueva_condicion = 'Bloqueo en marca 02'
+    columnaspronda = dfpronda3.columns()
+    nuevacondicion
+    columnaspronda
+    'generando nueva marca de bloqueo'
+    
 st.stop()
 #dfpronda = load_data02()           # Carga pronda
 ##dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
