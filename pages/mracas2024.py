@@ -81,6 +81,8 @@ if genm:
     for nombre_lista, grupo in grupos:
         st.write('Lista ', nombre_lista)
         grupo
+        gl = grupo.to_list()
+        gl
         #print(f"Lista {nombre_lista}:")
         #print(grupo)
     
