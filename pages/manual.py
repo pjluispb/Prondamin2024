@@ -81,7 +81,7 @@ if genmarca:
     # Generar el siguiente número consecutivo
     siguiente_numero = ultimo_numero + 1
     # Crear la nueva cadena con el prefijo y el número
-    nueva_columna = f"{prefijo}{siguiente_numero}"
+    nueva_columna = 'corte-'+str(siguiente_numero)
     # Agregar la nueva cadena a la lista
     # lista.append(nueva_cadena)
     # Configurar los valores de la nueva_columna, condicion y las viejas columnas(cort_strings)
