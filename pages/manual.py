@@ -25,7 +25,7 @@ def update_condicion(row):
 def update_paycon_y(row):
     row['paycon_y'] = row['paycon_x']
     row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
-    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am' if row['paycon_x]
+    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'
     return row
     
 @st.cache_data
