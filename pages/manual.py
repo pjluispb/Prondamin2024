@@ -59,6 +59,7 @@ dfpronda2
 conteo = dfpronda2['paycon'].value_counts()
 conteo
 conteo2 = dfpronda2['condicion'].value_counts()
+conteo2
 st.stop()
 dfmarks = load_data03()            # Carga marks
 dfmarks
