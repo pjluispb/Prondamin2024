@@ -22,7 +22,7 @@ def update_condicion(row):
     #row['condicion'] = vcondicion
     return row['condicion']
     
-def update_paycon_y(row):
+def update_columns(row):
     row['paycon_y'] = row['paycon_x']
     row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
     row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'
@@ -58,7 +58,8 @@ dfmarks
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
-dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon_y en dfpyd
+dfpymarks = dfpymarks.apply(update_columns, axis=1)
+#dfpymarks['paycon_y'] = dfpymarks.apply(update_paycon_y, axis=1)                  # Actualiza paycon_y en dfpyd
 #dfpymarks['paycon_y'] = dfpymarks.apply(update_condicion, axis=1)                 # Actualiza condicion en dfpyd
 'dfpymarks con paycon_y actualizado', dfpymarks
 
