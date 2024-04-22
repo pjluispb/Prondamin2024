@@ -66,7 +66,7 @@ dfpronda = load_data02()           # Carga pronda
 dfpronda
 dfmarks = load_data03()            # Carga marks
 dfmarks
-st.stop()
+# st.stop()
 dfpymarks = pd.merge(dfpronda, dfmarks, on='key', how='left')
 'dfpymarks = ', dfpymarks
 
