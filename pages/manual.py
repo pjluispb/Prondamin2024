@@ -53,7 +53,8 @@ def load_data03():
 
 
 dfpronda = load_data02()           # Carga pronda
-dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
+#dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
+dfprondabloq1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')
 dfprondabloq1
 conteo = dfprondabloq1['paycon'].value_counts()
 conteo
