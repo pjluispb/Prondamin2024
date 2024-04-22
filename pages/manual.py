@@ -64,14 +64,14 @@ conteo = dfpronda3['paycon'].value_counts()
 conteo
 conteo2 = dfpronda3['condicion'].value_counts()
 conteo2
-st.stop()
+
 dfmarks = load_data03()            # Carga marks
 dfmarks
 
 genmarca = st.button('Genera marca de bloqueo')
 if genmarca:
     'generando marca de bloqueo'
-
+st.stop()
 #dfpronda = load_data02()           # Carga pronda
 ##dfprondabloq1 = dfpronda[(dfpronda['condicion']=='Bloqueo en marca 01') & (dfpronda['value']=='exonerado') ]
 #dfprondabloq1 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
