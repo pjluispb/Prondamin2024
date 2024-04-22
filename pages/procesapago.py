@@ -67,13 +67,14 @@ Prondamin24 = deta.Base('Prondamin2024C')
 # dfPronda24
 
 # Carga el Pronda
-dfPronda24 = load_data02()
-dfPronda24
+dfPronda = load_data02()
 
 # limita los registros de Pronda donde buscara a solo aquellos que no hayan sido bloqueados
 # esto es, donde condicion==nulo o condicion=='-'
-
-
+dfPronda24 = dfpronda[(dfpronda['condicion']!='Bloqueo en marca 01')]
+dfPronda24            # aqui se muestran los registros donde condicion!='Bloqueo en marca 01'
+                      # esto es, condicion==None o condicion=='-'
+ 
 # Carga el DBanVerif2024 ...Datos Bancarios ya procesados
 DBanV24 = deta.Base('DBanVerif2024')
 DBanV24f = DBanV24.fetch().items
