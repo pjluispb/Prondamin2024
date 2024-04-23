@@ -33,7 +33,7 @@ def update_condicion(row):
 
 Pronda = load_data02()
 Pronda
-df1 = Pronda['corte-1'].isnull()
+df1 = Pronda[Pronda['corte-1'].isnull()]
 df1
 #df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
 #df1
