@@ -42,7 +42,7 @@ def update_condicion(row):
 #---------------------------------------------------------------------------------------------------------
 # Aqui se genera el df con los registros bloqueados inicialmente(corte-1 y corte-2 son no nulos)
 Pronda = load_data02()
-df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
+#df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
 df_filtrado = Pronda[Pronda['condicion'] in ('Bloqueo en marca 01', 'Bloqueo en marca 2')]
 selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 df_selected = df_filtrado[selected_columns]
