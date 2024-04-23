@@ -44,8 +44,8 @@ with st.form('Login Minec'):
                     elif buser[0]['tipou']=='Registrador':
                         #st.snow()
                         st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
-                        with st.spinner('Wait for it...'):
-                                time.sleep(8)
+                        with st.spinner('proceso de matriculación cerrado...saliendo...'):
+                                time.sleep(6)
                         st.switch_page('home2024.py')
                         with st.popover('cerrado'):
                             st.subheader('Proceso de Matriculación Prondamin2024 CERRADO')
