@@ -28,23 +28,30 @@ def update_condicion(row):
                 return 'Bloqueo en marca 2'
             else:
                 return 'Bloqueo en marca 3'
-    
+
 
 
 Pronda = load_data02()
-Pronda
-df1 = Pronda[Pronda['corte-1'].notnull()]
-df1
-st.write(df1['paycon'].value_counts())
-df2 = Pronda[Pronda['corte-2'].notnull()]
-df2
-st.write(df2['paycon'].value_counts())
 df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
 df_filtrado
 st.write(df_filtrado['paycon'].value_counts())
 
-#df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
+#---------------------------------------------------------------------------------------------
+#Pronda = load_data02()
+#Pronda
+#------modo 1 de mostrar solo cuando haya valor en corte-1 y corte-2---
+#df1 = Pronda[Pronda['corte-1'].notnull()]
 #df1
+#st.write(df1['paycon'].value_counts())
+#df2 = Pronda[Pronda['corte-2'].notnull()]
+#df2
+#st.write(df2['paycon'].value_counts())
+#-----modo 1 de mostrar solo cuando haya valor en corte-1 y corte-2-----
+#df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
+#df_filtrado
+#st.write(df_filtrado['paycon'].value_counts())
+#------------------------------------------------------------------------------------
+
 #-----------------------------------------------------
 # Pronda = load_data02()
 # Pronda
