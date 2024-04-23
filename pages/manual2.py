@@ -23,7 +23,7 @@ def update_condicion(row):
         return '-'
     else:
         if row['corte-1'] != '-':
-            if row['corte-1'].isna():
+            if row['corte-1'] is None:
                 return '-'
             else:
                 return 'Bloqueo en marca 01'
