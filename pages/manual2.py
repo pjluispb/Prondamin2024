@@ -23,7 +23,7 @@ def update_condicion(row):
         return '-'
     else:
         if row['corte-1'] != '-':
-            if row['corte-1'] == None:
+            if row['corte-1'] in ('-', None, ''):
                 return '-'
             else:
                 return 'Bloqueo en marca 01'
