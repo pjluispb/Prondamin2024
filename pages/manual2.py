@@ -33,6 +33,8 @@ def update_condicion(row):
 
 Pronda = load_data02()
 df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
+selected_columns = ['key', 'paycon', 'distrito', 'categoria', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']  # List of desired column names
+df_selected = df_filtrado[selected_columns]
 df_filtrado
 st.write(df_filtrado['paycon'].value_counts())
 
