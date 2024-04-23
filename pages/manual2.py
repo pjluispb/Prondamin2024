@@ -35,6 +35,8 @@ Pronda = load_data02()
 Pronda
 df1 = Pronda[Pronda['corte-1'].notnull()]
 df1
+df2 = Pronda[Pronda['corte-2'].notnull()]
+df2
 #df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
 #df1
 #-----------------------------------------------------
