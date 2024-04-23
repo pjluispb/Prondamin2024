@@ -38,8 +38,10 @@ df1
 st.write(df1['paycon'].value_counts())
 df2 = Pronda[Pronda['corte-2'].notnull()]
 df2
+st.write(df2['paycon'].value_counts())
 df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
 df_filtrado
+st.write(df_filtrado['paycon'].value_counts())
 
 #df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
 #df1
