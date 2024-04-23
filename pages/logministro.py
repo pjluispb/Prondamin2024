@@ -39,9 +39,9 @@ else:
     
     st.image(content)
     st.subheader('Hola '+first['nombre']+'  '+first['apellido'])
-
+    st.error('El proceso de matriculación de Prondamin2024 ha finalizado'
     vercertificados = st.toggle('Ver/Consultar Certificados')
-    actualizamin = st.toggle('Actualizar data y/o inscribir curso')
+    #actualizamin = st.toggle('Actualizar data y/o inscribir curso')
     st.session_state['cedulaministro'] = first['key']
     if vercertificados:
         st.switch_page('pages/certifi5.py')
