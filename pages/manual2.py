@@ -17,12 +17,17 @@ def load_data02():
 
 def update_condicion(row):
     'row : ', row
-    if row['corte-1'].find('SI')<0:
+    if row['paycon'] in ['NO', 'PENDIENTE', 'PENDIENTE X DIFERENCIA']:
         return '-'
-    if row['corte-2'].find('SI')<0:
-        return '-'
-    if row['corte-3'].find('SI')<0:
-        return '-'
+    else:
+        if row['corte-1'] != '-':
+            return 'Bloqueo en marca 01'
+        else:
+            if row['corte-2'] in ['SI', 'SI++']:
+                return 'Bloqueo en marca 2'
+            else:
+                return 'Bloqueo en marca 3'
+    
 
 
 Pronda = load_data02()
