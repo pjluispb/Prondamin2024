@@ -45,7 +45,7 @@ else:
     st.session_state['cedulaministro'] = first['key']
     if vercertificados:
         st.switch_page('pages/certifi5.py')
-    if actualizamin:
-        st.switch_page('pages/actualizar2024B.py')
-        'voy a actualizar'
+    #if actualizamin:
+    #    st.switch_page('pages/actualizar2024B.py')
+    #    'voy a actualizar'
 st.page_link("home2024.py", label="Inicio", icon="🏠")
