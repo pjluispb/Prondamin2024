@@ -52,7 +52,7 @@ df_filtrado = pd.concat([df_filtrado1, df_filtrado2], ignore_index=True)
 selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 df_selected = df_filtrado[selected_columns]
 #df_selected
-df_filtrado
+'df_filtrado = ', df_filtrado
 st.write(df_filtrado['paycon'].value_counts())
 
 df_complementario = Pronda.loc[~Pronda.index.isin(df_filtrado.index)]
