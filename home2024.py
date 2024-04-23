@@ -3,6 +3,7 @@ import streamlit as st
 
 #from deta import Deta
 from PIL import Image
+import time
 
 st.set_page_config(
     page_title="Minec Reg App",
@@ -28,5 +29,7 @@ uminec = ingresou.toggle(' $$ \large Usuario \,MINEC $$')
 if uminec:
     st.switch_page('pages/logmi.py')
 if uministro:
-    st.toast('Lo sentimos, el proceso de matriculación de Prondamin2024 ha finalizado')
-    #st.switch_page('pages/logministro.py')
+    st.toast('Aviso: el proceso de matriculación de Prondamin2024 ha finalizado')
+    with st.spinner('Matriculación Prondamin2024 cerrada):
+        time.sleep(5)
+    st.switch_page('pages/logministro.py')
