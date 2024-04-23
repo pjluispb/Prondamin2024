@@ -47,8 +47,8 @@ Pronda = load_data02()
 df_filtrado1 = Pronda[Pronda['condicion'] =='Bloqueo en marca 01']
 df_filtrado2 = Pronda[Pronda['condicion'] =='Bloqueo en marca 2']
 df_filtrado1
-df_filtrado1
-df_filtrado = pd.concat([df_filtrado1, df_filtrado1], ignore_index=True)
+df_filtrado2
+df_filtrado = pd.concat([df_filtrado1, df_filtrado2], ignore_index=True)
 selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 df_selected = df_filtrado[selected_columns]
 #df_selected
