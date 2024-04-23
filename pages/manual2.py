@@ -69,6 +69,11 @@ dfSI = pd.concat([dfsis, dfsim])
 'dfsi = ', dfSI
 st.write(dfSI['paycon'].value_counts())
 st.write(dfSI['condicion'].value_counts())
+dfnoSI = Pronda.loc[~Pronda.index.isin(dfSI.index)]
+'dfnoSI = ', dfnoSI
+st.write(dfnoSI['paycon'].value_counts())
+st.write(dfnoSI['condicion'].value_counts())
+
 #---------------------------------------------------------------------------------------------
 #Pronda = load_data02()
 #Pronda
