@@ -33,7 +33,7 @@ def update_condicion(row):
 
 
 Pronda = load_data02()
-Pronda
+# Pronda
 # Display specific columns
 selected_columns = ['key', 'paycon', 'condicion', 'corte-1', 'corte-2', 'corte-3', 'distrito']  # List of desired column names
 df_selected = Pronda[selected_columns]
