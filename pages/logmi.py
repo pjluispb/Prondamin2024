@@ -42,6 +42,10 @@ with st.form('Login Minec'):
                         st.switch_page('pages/admfin.py')
                     elif buser[0]['tipou']=='Registrador':
                         st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
+                        with st.popover('cerrado'):
+                            st.subheader('Proceso de Matriculación Prondamin2024 CERRADO')
+                            st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
+                            st.switch_page('home2024.py')
                     else:
                         switch_page('BienvenidaU2024')
                 else: st.write('Clave Inválida')
