@@ -16,7 +16,7 @@ def load_data02():
     return dfall_items
 
 def update_condicion(row):
-    'row : ', row
+    #'row : ', row
     if row['paycon'] in ['NO', 'PENDIENTE', 'PENDIENTE X DIFERENCIA']:
         return '-'
     else:
