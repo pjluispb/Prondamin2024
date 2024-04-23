@@ -16,14 +16,14 @@ def load_data02():
     return dfall_items
 
 def update_condicion(row):
-    #'row : ', row
+    'row : ', row
     #fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
     
     if row['paycon'] in ['NO', 'PENDIENTE', 'PENDIENTE X DIFERENCIA']:
         return '-'
     else:
         if row['corte-1'] != '-':
-            if row['corte-1'] is Null:
+            if row['corte-1'] is None:
                 return '-'
             else:
                 return 'Bloqueo en marca 01'
