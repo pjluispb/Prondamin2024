@@ -30,6 +30,6 @@ if uminec:
     st.switch_page('pages/logmi.py')
 if uministro:
     st.toast('Aviso: el proceso de matriculación de Prondamin2024 ha finalizado')
-    with st.spinner('Matriculación Prondamin2024 cerrada):
-        time.sleep(5)
+    #with st.spinner('Matriculación Prondamin2024 cerrada):
+    #    time.sleep(5)
     st.switch_page('pages/logministro.py')
