@@ -30,6 +30,11 @@ def update_condicion(row):
                 return 'Bloqueo en marca 3'
 
 
+
+
+autoriza = st.text_input('ingresa clave')
+if autoriza not in (5125570, 77777):
+    st.switch_page('home2024.py')
 #---------------------------------------------------------------------------------------------------------
 # Aqui se genera el df con los registros bloqueados inicialmente(corte-1 y corte-2 son no nulos)
 Pronda = load_data02()
