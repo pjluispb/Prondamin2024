@@ -33,11 +33,12 @@ def update_condicion(row):
 
 
 
-autoriza = st.text_input('ingresa clave')
-with st.spinner('...'):
-    time.sleep(5)
-if autoriza not in (5125570, 77777):
-    st.switch_page('home2024.py')
+#autoriza = st.text_input('ingresa clave')
+#with st.spinner('...'):
+#    time.sleep(5)
+#if autoriza not in (5125570, 77777):
+#    st.switch_page('home2024.py')
+
 #---------------------------------------------------------------------------------------------------------
 # Aqui se genera el df con los registros bloqueados inicialmente(corte-1 y corte-2 son no nulos)
 Pronda = load_data02()
