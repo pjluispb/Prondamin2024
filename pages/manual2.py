@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from deta import Deta
+import time
 
 deta = Deta(st.secrets["deta_key"])
 
@@ -33,6 +34,8 @@ def update_condicion(row):
 
 
 autoriza = st.text_input('ingresa clave')
+with st.spinner('...'):
+    time.sleep(5)
 if autoriza not in (5125570, 77777):
     st.switch_page('home2024.py')
 #---------------------------------------------------------------------------------------------------------
