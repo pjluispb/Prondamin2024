@@ -77,6 +77,13 @@ dfPronda = load_data02()
                       # esto es, condicion==None o condicion=='-'
 #============================================================================================= 
 
+# limita los registros de PRONDA donde buscara solo aquellos cuyo paycon no sea igual a SI o SI++
+dfsis = Pronda[Pronda['paycon'] == 'SI']
+dfsim = Pronda[Pronda['paycon'] == 'SI++']
+dfSI = pd.concat([dfsis, dfsim])
+dfnoSI = Pronda.loc[~Pronda.index.isin(dfSI.index)]
+dfPronda24 = dfnoSI
+#==============================================================================================
 
 # Carga el DBanVerif2024 ...Datos Bancarios ya procesados
 DBanV24 = deta.Base('DBanVerif2024')
