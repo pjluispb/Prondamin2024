@@ -32,14 +32,18 @@ def update_condicion(row):
 
 
 Pronda = load_data02()
+df1 = Pronda[Pronda['corte-1'] not in ['-', None, '']
+df1
+#-----------------------------------------------------
+# Pronda = load_data02()
 # Pronda
 # Display specific columns
-selected_columns = ['key', 'paycon', 'condicion', 'corte-1', 'corte-2', 'corte-3', 'distrito']  # List of desired column names
-df_selected = Pronda[selected_columns]
-df_selected
-df_selected['condicion'] = df_selected.apply(update_condicion, axis=1)
-df_selected
-st.stop()
+# selected_columns = ['key', 'paycon', 'condicion', 'corte-1', 'corte-2', 'corte-3', 'distrito']  # List of desired column names
+# df_selected = Pronda[selected_columns]
+# df_selected
+# df_selected['condicion'] = df_selected.apply(update_condicion, axis=1)
+# df_selected
+# st.stop()
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
 #Pronda = deta.Base('Prondamin2024C')
