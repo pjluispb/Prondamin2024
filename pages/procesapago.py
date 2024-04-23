@@ -204,6 +204,7 @@ if uploaded_file is not None:
         dfpyd['corte-2'] = dfpyd['corte-2'].fillna('-')                         # Coloca corte-2 = '-' cuando valga None
         dfpyd['corte-3'] = dfpyd['corte-3'].fillna('-')                         # Coloca corte-3 = '-' cuando valga None
         dfpyd['condicion'] = dfpyd['condicion'].fillna('-')                     # Coloca condicion = '-' cuando valga None
+        dfpyd['lista'] = dfpyd['lista'].fillna('-')                             # Coloca lista = '-' cuando valga None
         dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                       # Coloca close = True si paycon = SI
         dfpyd.loc[dfpyd['paycon']=='SI++', 'close'] = False                    # Coloca close = False si paycon = SI++
         dfpyd.loc[dfpyd['paycon']=='PENDIENTE X DIFERENCIA', 'close'] = False  # Coloca close = False si paycon = PENDIENTE X DIFERENCIA
