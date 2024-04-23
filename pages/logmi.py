@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from deta import Deta
 from PIL import Image
+import time
 
 deta = Deta(st.secrets["deta_key"])
 accesos = deta.Base('minec-accesos')
@@ -45,6 +46,8 @@ with st.form('Login Minec'):
                         with st.popover('cerrado'):
                             st.subheader('Proceso de Matriculación Prondamin2024 CERRADO')
                             st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
+                            with st.spinner('Wait for it...'):
+                                time.sleep(8)
                             st.switch_page('home2024.py')
                     else:
                         switch_page('BienvenidaU2024')
