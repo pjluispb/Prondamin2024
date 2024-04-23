@@ -45,12 +45,14 @@ Pronda = load_data02()
 df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
 selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 df_selected = df_filtrado[selected_columns]
-df_selected
+#df_selected
+df_filtrado
 st.write(df_filtrado['paycon'].value_counts())
 
 df_complementario = Pronda.loc[~Pronda.index.isin(df_filtrado.index)]
 df_complement_selected = df_complementario[selected_columns]
-df_complement_selected
+#df_complement_selected
+df_complementario
 st.write(df_complementario['paycon'].value_counts())
 
 #---------------------------------------------------------------------------------------------
