@@ -42,7 +42,7 @@ with st.form('Login Minec'):
                     if buser[0]['tipou']=='Registrador Financiero':
                         st.switch_page('pages/admfin.py')
                     elif buser[0]['tipou']=='Registrador':
-                        st.snow()
+                        #st.snow()
                         st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
                         with st.spinner('Wait for it...'):
                                 time.sleep(8)
