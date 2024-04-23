@@ -32,8 +32,9 @@ def update_condicion(row):
 
 
 Pronda = load_data02()
-df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
-df1
+Pronda
+#df1 = Pronda[Pronda['corte-1'] not in ('-', None, '')]
+#df1
 #-----------------------------------------------------
 # Pronda = load_data02()
 # Pronda
