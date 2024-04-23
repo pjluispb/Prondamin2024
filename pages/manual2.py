@@ -67,7 +67,8 @@ dfsis = Pronda[Pronda['paycon'] == 'SI']
 dfsim = Pronda[Pronda['paycon'] == 'SI++']
 dfSI = pd.concat([dfsis, dfsim])
 'dfsi = ', dfSI
-
+st.write(df_SI['paycon'].value_counts())
+st.write(df_SI['condicion'].value_counts())
 #---------------------------------------------------------------------------------------------
 #Pronda = load_data02()
 #Pronda
