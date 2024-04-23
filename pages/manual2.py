@@ -59,7 +59,7 @@ st.write(df_filtrado['condicion'].value_counts())
 df_complementario = Pronda.loc[~Pronda.index.isin(df_filtrado.index)]
 df_complement_selected = df_complementario[selected_columns]
 #df_complement_selected
-df_complementario
+'df_complementario = ', df_complementario
 st.write(df_complementario['paycon'].value_counts())
 st.write(df_complementario['condicion'].value_counts())
 '---'
