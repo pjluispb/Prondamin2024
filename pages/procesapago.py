@@ -78,10 +78,10 @@ dfPronda = load_data02()
 #============================================================================================= 
 
 # limita los registros de PRONDA donde buscara solo aquellos cuyo paycon no sea igual a SI o SI++
-dfsis = dfPronda[Pronda['paycon'] == 'SI']
-dfsim = dfPronda[Pronda['paycon'] == 'SI++']
+dfsis = dfPronda[dfPronda['paycon'] == 'SI']
+dfsim = dfPronda[dfPronda['paycon'] == 'SI++']
 dfSI = pd.concat([dfsis, dfsim])
-dfnoSI = Pronda.loc[~Pronda.index.isin(dfSI.index)]
+dfnoSI = Pronda.loc[~dfPronda.index.isin(dfSI.index)]
 dfPronda24 = dfnoSI
 #==============================================================================================
 
