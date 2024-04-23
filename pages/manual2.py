@@ -35,7 +35,7 @@ Pronda = load_data02()
 Pronda
 df1 = Pronda[Pronda['corte-1'].notnull()]
 df1
-df1['paycon'].value_counts()
+st.write(df1['paycon'].value_counts())
 df2 = Pronda[Pronda['corte-2'].notnull()]
 df2
 df_filtrado = Pronda.dropna(subset=["corte-1", "corte-2"], thresh=2)
