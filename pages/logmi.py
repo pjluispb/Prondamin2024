@@ -40,6 +40,8 @@ with st.form('Login Minec'):
                     st.write(logina)
                     if buser[0]['tipou']=='Registrador Financiero':
                         st.switch_page('pages/admfin.py')
+                    elif buser[0]['tipou']=='Registrador':
+                        st.toast('El proceso de matriculación Prondamin2024 ha finalizado')
                     else:
                         switch_page('BienvenidaU2024')
                 else: st.write('Clave Inválida')
