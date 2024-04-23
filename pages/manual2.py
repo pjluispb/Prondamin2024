@@ -18,7 +18,6 @@ def load_data02():
 def update_condicion(row):
     #'row : ', row
     #fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
-    
     if row['paycon'] in ['NO', 'PENDIENTE', 'PENDIENTE X DIFERENCIA']:
         return '-'
     else:
@@ -38,8 +37,8 @@ Pronda = load_data02()
 selected_columns = ['key', 'paycon', 'condicion', 'corte-1', 'corte-2', 'corte-3', 'distrito']  # List of desired column names
 df_selected = Pronda[selected_columns]
 df_selected
-#df_selected['condicion'] = df_selected.apply(update_condicion, axis=1)
-#df_selected
+df_selected['condicion'] = df_selected.apply(update_condicion, axis=1)
+df_selected
 st.stop()
 #--------------------------------------------------
 # para eliminar(1ro) y luego crear(put) registros en Pronda
