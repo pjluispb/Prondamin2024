@@ -200,9 +200,9 @@ if uploaded_file is not None:
         dfpyd['curso'] = dfpyd['curso'].fillna('-')                           # Coloca curso = '-' cuando valga None
         dfpyd['Categoría Actual'] = dfpyd['Categoría Actual'].fillna('-')     # Coloca Categoría Actual = '-' cuando valga None
         dfpyd['Cédula'] = dfpyd['Cédula'].fillna('-')                         # Coloca Cédula = '-' cuando valga None
-        dfpyd['Cédula'] = dfpyd['corte-1'].fillna('-')                         # Coloca corte-1 = '-' cuando valga None
-        dfpyd['Cédula'] = dfpyd['corte-2'].fillna('-')                         # Coloca corte-2 = '-' cuando valga None
-        dfpyd['Cédula'] = dfpyd['corte-3'].fillna('-')                         # Coloca corte-3 = '-' cuando valga None
+        dfpyd['corte-1'] = dfpyd['corte-1'].fillna('-')                         # Coloca corte-1 = '-' cuando valga None
+        dfpyd['corte-2'] = dfpyd['corte-2'].fillna('-')                         # Coloca corte-2 = '-' cuando valga None
+        dfpyd['corte-3'] = dfpyd['corte-3'].fillna('-')                         # Coloca corte-3 = '-' cuando valga None
         dfpyd.loc[dfpyd['paycon']=='SI', 'close'] = True                       # Coloca close = True si paycon = SI
         dfpyd.loc[dfpyd['paycon']=='SI++', 'close'] = False                    # Coloca close = False si paycon = SI++
         dfpyd.loc[dfpyd['paycon']=='PENDIENTE X DIFERENCIA', 'close'] = False  # Coloca close = False si paycon = PENDIENTE X DIFERENCIA
