@@ -17,13 +17,16 @@ def load_data02():
 
 def update_condicion(row):
     #'row : ', row
+    #fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
+    if row['corte-1'] == None:
+        return '-'
     if row['paycon'] in ['NO', 'PENDIENTE', 'PENDIENTE X DIFERENCIA']:
         return '-'
     else:
         if row['corte-1'] != '-':
             return 'Bloqueo en marca 01'
         else:
-            if row['corte-2'] in ['SI', 'SI++']:
+            if row['corte-2'].find('SI')>0:
                 return 'Bloqueo en marca 2'
             else:
                 return 'Bloqueo en marca 3'
