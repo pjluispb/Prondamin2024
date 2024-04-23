@@ -29,7 +29,7 @@ uminec = ingresou.toggle(' $$ \large Usuario \,MINEC $$')
 if uminec:
     st.switch_page('pages/logmi.py')
 if uministro:
-    st.toast('$$ \large Proceso\, de\, matriculación\, \\newline Prondamin2024\, finalizado $$')
+    st.toast('$$ \large Proceso\, de\, matriculación\, \\newline Prondamin2024\, CERRADO $$')
     with st.spinner('proceso de matriculación cerrado...'):
         time.sleep(5)
     st.switch_page('pages/logministro.py')
