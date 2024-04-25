@@ -1,4 +1,8 @@
-
+import streamlit as st
+import pandas as pd
+from deta import Deta
+from PIL import Image
+import time
 
 
 
