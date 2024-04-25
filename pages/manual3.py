@@ -24,3 +24,6 @@ dfsim = dfPronda[dfPronda['paycon'] == 'SI++']
 dfSI = pd.concat([dfsis, dfsim])
 dfnoSI = dfPronda.loc[~dfPronda.index.isin(dfSI.index)]
 dfPronda24 = dfnoSI
+dfnoSI
+st.write(dfnoSI['paycon'].value_counts())
+
