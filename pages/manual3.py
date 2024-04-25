@@ -17,6 +17,8 @@ def load_data02():
     dfall_items = pd.DataFrame(all_items)
     return dfall_items
 
+
+dfPronda = load_data02()
 dfsis = dfPronda[dfPronda['paycon'] == 'SI']
 dfsim = dfPronda[dfPronda['paycon'] == 'SI++']
 dfSI = pd.concat([dfsis, dfsim])
