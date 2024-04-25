@@ -4,6 +4,8 @@ from deta import Deta
 from PIL import Image
 import time
 
+deta = Deta(st.secrets["deta_key"])
+
 @st.cache_data
 def load_data02():
     Pronda24 = deta.Base('Prondamin2024C')
