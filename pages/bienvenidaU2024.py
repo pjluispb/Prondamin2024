@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from deta import Deta
 from PIL import Image
+import time
 
 imagen1 = Image.open('minecLogo.jpeg')
 imagen2 = Image.open('minecLogoTitle.jpeg')
@@ -20,11 +21,14 @@ if logina['tipou']=='Registrador Especial':
     st.write('Eres _Representante de Minec_ para todos los distritos')
 else:
     st.write('Eres  _Representante de MINEC_ para el distrito ****' + logina['Distrito'] + '**** y por eso puedes ver la data del distrito y actualizar algunos registros')
+    
 st.subheader('Que deseas hacer?')
 if logina['tipou']=='Registrador Especial':
     acciones = ['VER DATA', 'ACTUALIZAR', 'REGISTRAR' ]
 else:
     #acciones = ['VER DATA', 'ACTUALIZAR' ]
+    with st.spinner('El proceso de matriculación para Prondamin2024 ha finalizado...'):
+        time.sleep(5)
     acciones = ['VER DATA']
 st.write('Seleccionar Acción')
 selector = st.radio('****Seleccionar Acción****', acciones, horizontal=True, label_visibility='collapsed', index=None)
