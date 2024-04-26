@@ -28,9 +28,14 @@ dfnoSI
 st.write(dfnoSI['paycon'].value_counts())
 dfnoSIPend = dfnoSI[dfnoSI['paycon']=='PENDIENTE']
 dfnoSIPXD = dfnoSI[dfnoSI['paycon']=='PENDIENTE X DIFERENCIA']
-dfnoSIPend
+#dfnoSIPend
+selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
+dfnoSIPend_selected = dfnoSIPend[selected_columns]
+dfnoSIPend_selected
 st.write(dfnoSIPend['paycon'].value_counts())
-dfnoSIPXD 
+#dfnoSIPXD 
+dfnoSIPXD_selected = dfnoSIPXD[selected_columns]
+dfnoSIPXD_selected
 st.write(dfnoSIPXD['paycon'].value_counts())
 
 
