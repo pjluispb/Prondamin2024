@@ -24,7 +24,8 @@ st.subheader('Que deseas hacer?')
 if logina['tipou']=='Registrador Especial':
     acciones = ['VER DATA', 'ACTUALIZAR', 'REGISTRAR' ]
 else:
-    acciones = ['VER DATA', 'ACTUALIZAR' ]
+    #acciones = ['VER DATA', 'ACTUALIZAR' ]
+    acciones = ['VER DATA']
 st.write('Seleccionar Acción')
 selector = st.radio('****Seleccionar Acción****', acciones, horizontal=True, label_visibility='collapsed', index=None)
 #st.write(selector)
