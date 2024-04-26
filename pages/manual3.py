@@ -26,4 +26,11 @@ dfnoSI = dfPronda.loc[~dfPronda.index.isin(dfSI.index)]
 dfPronda24 = dfnoSI
 dfnoSI
 st.write(dfnoSI['paycon'].value_counts())
+dfnoSIPend = dfnoSI[dfnoSI['paycon']=='PENDIENTE']
+dfnoSIPXD = dfnoSI[dfnoSI['paycon']=='PENDIENTE X DIFERENCIA']
+dfnoSIPend
+st.write(dfnoSIPend['paycon'].value_counts())
+dfnoSIPXD 
+st.write(dfnoSIPXD['paycon'].value_counts())
+
 
