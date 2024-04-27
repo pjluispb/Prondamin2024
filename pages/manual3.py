@@ -28,8 +28,11 @@ dfLaraSC
 st.write(dfLaraSC['paycon'].value_counts())
 #----------Listado de calificaciones de Lara----------------------------
 uploaded_file = st.file_uploader("Subir archivo CSV", type=["csv"])  
-if uploaded_file not Null:
-    'subi uploader_file'
+if uploaded_file is not None:
+    # Lee el archivo CSV en un DataFrame
+    df = pd.read_csv(uploaded_file) 
+    df
+    
     
 
 
