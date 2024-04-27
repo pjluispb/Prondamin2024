@@ -24,6 +24,7 @@ dfLara = dfPronda[dfPronda['distrito']=='Lara']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 dfLaraSC = dfLara[sel_col]
 dfLaraSC
+st.write(dfLaraSC['paycon'].value_counts())
 
 
 #=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
