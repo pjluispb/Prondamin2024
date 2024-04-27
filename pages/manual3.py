@@ -23,7 +23,8 @@ dfPronda = load_data02()
 dfLara = dfPronda[dfPronda['distrito']=='Lara']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 dfLaraSC = dfLara[sel_col]
-dfLara
+dfLaraSC
+
 
 #=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
 #dfPronda = load_data02()
