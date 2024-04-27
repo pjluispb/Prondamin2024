@@ -20,7 +20,8 @@ def load_data02():
 
 #----------Lista de Lara--------------------
 dfPronda = load_data02()
-dfLara = dfPronda[dfPronda['distrito']=='Lara']
+dfLara1 = dfPronda[dfPronda['distrito']=='Lara']
+dfLara = dfLara1[dfLara1['paycon']!='NO']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 dfLaraSC = dfLara[sel_col]
 dfLaraSC
