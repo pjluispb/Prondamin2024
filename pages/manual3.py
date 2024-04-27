@@ -18,24 +18,32 @@ def load_data02():
     return dfall_items
 
 
+#----------Lista de Lara--------------------
 dfPronda = load_data02()
-dfsis = dfPronda[dfPronda['paycon'] == 'SI']
-dfsim = dfPronda[dfPronda['paycon'] == 'SI++']
-dfSI = pd.concat([dfsis, dfsim])
-dfnoSI = dfPronda.loc[~dfPronda.index.isin(dfSI.index)]
-dfPronda24 = dfnoSI
-dfnoSI
-st.write(dfnoSI['paycon'].value_counts())
-dfnoSIPend = dfnoSI[dfnoSI['paycon']=='PENDIENTE']
-dfnoSIPXD = dfnoSI[dfnoSI['paycon']=='PENDIENTE X DIFERENCIA']
-#dfnoSIPend
-selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
-dfnoSIPend_selected = dfnoSIPend[selected_columns]
-dfnoSIPend_selected
-st.write(dfnoSIPend['paycon'].value_counts())
-#dfnoSIPXD 
-dfnoSIPXD_selected = dfnoSIPXD[selected_columns]
-dfnoSIPXD_selected
-st.write(dfnoSIPXD['paycon'].value_counts())
+dfLara = dfPronda[dfPronda['distrito']=='Lara']
+sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
+dfLaraSC = dfLara[sel_col]
+dfLara
 
+#=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
+#dfPronda = load_data02()
+#dfsis = dfPronda[dfPronda['paycon'] == 'SI']
+#dfsim = dfPronda[dfPronda['paycon'] == 'SI++']
+#dfSI = pd.concat([dfsis, dfsim])
+#dfnoSI = dfPronda.loc[~dfPronda.index.isin(dfSI.index)]
+#dfPronda24 = dfnoSI
+#dfnoSI
+#st.write(dfnoSI['paycon'].value_counts())
+#dfnoSIPend = dfnoSI[dfnoSI['paycon']=='PENDIENTE']
+#dfnoSIPXD = dfnoSI[dfnoSI['paycon']=='PENDIENTE X DIFERENCIA']
+#dfnoSIPend
+#selected_columns = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
+#dfnoSIPend_selected = dfnoSIPend[selected_columns]
+#dfnoSIPend_selected
+#st.write(dfnoSIPend['paycon'].value_counts())
+#dfnoSIPXD 
+#dfnoSIPXD_selected = dfnoSIPXD[selected_columns]
+#dfnoSIPXD_selected
+#st.write(dfnoSIPXD['paycon'].value_counts())
+#==============================================================================================================
 
