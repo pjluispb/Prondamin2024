@@ -32,6 +32,7 @@ if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
     df = pd.read_csv(uploaded_file) 
     df
+    st.write(df['].value_counts('test01'))
 '---'    
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
 #dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
