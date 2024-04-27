@@ -21,7 +21,7 @@ def load_data02():
 #----------Lista Pronda paycon=NO--------------------------------------------------
 dfPronda = load_data02()
 'pronda = ', dfPronda
-dfdfProndanno = dfLara1[dfLara1['paycon']!='NO']
+dfdfProndanno = dfPronda[dfPronda['paycon']!='NO']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 dfProndaSC = dfdfProndanno[sel_col]
 dfProndaSC['emails'] = dfProndaSC['emails'].apply(lambda x: str(x[0]) if x else '')
