@@ -18,16 +18,15 @@ def load_data02():
     return dfall_items
 
 
-#----------Lista de Lara--------------------------------------------------
+#----------Lista Pronda paycon=NO--------------------------------------------------
 dfPronda = load_data02()
 'pronda = ', dfPronda
-dfLara1 = dfPronda[dfPronda['distrito']=='Lara']
-dfLara = dfLara1[dfLara1['paycon']!='NO']
+dfdfProndanno = dfLara1[dfLara1['paycon']!='NO']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
-dfLaraSC = dfLara[sel_col]
-dfLaraSC['emails'] = dfLaraSC['emails'].apply(lambda x: str(x[0]) if x else '')
-dfLaraSC
-st.write(dfLaraSC['paycon'].value_counts())
+dfProndaSC = dfdfProndanno[sel_col]
+dfProndaSC['emails'] = dfProndaSC['emails'].apply(lambda x: str(x[0]) if x else '')
+dfProndaSC
+st.write(dfProndaSC['paycon'].value_counts())
 #----------Listado de calificaciones de Lara----------------------------
 uploaded_file = st.file_uploader("Subir archivo CSV", type=["csv"])  
 if uploaded_file is not None:
@@ -40,7 +39,7 @@ if uploaded_file is not None:
 #dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
 #result = pd.merge(df, dfLaraSC, on='emails', how='left')
 #result = pd.merge(dfLaraSC, df, on='emails', how='left')
-result = pd.merge(dfLaraSC, df, left_on=['emails'], right_on=['emails'])
+result = pd.merge(dfProndaSC, df, left_on=['emails'], right_on=['emails'])
 'result = ', result
 st.write(result['test01'].value_counts())
 
