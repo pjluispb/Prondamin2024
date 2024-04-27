@@ -39,7 +39,7 @@ if uploaded_file is not None:
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
 #dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
 #result = pd.merge(df, dfLaraSC, on='emails', how='left')
-result = pd.merge(dfProndaSC, df, on='emails', how='left')
+result = pd.merge( df, dfProndaSC, on='emails', how='left')
 #result = pd.merge(dfProndaSC, df, left_on=['emails'], right_on=['emails'])
 'result = ', result
 st.write(result['test01'].value_counts())
