@@ -42,7 +42,7 @@ if uploaded_file is not None:
 result = pd.merge( df, dfProndaSC, on='emails', how='left')
 #result = pd.merge(dfProndaSC, df, left_on=['emails'], right_on=['emails'])
 'result = ', result
-st.write(result['test01'].value_counts())
+#st.write(result['test01'].value_counts())
 
 #=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
 #dfPronda = load_data02()
