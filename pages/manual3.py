@@ -18,7 +18,7 @@ def load_data02():
     return dfall_items
 
 
-#----------Lista de Lara--------------------
+#----------Lista de Lara--------------------------------------------------
 dfPronda = load_data02()
 dfLara1 = dfPronda[dfPronda['distrito']=='Lara']
 dfLara = dfLara1[dfLara1['paycon']!='NO']
@@ -26,6 +26,8 @@ sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'ema
 dfLaraSC = dfLara[sel_col]
 dfLaraSC
 st.write(dfLaraSC['paycon'].value_counts())
+#----------Listado de calificaciones de Lara----------------------------
+
 
 
 #=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
