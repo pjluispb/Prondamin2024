@@ -24,6 +24,7 @@ dfLara1 = dfPronda[dfPronda['distrito']=='Lara']
 dfLara = dfLara1[dfLara1['paycon']!='NO']
 sel_col = ['key', 'paycon', 'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'modalidad', 'referenciaPago']         # List of desired column names
 dfLaraSC = dfLara[sel_col]
+dfLaraSC['emails'] = dfLaraSC['emails'].apply(lambda x: str(x[0]) if x else '')
 dfLaraSC
 st.write(dfLaraSC['paycon'].value_counts())
 #----------Listado de calificaciones de Lara----------------------------
@@ -37,6 +38,7 @@ if uploaded_file is not None:
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
 #dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
 result = pd.merge(dfLaraSC, df, on='nombre', how='left')
+#result = pd.merge(dfLaraSC, df, on=
 #result = pd.merge(dfLaraSC, df, left_on=['nombre', 'apellido'], right_on=['nombre', 'apellido'])
 'result = ', result
 st.write(result['test01'].value_counts())
