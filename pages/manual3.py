@@ -33,6 +33,7 @@ if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
     df = pd.read_csv(uploaded_file) 
     df
+    df.rename(columns={'Dirección de correo': 'emails'}, inplace=True)
     #st.write(df['test01'].value_counts())
 '---'    
 #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
