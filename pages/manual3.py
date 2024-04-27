@@ -32,9 +32,11 @@ if uploaded_file is not None:
     # Lee el archivo CSV en un DataFrame
     df = pd.read_csv(uploaded_file) 
     df
-    
- #dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
-
+'---'    
+#dfpyd = pd.merge(dfPronda24_ref, DatBanVerif, on='referenciaPago', how='left')   # Mezcla Pronda y DatBanVerif   
+#dfpymarks = pd.merge(dfpronda2, dfmarks, on='key', how='left')
+result = pd.merge(dfLaraSC, df, left_on=['nombre', 'apellido'], right_on=['nombre', 'apellido'])
+'result = ', result
 
 
 #=======Genera la lista de los matriculados con Pendiente y Pendiente por diferncia============================
