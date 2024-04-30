@@ -78,7 +78,40 @@ dfProndaSC['value'] = dfProndaSC['value'].fillna('-')
 '---'
 'dfProndaSC = ', dfProndaSC
 '---'
-regPronda = dfProndaSC.to_dict('records')
-regPronda
+#regPronda = dfProndaSC.to_dict('records')
+#regPronda
 
+dfProndaSC.drop(columns = ['lista'], inplace=True )
+dfProndaSC
+# para grabar en la bd en grupos de 20 registros a la vez
+num_registros_por_lista = 20
+' dfProndaSC.index = ', dfProndaSC.index
+
+# Crea una columna que represente el número de lista para cada registro
+dfProndaSC['lista'] = dfProndaSC.index // num_registros_por_lista
+dfProndaSC['lista']
+dfProndaSC['lista'].value_counts()
+
+# Divide el DataFrame en grupos basados en la columna 'lista'
+grupos = dfProndaSC.groupby('lista')                                          # Ahora puedes acceder a cada grupo individualmente
+#grupos
+
+contador = 1
+for nombre_lista, grupo in grupos:
+    st.write('Lista ', nombre_lista, contador)
+    grupo
+    reggrupo = grupo.to_dict('records')
+    
+    if contador < 200:               
+        reggrupo
+        #try:
+        #    Prondamin24.put_many(reggrupo)
+        #    'listo grupo ',str(contador)
+        #except:
+        #    'error grabando grupo',contador
+        #    reggrupo
+        #    st.stop()
+    else: st.stop()
+    contador+=1
+#-------------------------------
 
