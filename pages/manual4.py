@@ -62,6 +62,7 @@ dfProndaSC['telefFormat'] = dfProndaSC['teléfonos']
 dfProndaSC['telefFormat'] = dfProndaSC['telefFormat'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
 dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
+dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['telefFormat'].value_counts())
 
