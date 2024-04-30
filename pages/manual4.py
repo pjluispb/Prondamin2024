@@ -18,7 +18,7 @@ def load_data02():
     return dfall_items
 
 def formatelf(row):
-    digitos = re.sub(r'\D', '', str(row['telefFormat']))
+    digitos = re.sub(r'\D', '', str(row['notifitelf']))
     newt = digitos
     if digitos=='': newt = '-'
     if digitos == '0416': newt = '-'
