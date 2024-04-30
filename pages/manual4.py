@@ -50,6 +50,9 @@ def formatelf(row):
         newt = '+'+digitos[:3]+' - '+digitos[3:6]+' - '+digitos[6:]
     if digitos.startswith('212'):
         newt = '+'+digitos[:3]+' - '+digitos[3:6]+' - '+digitos[6:]
+    if digitos.startswith('1'):
+        if len(digitos)==11:
+            newt = '+1'+' - '+digitos[1:4]+' - '+digitos[4:7]+' - '+digitos[7:]
     return newt
     
 
