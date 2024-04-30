@@ -21,7 +21,7 @@ def formatelf(row):
     #'row : ', row
     #fmontoPago = float(row['montoPago']) if row['montoPago'] not in ('-', None, '') else 0
     digitos = re.sub(r'\D', '', str(row['teléfonos']))
-    newt = 'digitos'
+    newt = digitos
     if digitos == '0416': newt = '-'
     return newt
     #if row['teléfonos'].startswith('-0'):
