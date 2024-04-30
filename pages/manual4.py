@@ -56,7 +56,7 @@ def formatelf(row):
 
 Pronda = load_data02()
 
-sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos']         # List of desired column names
+sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 dfProndaSC = Pronda[sel_col]
 #dfProndaSC['teléfonos'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
