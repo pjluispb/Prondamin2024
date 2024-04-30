@@ -24,6 +24,7 @@ sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos']         # Li
 dfProndaSC = Pronda[sel_col]
 dfProndaSC['teléfonos'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['telefFormat'] = '-'
+dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['teléfonos'].value_counts())
 
