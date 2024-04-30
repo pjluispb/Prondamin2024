@@ -75,7 +75,9 @@ dfProndaSC['corte-3'] = dfProndaSC['corte-3'].fillna('-')
 dfProndaSC['curso'] = dfProndaSC['curso'].fillna('-')
 dfProndaSC['lista'] = dfProndaSC['lista'].fillna('-')
 dfProndaSC['value'] = dfProndaSC['value'].fillna('-')
-
+'---'
+'dfProndaSC = ', dfProndaSC
+'---'
 regPronda = dfProndaSC.to_dict('records')
 regPronda
 
