@@ -60,7 +60,7 @@ sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']   
 dfProndaSC = Pronda[sel_col]
 dfProndaSC['teléfonos'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
-dfProndaSC['teléfonos'] = dfProndaSC.apply(formatelf, axis=1)
+#dfProndaSC['teléfonos'] = dfProndaSC.apply(formatelf, axis=1)
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['teléfonos'].value_counts())
 
