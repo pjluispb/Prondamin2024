@@ -36,5 +36,5 @@ dfProndaSC['teléfonos'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if
 dfProndaSC['telefFormat'] = '-'
 dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
 'pronda = ', dfProndaSC
-st.write(dfProndaSC['teléfonos'].value_counts())
+st.write(dfProndaSC['telefFormat'].value_counts())
 
