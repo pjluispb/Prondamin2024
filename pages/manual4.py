@@ -63,7 +63,7 @@ dfProndaSC = Pronda
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
-dfProndaSC['xval'] = '***'
+#dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['notifitelf'].value_counts())
 
