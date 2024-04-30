@@ -34,6 +34,20 @@ def formatelf(row):
         newt = digitos[:4]+' - '+digitos[4:]
     if digitos.startswith('58'):
         newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('59'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('57'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('56'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('54'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('51'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('34'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
+    if digitos.startswith('35'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
     return newt
     
 
