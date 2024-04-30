@@ -59,10 +59,10 @@ Pronda = load_data02()
 sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 dfProndaSC = Pronda[sel_col]
 #dfProndaSC['telefFormat'] = dfProndaSC['teléfonos']
-dfProndaSC['telefFormat'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
+dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
-dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
+dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
-st.write(dfProndaSC['telefFormat'].value_counts())
+st.write(dfProndaSC['notifitelf'].value_counts())
 
