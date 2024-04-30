@@ -32,11 +32,9 @@ def formatelf(row):
             newt = '0'+digitos[0:3]+' - '+digitos[3:10]
     if digitos.startswith('02'):
         newt = digitos[:4]+' - '+digitos[4:]
+    if digitos.startswith('58'):
+        newt = '+'+digitos[:2]+' - '+digitos[2:5]+' - '+digitos[5:]
     return newt
-    #if row['teléfonos'].startswith('-0'):
-    #    newt = row['teléfonos'][1:]
-    #    return newt
-    #elif row['teléfonos'].
     
 
 Pronda = load_data02()
