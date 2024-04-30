@@ -84,7 +84,7 @@ dfProndaSC['value'] = dfProndaSC['value'].fillna('-')
 dfProndaSC.drop(columns = ['lista'], inplace=True )
 dfProndaSC
 # para grabar en la bd en grupos de 20 registros a la vez
-num_registros_por_lista = 20
+num_registros_por_lista = 10
 ' dfProndaSC.index = ', dfProndaSC.index
 
 # Crea una columna que represente el número de lista para cada registro
