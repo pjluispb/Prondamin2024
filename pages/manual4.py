@@ -63,6 +63,16 @@ dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['notifitelf'].value_counts())
+dfpronda3['Categoría Actual'] = dfpronda3['Categoría Actual'].fillna('-')
+dfpronda3['Cédula'] = dfpronda3['Cédula'].fillna('-')
+dfpronda3['ReporteCertif'] = dfpronda3['ReporteCertif'].fillna('-')
+dfpronda3['Status'] = dfpronda3['Status'].fillna('-')
+dfpronda3['close'] = dfpronda3['close'].fillna('-')
+dfpronda3['corte-1'] = dfpronda3['corte-1'].fillna('-')
+dfpronda3['corte-2'] = dfpronda3['corte-1'].fillna('-')
+dfpronda3['corte-3'] = dfpronda3['corte-1'].fillna('-')
+dfpronda3['curso'] = dfpronda3['curso'].fillna('-')
+dfpronda3['value'] = dfpronda3['value'].fillna('-')
 regPronda = dfProndaSC.to_dict('records')
 regPronda
 
