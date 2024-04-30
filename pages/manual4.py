@@ -18,7 +18,7 @@ def load_data02():
     return dfall_items
 
 def formatelf(row):
-    digitos = re.sub(r'\D', '', str(row['teléfonos']))
+    digitos = re.sub(r'\D', '', str(row['telefFormat']))
     newt = digitos
     if digitos=='': newt = '-'
     if digitos == '0416': newt = '-'
@@ -61,7 +61,7 @@ dfProndaSC = Pronda[sel_col]
 #dfProndaSC['telefFormat'] = dfProndaSC['teléfonos']
 dfProndaSC['telefFormat'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 #dfProndaSC['telefFormat'] = '-'
-#dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
+dfProndaSC['telefFormat'] = dfProndaSC.apply(formatelf, axis=1)
 dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['telefFormat'].value_counts())
