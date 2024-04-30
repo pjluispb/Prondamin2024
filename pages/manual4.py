@@ -102,7 +102,7 @@ for nombre_lista, grupo in grupos:
     grupo
     reggrupo = grupo.to_dict('records')
     
-    if contador < 200:               
+    if contador < 20:               
         reggrupo
         #try:
         #    Prondamin24.put_many(reggrupo)
