@@ -55,15 +55,15 @@ def formatelf(row):
     
 
 Pronda = load_data02()
-
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
 dfProndaSC = Pronda
-#dfProndaSC['telefFormat'] = dfProndaSC['teléfonos']
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
-#dfProndaSC['telefFormat'] = '-'
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['notifitelf'].value_counts())
+regPronda = dfProndaSC.to_dict('records')
+regPronda
+
 
