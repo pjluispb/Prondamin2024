@@ -20,8 +20,10 @@ def load_data02():
 
 Pronda = load_data02()
 
-sel_col = ['key',  'distrito', 'categoría', 'nombre', 'apellido', 'emails', 'teléfonos', 'paycon', 'modalidad', 'referenciaPago']         # List of desired column names
+sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos']         # List of desired column names
 dfProndaSC = Pronda[sel_col]
 dfProndaSC['teléfonos'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
+dfProndaSC['telefFormat'] = '-'
 'pronda = ', dfProndaSC
 st.write(dfProndaSC['teléfonos'].value_counts())
+
