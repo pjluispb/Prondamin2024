@@ -31,7 +31,7 @@ def formatelf(row):
         if digitos[0:3] in ['412', '414', '416', '424', '426']:
             newt = '0'+digitos[0:3]+' - '+digitos[3:10]
     if digitos.startswith('02'):
-        newt = digitos[:3]+' - '+digitos[3:]
+        newt = digitos[:4]+' - '+digitos[4:]
     return newt
     #if row['teléfonos'].startswith('-0'):
     #    newt = row['teléfonos'][1:]
