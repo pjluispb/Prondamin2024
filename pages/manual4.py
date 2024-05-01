@@ -83,6 +83,8 @@ dfProndaSC['value'] = dfProndaSC['value'].fillna('-')
 
 dfProndaSC.drop(columns = ['lista'], inplace=True )
 dfProndaSC
+
+#Pronda24D = deta.Base('Prondamin2024D')
 # para grabar en la bd en grupos de 20 registros a la vez
 num_registros_por_lista = 10
 ' dfProndaSC.index = ', dfProndaSC.index
@@ -102,10 +104,10 @@ for nombre_lista, grupo in grupos:
     grupo
     reggrupo = grupo.to_dict('records')
     
-    if contador < 20:               
+    if contador < 10:               
         reggrupo
         try:
-            Prondamin24.put_many(reggrupo)
+            Pronda.put_many(reggrupo)
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
