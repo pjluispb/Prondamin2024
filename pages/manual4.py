@@ -63,7 +63,7 @@ try:  #obtiene pronda2023 y su drive
     #drive2024 = deta.Drive("minec")
     #dicPminec2023 =  drive2023.list()
     p2024 = 'PRONDAMIN2024'
-    df24.columns.values
+    list(df24.columns.values)
     df24
     #dicPminec2023
 except:
@@ -74,7 +74,7 @@ try:  #obtiene pronda2023 y su drive
     drive2023 = deta.Drive("minec")
     dicPminec2023 =  drive2023.list()
     p2023 = 'PRONDAMIN2023'
-    df23.columns.values
+    list(df23.columns.values)
     df23
     dicPminec2023
 except:
@@ -85,7 +85,7 @@ try:  #obtiene pronda2022 y su drive
     drive2022 = deta.Drive("minec2022")
     dicPminec2022 =  drive2022.list()
     p2022 = 'PRONDAMIN2022'
-    df22.columns.values
+    list(df22.columns.values)
     df22
     dicPminec2022
 except:
@@ -96,7 +96,7 @@ try:  #obtiene pronda2021 y su drive
     drive2021 = deta.Drive("minec2021")
     dicPminec2021 =  drive2021.list()
     p2021 = 'PRONDAMIN2021'
-    df21.columns.values
+    list(df21.columns.values)
     df21
     dicPminec2021
     #st.write(pronda2021.fetch().items)
@@ -108,7 +108,7 @@ try:  #obtiene pronda2020 y su drive
     drive2020 = deta.Drive("minec2020")
     dicPminec2020 =  drive2020.list()
     p2020 = 'PRONDAMIN2020'
-    df20.columns.values
+    list(df20.columns.values)
     df20
     dicPminec2020
 except:
