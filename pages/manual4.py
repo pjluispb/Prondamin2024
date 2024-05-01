@@ -92,7 +92,7 @@ Pronda24D = deta.Base('Prondamin2024D')
 #    Cédula, Categoría Actual, Status, ReporteCertif, close, condicion, corte-1
 #    corte-2, corte-3, lista, curso
 dfProndaSC.drop(columns = ['Cédula', 'Categoría Actual', 'Status', 'ReporteCertif',
-                           'close', 'condicion', 'corte-1', 'lista', 'corte-2',
+                           'close', 'condicion', 'corte-1', 'corte-2',
                            'corte-3', 'curso'], inplace=True )
 
 # para grabar en la bd en grupos de 10 registros a la vez
