@@ -199,6 +199,10 @@ Pronda24D = deta.Base('Prondamin2024D')
 dfProndaSC.drop(columns = ['Categoría Actual', 'Status', 'ReporteCertif',
                            'close', 'condicion', 'corte-1', 'corte-2',
                            'corte-3', 'curso'], inplace=True )
+dfProndaSC.rename(columns={"apellido": "Roll_no", "categoría": "Marks", "Cédula": "CEDULA", 
+                           "curso": "CURSOREALIZADO", "distrito": "DISTRITO", "emails": "EMAIL",
+                           "modalidad": "MODALIDAD", "nombre": "NOMBRES", "ReporteCertif": "REPORTECERTIF",
+                           "Status": "STATUS", "teléfonos":  "TELEFONO"}, inplace=True)
 dfProndaSC
 st.stop()
 
