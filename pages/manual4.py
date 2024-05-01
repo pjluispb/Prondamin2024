@@ -124,8 +124,8 @@ co2.write(list(df21.columns.values))
 co3.write(list(df22.columns.values))
 co4.write(list(df23.columns.values))
 sel_col = ['apellido',  'categoría',  'Cédula', 'curso', 'distrito', 'emails', 'modalidad', 'nombre', 'ReporteCertif', 'Status', 'teléfonos', 'key']         # List of desired column names
-df4s = df4[sel_col]
-co5.write(list(df24.columns.values))
+df24s = df24[sel_col]
+co5.write(list(df24s.columns.values))
 
 listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda2021,drive2021,p2021), (pronda2020,drive2020,p2020)]
 
