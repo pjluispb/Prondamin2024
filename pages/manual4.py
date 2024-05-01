@@ -225,7 +225,7 @@ for nombre_lista, grupo in grupos:
     grupo
     reggrupo = grupo.to_dict('records')
     
-    if contador < 2:               
+    if contador < 350:               
         reggrupo
         try:
             Pronda24D.put_many(reggrupo)
