@@ -59,7 +59,8 @@ def normalize_string(row):
     s = s.lower()
     s = unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore').decode('ASCII')
     s = s.capitalize()
-    return s
+    scap = [ns.title() for ns in s]
+    return scap
 
 def update_columns(row):
     s1 = str(row['apellido'])
