@@ -196,13 +196,13 @@ Pronda24D = deta.Base('Prondamin2024D')
 # elimino las columnas innecesarias: 
 #    Cédula, Categoría Actual, Status, ReporteCertif, close, condicion, corte-1
 #    corte-2, corte-3, lista, curso
-dfProndaSC.drop(columns = ['Categoría Actual', 'Status', 'ReporteCertif',
-                           'close', 'condicion', 'corte-1', 'corte-2',
-                           'corte-3', 'curso'], inplace=True )
+dfProndaSC.drop(columns = ['Categoría Actual', 'fechaPago', 'fuenteOrigen', 'montoApagar', 'paycon', 
+                           'close', 'condicion', 'corte-1', 'corte-2', 'montoPago', 'referenciaPago',
+                           'corte-3', 'value', 'teléfonos'], inplace=True )
 dfProndaSC.rename(columns={"apellido": "APELLIDOS", "categoría": "CATEGORIA", "Cédula": "CEDULA", 
                            "curso": "CURSOREALIZADO", "distrito": "DISTRITO", "emails": "EMAIL",
                            "modalidad": "MODALIDAD", "nombre": "NOMBRES", "ReporteCertif": "REPORTECERTIF",
-                           "Status": "STATUS", "teléfonos":  "TELEFONO"}, inplace=True)
+                           "Status": "STATUS", "notifitelf":  "TELEFONO"}, inplace=True)
 dfProndaSC
 st.stop()
 
