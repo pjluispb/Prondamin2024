@@ -69,9 +69,12 @@ except:
     st.write('********Error conectando con Prondamin2023-Final y el drive minec')
 try:  #obtiene pronda2022 y su drive
     pronda2022 = deta.Base('PRONDANMIN-2022')
+    df22 = pd.DataFrame(pronda2022.fetch().items)
     drive2022 = deta.Drive("minec2022")
     dicPminec2022 =  drive2022.list()
     p2022 = 'PRONDAMIN2022'
+    df22
+    dicPminec2022
 except:
     st.write('*/*/*/*/*/*/*/')
 try:  #obtiene pronda2021 y su drive
