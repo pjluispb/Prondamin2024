@@ -102,9 +102,9 @@ except:
     #pronda2021 = []
 
 
-pronda2023
-drive2023
-p2023
+st.write(pronda2023)
+st.write(drive2023)
+st.write(p2023)
 listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda2021,drive2021,p2021), (pronda2020,drive2020,p2020)]
 
 st.write(listadb)
