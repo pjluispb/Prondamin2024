@@ -3,6 +3,7 @@ import streamlit as st
 from deta import Deta
 import time
 import re
+import unicodedata
 
 deta = Deta(st.secrets["deta_key"])
 
