@@ -58,11 +58,23 @@ def formatelf(row):
 
 listdb = []
 try:  #obtiene pronda2023 y su drive
+    pronda2024 = deta.Base('Prondamin2024C')
+    df24 = pd.DataFrame(pronda2024.fetch().items)
+    #drive2024 = deta.Drive("minec")
+    #dicPminec2023 =  drive2023.list()
+    p2024 = 'PRONDAMIN2024'
+    df24.columns.values
+    df24
+    #dicPminec2023
+except:
+    st.write('********Error conectando con Prondamin2024C y el drive minec')
+try:  #obtiene pronda2023 y su drive
     pronda2023 = deta.Base('PRONDAMIN2023-Final')
     df23 = pd.DataFrame(pronda2023.fetch().items)
     drive2023 = deta.Drive("minec")
     dicPminec2023 =  drive2023.list()
     p2023 = 'PRONDAMIN2023'
+    df23.columns.values
     df23
     dicPminec2023
 except:
@@ -73,6 +85,7 @@ try:  #obtiene pronda2022 y su drive
     drive2022 = deta.Drive("minec2022")
     dicPminec2022 =  drive2022.list()
     p2022 = 'PRONDAMIN2022'
+    df22.columns.values
     df22
     dicPminec2022
 except:
@@ -83,6 +96,7 @@ try:  #obtiene pronda2021 y su drive
     drive2021 = deta.Drive("minec2021")
     dicPminec2021 =  drive2021.list()
     p2021 = 'PRONDAMIN2021'
+    df21.columns.values
     df21
     dicPminec2021
     #st.write(pronda2021.fetch().items)
@@ -94,6 +108,7 @@ try:  #obtiene pronda2020 y su drive
     drive2020 = deta.Drive("minec2020")
     dicPminec2020 =  drive2020.list()
     p2020 = 'PRONDAMIN2020'
+    df20.columns.values
     df20
     dicPminec2020
 except:
@@ -102,17 +117,13 @@ except:
     #pronda2021 = []
 
 
-#st.write(pronda2023)
-#st.write(drive2023)
-#st.write(p2023)
+
 listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda2021,drive2021,p2021), (pronda2020,drive2020,p2020)]
-#listdb = [(pronda2023,drive2023,p2023),]
+
 
 st.write(listdb)
-#drive2023 = deta.Drive("minec")
-#dicPminec2023 =  drive2023.list()
-st.write(dicPminec2023)
 
+st.stop()
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
