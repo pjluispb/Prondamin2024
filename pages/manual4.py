@@ -158,6 +158,7 @@ Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
 dfProndaSC = Pronda
+'dfProndaSC = ', dfProndaSC
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 dfProndaSC = dfProndaSC.apply(update_columns, axis=1)
