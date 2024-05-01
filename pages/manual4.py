@@ -63,6 +63,8 @@ try:  #obtiene pronda2023 y su drive
     drive2023 = deta.Drive("minec")
     dicPminec2023 =  drive2023.list()
     p2023 = 'PRONDAMIN2023'
+    df23
+    dicPminec2023
 except:
     st.write('********Error conectando con Prondamin2023-Final y el drive minec')
 try:  #obtiene pronda2022 y su drive
