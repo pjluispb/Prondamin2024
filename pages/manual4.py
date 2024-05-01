@@ -107,7 +107,7 @@ for nombre_lista, grupo in grupos:
     if contador < 10:               
         reggrupo
         try:
-            Pronda.put_many(reggrupo)
+            Pronda24.put_many(reggrupo)
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
