@@ -204,7 +204,7 @@ dfProndaSC.rename(columns={"apellido": "APELLIDOS", "categoría": "CATEGORIA", "
                            "modalidad": "MODALIDAD", "nombre": "NOMBRES", "ReporteCertif": "REPORTECERTIF",
                            "Status": "STATUS", "notifitelf":  "TELEFONO"}, inplace=True)
 dfProndaSC
-st.stop()
+#st.stop()
 
 # para grabar en la bd en grupos de 10 registros a la vez
 num_registros_por_lista = 10
