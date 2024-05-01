@@ -67,13 +67,15 @@ def update_columns(row):
     s1 = s1.lower()
     s1 = unicodedata.normalize('NFKD', s1).encode('ASCII', 'ignore').decode('ASCII')
     s1 = s1.capitalize()
-    row['apellido'] = s1
+    scap1 = [ns.title() for ns in s1]
+    row['apellido'] = scap1
 
     s2 = str(row['nombre'])
     s2 = s2.lower()
     s2 = unicodedata.normalize('NFKD', s2).encode('ASCII', 'ignore').decode('ASCII')
     s2 = s2.capitalize()
-    row['nombre'] = s2
+    scap2 = [ns.title() for ns in s2]
+    row['nombre'] = scap2
        
     return row
 
