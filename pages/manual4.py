@@ -74,6 +74,9 @@ def update_columns(row):
     return row
 
 
+
+
+
 listdb = []
 try:  #obtiene pronda2023 y su drive
     pronda2024 = deta.Base('Prondamin2024C')
@@ -163,7 +166,7 @@ dfProndaSC = dfProndaSC.apply(update_columns, axis=1)
 #dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
-st.stop()
+
 st.write(dfProndaSC['notifitelf'].value_counts())
 dfProndaSC['Categoría Actual'] = dfProndaSC['Categoría Actual'].fillna('-')
 dfProndaSC['Cédula'] = dfProndaSC['Cédula'].fillna('-')
@@ -193,9 +196,11 @@ Pronda24D = deta.Base('Prondamin2024D')
 # elimino las columnas innecesarias: 
 #    Cédula, Categoría Actual, Status, ReporteCertif, close, condicion, corte-1
 #    corte-2, corte-3, lista, curso
-dfProndaSC.drop(columns = ['Cédula', 'Categoría Actual', 'Status', 'ReporteCertif',
+dfProndaSC.drop(columns = ['Categoría Actual', 'Status', 'ReporteCertif',
                            'close', 'condicion', 'corte-1', 'corte-2',
                            'corte-3', 'curso'], inplace=True )
+dfProndaSC
+st.stop()
 
 # para grabar en la bd en grupos de 10 registros a la vez
 num_registros_por_lista = 10
