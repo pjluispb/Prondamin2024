@@ -63,7 +63,7 @@ try:  #obtiene pronda2023 y su drive
     #drive2024 = deta.Drive("minec")
     #dicPminec2023 =  drive2023.list()
     p2024 = 'PRONDAMIN2024'
-    list(df24.columns.values)
+    st.write(list(df24.columns.values))
     df24
     #dicPminec2023
 except:
