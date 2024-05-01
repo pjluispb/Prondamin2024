@@ -118,6 +118,13 @@ except:
 
 
 
+co1, co2, co3, co4, co5 = st.columns(5)
+co1.write(list(df20.columns.values))
+co2.write(list(df21.columns.values))
+co3.write(list(df22.columns.values))
+co4.write(list(df23.columns.values))
+co5.write(list(df24.columns.values))
+
 listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda2021,drive2021,p2021), (pronda2020,drive2020,p2020)]
 
 
