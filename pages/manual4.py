@@ -79,9 +79,12 @@ except:
     st.write('*/*/*/*/*/*/*/')
 try:  #obtiene pronda2021 y su drive
     pronda2021 = deta.Base('PRONDANMIN-2021')
+    df21 = pd.DataFrame(pronda2021.fetch().items)
     drive2021 = deta.Drive("minec2021")
     dicPminec2021 =  drive2022.list()
     p2021 = 'PRONDAMIN2021'
+    df21
+    dicPminec2021
     #st.write(pronda2021.fetch().items)
 except:
     st.write('pronda2021 NO existe')
