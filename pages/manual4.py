@@ -153,6 +153,7 @@ listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda202
 
 st.write(listdb)
 Pronda = load_data02()
+Pronda
 st.write(Pronda['MODALIDAD'].value_counts())
 
 st.stop()
