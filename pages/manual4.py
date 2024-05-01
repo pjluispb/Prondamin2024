@@ -84,8 +84,18 @@ dfProndaSC['value'] = dfProndaSC['value'].fillna('-')
 dfProndaSC.drop(columns = ['lista'], inplace=True )
 dfProndaSC
 
-#Pronda24D = deta.Base('Prondamin2024D')
-# para grabar en la bd en grupos de 20 registros a la vez
+# Abre la BD donde se guardaran los nuevos datos normalizados (teléfonos y nombres)
+# por ahora solo los teléfonos
+# también aquí se incluiran los datos de los certificados y cursos realizados
+Pronda24D = deta.Base('Prondamin2024D')
+# elimino las columnas innecesarias: 
+#    Cédula, Categoría Actual, Status, ReporteCertif, close, condicion, corte-1
+#    corte-2, corte-3, lista, curso
+dfProndaSC.drop(columns = ['Cédula', 'Categoría Actual', 'Status', 'ReporteCertif',
+                           'close', 'condicion', 'corte-1', 'lista', 'corte-2',
+                           'corte-3', 'curso'], inplace=True )
+
+# para grabar en la bd en grupos de 10 registros a la vez
 num_registros_por_lista = 10
 ' dfProndaSC.index = ', dfProndaSC.index
 
@@ -104,10 +114,10 @@ for nombre_lista, grupo in grupos:
     grupo
     reggrupo = grupo.to_dict('records')
     
-    if contador < 10:               
+    if contador < 2:               
         reggrupo
         try:
-            Pronda24.put_many(reggrupo)
+            Pronda24D.put_many(reggrupo)
             'listo grupo ',str(contador)
         except:
             'error grabando grupo',contador
