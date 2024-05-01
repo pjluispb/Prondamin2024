@@ -64,7 +64,7 @@ try:  #obtiene pronda2023 y su drive
     #dicPminec2023 =  drive2023.list()
     p2024 = 'PRONDAMIN2024'
     st.write(list(df24.columns.values))
-    df24
+    #df24
     #dicPminec2023
 except:
     st.write('********Error conectando con Prondamin2024C y el drive minec')
@@ -75,7 +75,7 @@ try:  #obtiene pronda2023 y su drive
     dicPminec2023 =  drive2023.list()
     p2023 = 'PRONDAMIN2023'
     list(df23.columns.values)
-    df23
+    #df23
     dicPminec2023
 except:
     st.write('********Error conectando con Prondamin2023-Final y el drive minec')
@@ -86,7 +86,7 @@ try:  #obtiene pronda2022 y su drive
     dicPminec2022 =  drive2022.list()
     p2022 = 'PRONDAMIN2022'
     list(df22.columns.values)
-    df22
+    #df22
     dicPminec2022
 except:
     st.write('*/*/*/*/*/*/*/')
@@ -97,7 +97,7 @@ try:  #obtiene pronda2021 y su drive
     dicPminec2021 =  drive2021.list()
     p2021 = 'PRONDAMIN2021'
     list(df21.columns.values)
-    df21
+    #df21
     dicPminec2021
     #st.write(pronda2021.fetch().items)
 except:
@@ -109,7 +109,7 @@ try:  #obtiene pronda2020 y su drive
     dicPminec2020 =  drive2020.list()
     p2020 = 'PRONDAMIN2020'
     list(df20.columns.values)
-    df20
+    #df20
     dicPminec2020
 except:
     # pronda2021 No Existe
