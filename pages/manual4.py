@@ -54,6 +54,11 @@ def formatelf(row):
     return newt
     
 
+
+drive2022 = deta.Drive("minec2022")
+dicPminec2022 =  drive2022.list()
+dicMinec2022
+
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
@@ -62,6 +67,7 @@ dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
+st.stop()
 st.write(dfProndaSC['notifitelf'].value_counts())
 dfProndaSC['Categoría Actual'] = dfProndaSC['Categoría Actual'].fillna('-')
 dfProndaSC['Cédula'] = dfProndaSC['Cédula'].fillna('-')
