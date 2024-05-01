@@ -108,7 +108,7 @@ st.write(p2023)
 #listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda2021,drive2021,p2021), (pronda2020,drive2020,p2020)]
 listdb = [(pronda2023,drive2023,p2023),]
 
-st.write(listadb)
+st.write(listdb)
 #drive2023 = deta.Drive("minec")
 #dicPminec2023 =  drive2023.list()
 st.write(dicPminec2023)
