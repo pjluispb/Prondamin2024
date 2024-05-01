@@ -55,9 +55,9 @@ def formatelf(row):
     
 
 
-drive2022 = deta.Drive("minec2022")
-dicPminec2022 =  drive2022.list()
-st.write(dicMinec2022)
+drive2023 = deta.Drive("minec")
+dicPminec2023 =  drive2023.list()
+st.write(dicPminec2023)
 
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
