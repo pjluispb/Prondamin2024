@@ -52,7 +52,13 @@ def formatelf(row):
         if len(digitos)==11:
             newt = '+1'+' - '+digitos[1:4]+' - '+digitos[4:7]+' - '+digitos[7:]
     return newt
-    
+
+def normalize_string(s):
+   
+    s = s.lower()
+    s = unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore').decode('ASCII')
+    s = s.capitalize()
+    return s
 
 
 
@@ -132,13 +138,15 @@ listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda202
 
 st.write(listdb)
 
-st.stop()
+#st.stop()
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
 dfProndaSC = Pronda
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
+dfProndaSC['apellido'] = dfProndaSC.apply(normalize_strings, axis=1)
+dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.stop()
