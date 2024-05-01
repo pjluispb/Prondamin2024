@@ -54,21 +54,15 @@ def formatelf(row):
             newt = '+1'+' - '+digitos[1:4]+' - '+digitos[4:7]+' - '+digitos[7:]
     return newt
 
-def normalize_string(row):
-    s = str(row['apellido'])
-    s = s.lower()
-    s = unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore').decode('ASCII')
-    s = s.capitalize()
-    scap = [ns.title() for ns in s]
-    return scap
+
 
 def update_columns(row):
     s1 = str(row['apellido'])
     s1 = s1.lower()
     s1 = unicodedata.normalize('NFKD', s1).encode('ASCII', 'ignore').decode('ASCII')
-    #s1 = s1.capitalize()
-    scap1 = [ns.title() for ns in s1]
-    row['apellido'] = scap1
+    s1 = s1.title()
+    #scap1 = [ns.title() for ns in s1]
+    row['apellido'] = s1
 
     s2 = str(row['nombre'])
     s2 = s2.lower()
