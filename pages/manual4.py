@@ -169,7 +169,7 @@ dfProndaSC = dfProndaSC.apply(update_columns, axis=1)
 
 st.write(dfProndaSC['notifitelf'].value_counts())
 dfProndaSC['Categoría Actual'] = dfProndaSC['Categoría Actual'].fillna('-')
-dfProndaSC['Cédula'] = dfProndaSC['Cédula'].fillna('-')
+dfProndaSC['Cédula'] = dfProndaSC['key']
 dfProndaSC['ReporteCertif'] = dfProndaSC['ReporteCertif'].fillna('-')
 dfProndaSC['Status'] = dfProndaSC['Status'].fillna('-')
 dfProndaSC['close'] = dfProndaSC['close'].fillna('-')
