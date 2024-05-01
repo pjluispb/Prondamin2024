@@ -79,7 +79,7 @@ def update_columns(row):
 
 listdb = []
 try:  #obtiene pronda2023 y su drive
-    pronda2024 = deta.Base('Prondamin2024C')
+    pronda2024 = deta.Base('Prondamin2024D')
     df24 = pd.DataFrame(pronda2024.fetch().items)
     #drive2024 = deta.Drive("minec")
     #dicPminec2023 =  drive2023.list()
@@ -153,7 +153,7 @@ listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda202
 
 st.write(listdb)
 
-#st.stop()
+st.stop()
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
