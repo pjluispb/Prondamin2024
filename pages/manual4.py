@@ -60,6 +60,11 @@ def normalize_string(row):
     s = s.capitalize()
     return s
 
+def update_columns(row):
+    row['paycon_y'] = row['paycon_x']
+    row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
+    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'    
+    return row
 
 
 listdb = []
