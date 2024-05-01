@@ -53,8 +53,8 @@ def formatelf(row):
             newt = '+1'+' - '+digitos[1:4]+' - '+digitos[4:7]+' - '+digitos[7:]
     return newt
 
-def normalize_string(s):
-   
+def normalize_string(row):
+    s = str(row['apellido'])
     s = s.lower()
     s = unicodedata.normalize('NFKD', s).encode('ASCII', 'ignore').decode('ASCII')
     s = s.capitalize()
@@ -146,7 +146,7 @@ dfProndaSC = Pronda
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
 dfProndaSC['apellido'] = dfProndaSC.apply(normalize_strings, axis=1)
-dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
+#dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
 st.stop()
