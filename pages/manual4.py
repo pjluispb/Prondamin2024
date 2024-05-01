@@ -59,7 +59,7 @@ def formatelf(row):
 listdb = []
 try:  #obtiene pronda2023 y su drive
     pronda2023 = deta.Base('PRONDAMIN2023-Final')
-    df23 = pd.DataFrame(pronda2023.fetch.items)
+    df23 = pd.DataFrame(pronda2023.fetch().items)
     drive2023 = deta.Drive("minec")
     dicPminec2023 =  drive2023.list()
     p2023 = 'PRONDAMIN2023'
