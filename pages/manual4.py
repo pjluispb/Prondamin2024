@@ -66,7 +66,7 @@ def update_columns(row):
     s1 = str(row['apellido'])
     s1 = s1.lower()
     s1 = unicodedata.normalize('NFKD', s1).encode('ASCII', 'ignore').decode('ASCII')
-    s1 = s1.capitalize()
+    #s1 = s1.capitalize()
     scap1 = [ns.title() for ns in s1]
     row['apellido'] = scap1
 
