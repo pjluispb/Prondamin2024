@@ -90,9 +90,12 @@ except:
     st.write('pronda2021 NO existe')
 try:  #obtiene pronda2020 y su drive
     pronda2020 = deta.Base('PRONDANMIN-2020')
+    df20 = pd.DataFrame(pronda2020.fetch().items)
     drive2020 = deta.Drive("minec2020")
     dicPminec2020 =  drive2020.list()
     p2020 = 'PRONDAMIN2020'
+    df20
+    dicPminec2020
 except:
     # pronda2021 No Existe
     st.write('pronda2020 NO existe')
