@@ -61,9 +61,18 @@ def normalize_string(row):
     return s
 
 def update_columns(row):
-    row['paycon_y'] = row['paycon_x']
-    row['condicion'] = 'Bloqueo en marca 01' if row['paycon_x'] in ['SI', 'SI++'] else '-'
-    row['corte-1'] = 'Corte01:'+str(row['paycon_x'])+' -->22/4:4am'    
+    s1 = str(row['apellido'])
+    s1 = s1.lower()
+    s1 = unicodedata.normalize('NFKD', s1).encode('ASCII', 'ignore').decode('ASCII')
+    s1 = s1.capitalize()
+    row['apellido'] = s1
+
+    s2 = str(row['nombre'])
+    s2 = s2.lower()
+    s2 = unicodedata.normalize('NFKD', s2).encode('ASCII', 'ignore').decode('ASCII')
+    s2 = s2.capitalize()
+    row['nombre'] = s2
+       
     return row
 
 
@@ -150,7 +159,8 @@ Pronda = load_data02()
 dfProndaSC = Pronda
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
-dfProndaSC['apellido'] = dfProndaSC['apellido'].apply(normalize_strings, axis=1)
+dfProndaSC = dfProndaSC.apply(update_columns, axis=1)
+#dfProndaSC['apellido'] = dfProndaSC['apellido'].apply(normalize_strings, axis=1)
 #dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
