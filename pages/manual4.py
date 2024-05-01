@@ -145,7 +145,7 @@ Pronda = load_data02()
 dfProndaSC = Pronda
 dfProndaSC['notifitelf'] = dfProndaSC['teléfonos'].apply(lambda x: str(x[0]) if x else '')
 dfProndaSC['notifitelf'] = dfProndaSC.apply(formatelf, axis=1)
-dfProndaSC['apellido'] = dfProndaSC.apply(normalize_strings, axis=1)
+dfProndaSC['apellido'] = dfProndaSC['apellido'].apply(normalize_strings, axis=1)
 #dfProndaSC['nombre'] = dfProndaSC.apply(normalize_strings, axis=1)
 #dfProndaSC['xval'] = '***'
 'pronda = ', dfProndaSC
