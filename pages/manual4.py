@@ -152,6 +152,8 @@ listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda202
 
 
 st.write(listdb)
+df24
+st.write(df24['MODALIDAD'].value_counts())
 
 st.stop()
 Pronda = load_data02()
