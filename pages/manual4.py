@@ -9,7 +9,7 @@ deta = Deta(st.secrets["deta_key"])
 
 @st.cache_data
 def load_data02():
-    Pronda24 = deta.Base('Prondamin2024C')
+    Pronda24 = deta.Base('Prondamin2024D')
     res = Pronda24.fetch(limit=500)
     all_items = res.items
     while res.last:
@@ -152,10 +152,12 @@ listdb = [(pronda2023,drive2023,p2023), (pronda2022,drive2022,p2022), (pronda202
 
 
 st.write(listdb)
-df24
-st.write(df24['MODALIDAD'].value_counts())
+Pronda = load_data02()
+st.write(Pronda['MODALIDAD'].value_counts())
 
 st.stop()
+
+
 Pronda = load_data02()
 #sel_col = ['key',  'distrito',  'nombre', 'apellido', 'teléfonos', 'emails']         # List of desired column names
 #dfProndaSC = Pronda[sel_col]
