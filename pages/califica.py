@@ -14,7 +14,7 @@ dfcML = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Lic
 dfcMO = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Ordenado ']
 dfcMCi = dfcMC.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
 dfcMLi = dfcML.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
-dfcMOi = dfcML.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
+dfcMOi = dfcMO.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
 
 'Ministros Cristianos Bloque 01 : ', dfcMCi
 col1, col2 = st.columns(2)
