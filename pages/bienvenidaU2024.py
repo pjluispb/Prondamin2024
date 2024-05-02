@@ -24,7 +24,7 @@ else:
     
 st.subheader('Que deseas hacer?')
 if logina['tipou']=='Registrador Especial':
-    acciones = ['VER DATA', 'ACTUALIZAR', 'REGISTRAR' ]
+    acciones = ['VER DATA', 'ACTUALIZAR', 'REGISTRAR', 'VER CALIFICACIONES']
 else:
     #acciones = ['VER DATA', 'ACTUALIZAR' ]
     with st.spinner('El proceso de matriculación para Prondamin2024 ha finalizado...'):
@@ -40,6 +40,8 @@ if selector=='REGISTRAR':
     switch_page('registrar2024')
 if selector=='VER DATA':
     switch_page('verdata2024')
+if selector=='VER CALIFICACIONES':
+    switch_page('califica')
 
 # regresar = st.button('Volver')
 # if regresar:
