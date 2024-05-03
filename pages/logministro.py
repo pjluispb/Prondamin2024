@@ -44,7 +44,7 @@ else:
     #actualizamin = st.toggle('Actualizar data y/o inscribir curso')
     st.session_state['cedulaministro'] = first['key']
     if vercertificados:
-        st.switch_page('pages/certifi5.py')
+        st.switch_page('pages/certifi6.py')
     #if actualizamin:
     #    st.switch_page('pages/actualizar2024B.py')
     #    'voy a actualizar'
