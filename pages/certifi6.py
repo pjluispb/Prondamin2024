@@ -87,9 +87,9 @@ def procesar_lista(lista):
             msg6 = ''
         st.subheader(msg0a)
         st.header(msg0b)
-        st.markdown(msg1)
+        if len(aprobados)>0: st.markdown(msg1)
         #st.markdown(msg2)
-        st.markdown(msg3)
+        if msg3!='':st.markdown(msg3)
         if msg6!='': st.error(msg6)
         bcont = 10
         for cap in aprobados:
