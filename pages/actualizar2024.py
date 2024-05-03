@@ -4,6 +4,7 @@ import datetime as datetime
 from streamlit_extras.switch_page_button import switch_page
 from deta import Deta
 from PIL import Image
+import re
 
 st.set_page_config(
     page_title="Minec Reg App",
@@ -69,6 +70,12 @@ if b0:
                                 apellidos = ph1.text_input('Apellidos:',value = first['apellido'])
                                 correo = ph1.text_input('Correo Electrónico: 	:email:',value = first['emails'][0])
                                 telefono = ph1.text_input('Teléfono: :telephone_receiver:', value = ''  if first['teléfonos'] == [] else first['teléfonos'][0])
+                                phone_number_regex = r"^\+?[0-9]{1,3}[- ]?[0-9]{3,4}[- ]?[0-9]{6,7}$"
+                                if not bool(re.search(phone_number_regex, telefono)):
+                                        telval = False
+                                        ph1.error("Formato de número de teléfono no válido. Debe seguir el formato: 'código país - código de área - número'.")
+                                else:
+                                        telval = True
                                 distrito = ph1.text_input('Distrito:',value = first['distrito'], disabled=True)
                                 if logina['tipou']=='Registrador':
                                         catasp = ph1.text_input('Categoría: :male-judge:',value = first['categoría'], disabled=True)
