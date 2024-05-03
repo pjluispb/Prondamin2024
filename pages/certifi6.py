@@ -78,7 +78,7 @@ def procesar_lista(lista):
             for cura in aprobados:
                 msg3+=' $\space$ 🔹 :orange['+cura[0]+'] 🔹 del periodo/cohorte de :violet[**'+cura[1]+'**]   $\\newline$'
         else:
-            msg5 = 'No tiene cursos APROBADOS'
+            msg3 = 'No tiene cursos APROBADOS'
         if len(reprobados)>0:
             msg6 = '\t'
             for cura in reprobados:
