@@ -11,7 +11,7 @@ dfProndaCalifica = pd.DataFrame(itemsProndaCalifica)
 
 dfcMC = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Cristiano ']
 dfcML = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Licenciado ']
-dfcMO = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Ordenado ']
+dfcMO = dfProndaCalifica.loc[dfProndaCalifica['CURSOREALIZADO'] == 'Ministro Ordenado']
 dfcMCi = dfcMC.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
 dfcMLi = dfcML.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
 dfcMOi = dfcMO.reindex(columns=['CATEGORIA','DISTRITO','NOMBRES','APELLIDOS','CURSOREALIZADO','Total del curso (Real)','STATUS','MODALIDAD','CEDULA','EMAIL','TELEFONO','REPORTECERTIF','key'])
