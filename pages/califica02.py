@@ -4,8 +4,8 @@ import pandas as pd
 from deta import Deta
 import pygsheets
 from google.oauth2 import service_account
-import unicodedata
-from unidecode import unidecode
+#import unicodedata
+#from unidecode import unidecode
 
 deta = Deta(st.secrets["deta_key"])
 SCOPES = ('https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive')
