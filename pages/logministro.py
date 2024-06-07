@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 deta = Deta(st.secrets["deta_key"])
-encprof = deta.Base('Prondamin2024D')
+encprof = deta.Base('Prondamin2024C')
 photosys = deta.Drive(name='modphotos')
 
 imagen1 = Image.open('minecLogo.jpeg')
