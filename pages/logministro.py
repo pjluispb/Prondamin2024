@@ -20,7 +20,8 @@ imagen2 = Image.open('minecLogoTitle.jpeg')
 st.image(imagen1)
 st.image(imagen2)
 
-
+st.header('Bienvenido a MINEC')
+st.subheader('Ministerio de Educación Cristiana de las Asambleas de Dios Venezuela')
 st.subheader('Bienvenido Ministro')
 #cedulaministro = st.text_input('$$ \large Introduce \,tu \,número \,de \,cédula\,:\,\, $$')
 encontrada = False
