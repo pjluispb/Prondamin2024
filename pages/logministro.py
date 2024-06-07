@@ -22,7 +22,8 @@ st.image(imagen2)
 
 st.header('Bienvenido a MINEC')
 st.subheader('Ministerio de Educación Cristiana de las Asambleas de Dios Venezuela')
-st.subheader('Bienvenido Ministro')
+'---'
+#st.subheader('Bienvenido Ministro')
 #cedulaministro = st.text_input('$$ \large Introduce \,tu \,número \,de \,cédula\,:\,\, $$')
 encontrada = False
 cedulaministro = st.text_input('$$ \large Introduce \,el \,número \,de \,tu \,cédula \,y/o \\newline documento \,de \,identidad $$ :id:',key='iced',placeholder='ingrese su ID')
