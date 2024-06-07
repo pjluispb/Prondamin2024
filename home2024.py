@@ -20,6 +20,8 @@ st.image(imagen2)
 
 st.header('Bienvenido a MINEC')
 st.subheader('Ministerio de Educación Cristiana de las Asambleas de Dios Venezuela')
+st.switch_page('pages/logmy.py')
+
 ingresou = st.popover(' $$ \large 👉PRONDAMIN 2024👈 \\newline Ingresar $$')
 
 uministro = ingresou.toggle(' $$ \Large Ministro \small \\newline Ministro \,acreditado \,que \,desee \\newline actualizar \,su \,data \,y/o \,\, inscribirse \\newline en \,curso \,PRONDAMIN $$')
